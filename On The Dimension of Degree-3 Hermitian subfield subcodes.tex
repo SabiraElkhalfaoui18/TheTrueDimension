@@ -1,0 +1,461 @@
+\documentclass[a4paper]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+\usepackage{subcaption}
+\usepackage{amsmath, mathrsfs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{animate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{hyperref} %Références cliquables
+\usepackage{cleveref}
+\usepackage{csquotes}
+\usepackage{mathtools}
+\usepackage{relsize}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{academicons}
+\usepackage{mdframed}
+\mdfdefinestyle{algoBoxStyle}{%
+	linecolor=black,
+	linewidth=1pt,
+	roundcorner=5pt,
+	innertopmargin=10pt,
+	innerbottommargin=10pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	backgroundcolor=white
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%$\usepackage{lineno}
+%\linenumbers
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{problem}[definition]{Problem}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\newcommand{\GRS}{\mathbf{GRS}}
+\newcommand{\Frob}{Frob}
+\newcommand{\g}{\mathfrak{g}}
+
+\DeclareMathOperator{\tr}{Tr}
+
+\newcommand{\C}{C_L(D,sP_{\infty})|_{\mathbb{F}_q}}
+
+\newcommand{\trf}[2]{\tr_{\mathbb{F}_{#1}/\mathbb{F}_{#2}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\trace}{Tr}
+
+%------------Commands-----------%
+\newcommand{\Fq}{\mathbb{F}_q}
+\newcommand{\Fqsq}{\mathbb{F}_{q^2}}
+\newcommand{\LsP}{\mathscr{L}(sP)}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\fqm}{\mathbb{F}_{q^m}}
+\newcommand{\fq}{\mathbb{F}_{q}}
+\newcommand{\fqo}{\mathbb{F}_{q_0^2}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Trm}[1]{\trace_{\mathbb{F}_{q^m}/\fq}\!\left(#1\right)}
+\newcommand{\Tr}[1]{\trace\!\left(#1\right)}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\operatorname{Span}\left(#1\right)}
+\newcommand{\LT}[1]{\operatorname{LT}\left(#1\right)}
+\newcommand{\LM}[1]{\operatorname{LM}\left(#1\right)}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\ssag}[1]{\operatorname{\mathsf{SSAG}}_{q}\left(#1\right)}
+%\newcommand{\GRS}{\operatorname{\mathsf{GRS}}}
+\newcommand{\gen}{\mathfrak{g}}
+\newcommand{\degab}[1]{\deg_{a,b}\left(#1\right)}
+\newcommand\TODO[1]{\textcolor{red}{TO DO: #1}}
+%%%%%% Bibliography %%%%%%
+% Replace "sample" in the \addbibresource line below with the name of your .bib file.
+
+
+
+\title{On the dimension of Hermitian subfield subcodes from higher degree place}
+\author{Sabira El Khalfaoui, G\'abor Nagy, Jade Nardi}
+
+%%%%%% Affiliations %%%%%%
+%\affil[1]{}
+
+
+%%%%%% Date %%%%%%
+% Date is optional
+\date{}
+
+%%%%%% Spacing %%%%%%
+% Use paragraph spacing of 1.5 or 2 (for double spacing, use command \doublespacing)
+\onehalfspacing
+
+\begin{document}
+	
+
+	
+	%%%%%% Abstract %%%%%%
+	\begin{abstract}
+		
+	\end{abstract}
+	
+	%%%%%% Main Text %%%%%%
+	
+	\maketitle
+	
+	\section{Introduction}
+	
+	\textcolor{red}{The advent of quantum computers poses significant threats to classical cryptographic schemes, necessitating the development of post-quantum cryptographic primitives that are resilient against quantum attacks. In this context, Algebraic-Geometry (AG) codes have gained considerable attention due to their excellent error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes stand out for their inherent resistance to structural attacks, making them prime candidates for deployment in post-quantum cryptography.}
+	
+	
+	\textcolor{red}{Constructingg subfield subcodes, a process also known as restriction, is a simple yet effective technique in cryptography for hiding a code's structure. This is especially useful in the McEliece cryptosystem, where it's important that the code's structure isn't easily recognized. Subfield subcodes help meet this security need, making them a fundamental element in designing secure cryptographic systems.}
+	
+	
+	\textcolor{red}{	This paper, we investigate subfield subcodes of Hermitian codes from higher degree place, with a particular emphasis on determining their exact dimensions...  \\An important application of subfield subcodes of AG codes is in the McEliece cryptosystem, a public-key encryption scheme that has withstood for several years and is renowned for its security against quantum attacks. The security of the McEliece cryptosystem hinges on the hardness of decoding random linear codes. By using subfield subcodes of AG codes as the underlying codes, we can achieve a system that not only inherits the quantum-resistant properties of these codes but also benefits from their efficient decoding algorithms.\\
+		In this paper ....}
+
+	
+	\section{Algebraic Geometry (AG) codes}
+	
+	\subsection*{Hermitian curves and their divisors}
+	
+	For more details we refer the readers to \cite{stichtenoth2009algebraic, stepanov2012codes}.
+	
+%		The Hermitian curve $\mathscr{H}_q$ over the finite field $\mathbb{F}_{q^2}$ in affine coordinates, is described by the equation:
+%	
+%	\[
+%	\mathscr{H}_q: Y^q + Y = X^{q+1}.
+%	\]
+%	
+%	This curve is characterized by a genus $\mathfrak{g} = \frac{q(q-1)}{2}$, classifying it as a maximal curve. This classification is further substantiated by the property $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Notably, $\mathscr{H}_q$ encompasses a singular point at infinity, which is denoted as $P_{\infty}$.
+%	
+%	The Frobenius automorphism, denoted by $\text{Fr}_{q^2}$, is defined through the mapping:
+%	
+%	\[
+%	\text{Fr}_{q^2}: \overline{\mathbb{F}}_{q^2} \to \overline{\mathbb{F}}_{q^2}, \quad x \mapsto x^{q^2}.
+%	\]
+%	
+%	This automorphism extends to the points on the curve $\mathscr{H}_q$ by applying $\text{Fr}_{q^2}$ to their coordinates. Consequently, a point $P$ on $\mathscr{H}_q$ is deemed $\mathbb{F}_{q^2}$-rational if and only if it satisfies the condition $P = \text{Fr}_{q^2}(P)$. Viewing $\mathscr{H}_q$ over the algebraic closure $\overline{\mathbb{F}}_{q^2}$, there is a one-to-one correspondence between the points of $\mathscr{H}_q$ and the places of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$.
+%	
+%	For a given divisor $D = \lambda_1P_1 + \cdots + \lambda_kP_k$, consisting of points $P_1, \ldots, P_k$ on $\mathscr{H}_q$ and respective integers $\lambda_1, \ldots, \lambda_k$, its Frobenius image is articulated as:
+%	
+%	\[
+%	\text{Fr}_{q^2}(D) = \lambda_1 \text{Fr}_{q^2}(P_1) + \cdots + \lambda_k \text{Fr}_{q^2}(P_k).
+%	\]
+%	
+%	A divisor $D$ is classified as $\mathbb{F}_{q^2}$-rational if it fulfills the condition $D = \text{Fr}_{q^2}(D)$. It is particularly noteworthy that if all points $P_1, \ldots, P_k$ belong to $\mathscr{H}_q(\mathbb{F}_{q^2})$, then $D$ inherently qualifies as $\mathbb{F}_{q^2}$-rational, though the reverse may not always be valid. The degree of $D$ is defined as $\deg(D) = \lambda_1 + \cdots + \lambda_k$, with the support of $D$ being the collection of points $P_i$ for which $\lambda_i \neq 0$.
+
+	
+	The Hermitian curve, denoted as $\mathscr{H}_q$, over the finite field $\mathbb{F}_{q^2}$ in affine coordinates, is given by the equation:
+	\[
+	\mathscr{H}_q: Y^q + Y = X^{q+1}.
+	\]
+	This curve has a genus $g = \frac{q(q-1)}{2}$, classifying it as a maximal curve because it achieves the maximum number of $\mathbb{F}_{q^2}$-rational points, which is $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Additionally, $\mathscr{H}_q$ possesses a unique singular point at infinity, denoted $P_{\infty}$.
+	
+	A divisor on $\mathscr{H}_q$ is a formal sum $D = n_1 Q_1 + \cdots + n_k Q_k$ where $n_1, \cdots, n_k$ are integers, and $Q_1, \cdots, Q_k$ are points on $\mathscr{H}_q$. The degree of the divisor $D$ is defined as $\deg(D) = \sum_{i=1}^k n_i$. The valuation of $D$ at a point $Q_i$ is $v_{Q_i}(D) = n_i$, and the support of $D$ is the set $\{ Q_i \mid n_i \neq 0 \}$.
+	
+	The Frobenius automorphism, denoted as $\text{Fr}_{q^2}$, is defined over the algebraic closure $\overline{\mathbb{F}}_{q^2}$ and acts on elements by
+	\[
+	\text{Fr}_{q^2}: \overline{\mathbb{F}}_{q^2} \to \overline{\mathbb{F}}_{q^2}, \quad x \mapsto x^{q^2}.
+	\]
+	It acts on points of $\mathscr{H}_q$ by applying to their coordinates. A point $Q$ on $\mathscr{H}_q$ is $\mathbb{F}_{q^2}$-rational if and only if it is fixed by $\text{Fr}_{q^2}(Q)$. In $\overline{\mathbb{F}}_{q^2}$, points on $\mathscr{H}_q$ correspond one-to-one with the places of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$.
+	
+	For a divisor $D$, its Frobenius image is given by
+	\[
+	\text{Fr}_{q^2}(D) = n_1 \text{Fr}_{q^2}(Q_1) + \cdots + n_k \text{Fr}_{q^2}(Q_k).
+	\]
+	$D$ is $\mathbb{F}_{q^2}$-rational if $D = \text{Fr}_{q^2}(D)$. Notably, if all points $Q_1, \ldots, Q_k$ are in $\mathscr{H}_q(\mathbb{F}_{q^2})$, then $D$ is inherently $\mathbb{F}_{q^2}$-rational.
+	
+	
+	
+	\subsection*{Riemann-Roch space}
+	
+	For a non-zero function $g$ in the function field $\bar{\mathbb{F}}_{q^2}$ and a place $P$ ,$v_P(g)$ stands for the order of $g$ at $P$. If $v_P(g) > 0$ then $P$ is a zero of $g$, while if $v_P(g) < 0 $,then $P$ is a pole of $g$ with multiplicity  $-v_P(g)$. The principal divisor of a non-zero function $g$ is $(g)= \sum_{P}v_P(g) P$.
+	
+	The \emph{Riemann--Roch space} associated with an  $\mathbb{F}_{q^2}$-rational divisor $G$ is the $\mathbb{F}_{q^2}$ vector space $$\mathscr{L}(G) := \set{g \in \mathbb{F}_{q^2}(\mathscr{H}_q) \mid (g) + G \geq 0} \cup {0},$$ with dimension $\ell(G)$.
+	
+
+	From  \cite[Riemann's Theorem~1.4.17]{stichtenoth2009algebraic}, we have $$\ell(G) \geq \deg(G) +1 - \mathfrak{g},$$ with equality if $\deg(G) \geq 2\mathfrak{g}-1$.
+	
+
+	In this work, our primary focus is on an $\mathbb{F}_{q^2}$-rational divisor $G$ of the form $ sP$ where $P$ is a degree $r$ place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and $s$ is a positive integer. In the extended constant field of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $r$, let $P_1, P_2, \cdots, P_r$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^{2r}}(\mathscr{H}_q)$, and, by appropriately labeling the indices, $P_{i} = \text{Fr}^i_{q^2}(P_1)$, where indices are considered modulo $r$.
+	
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection*{Hermitian codes}
+	Here, we outline the construction of an AG code from the Hermitian curve
+	
+	
+	In algebraic coding theory, Hermitian codes stand out as a significant class of algebraic geometry (AG) codes, renowned for their distinctive properties. These codes are constructed from Hermitian curves defined over finite fields. These codes are typically viewed as functional AG codes, denoted by $C_{\mathcal{L}}(D, G)$. In this standard approach, the divisor $G$ is usually a multiple of a single place of degree one. The set $\mathcal{P}$, encompassing all rational points on $\mathscr{H}_q$, is listed as $\{Q_1, \ldots, Q_{n}\}$. This approach gives rise to a structure referred to as a one-point code. However, it is important to note that recent research in the field suggests that using a more varied selection for the divisor $G$ can result in the creation of better AG codes \cite{matthews2005one,korchmaros2013hermitian}.
+	
+	
+	
+	Given a divisor $D=Q_1+Q_2+\cdots+Q_n$ where all $Q_i$ are distinct rational points, and an $\mathbb{F}_{q^2}$-rational divisor $G$ such that $\Supp(G) \cap \calP = \varnothing$. By numbering the points in $\calP$, we define an evaluation map $\ev_{\calP}$ such that $\ev_{\calP}(g) = (g(Q_1),\dots,g(Q_n))$ for $g \in \calL(G)$. 
+	
+	
+	The functional AG code associated with the divisor $G$ is
+	\[C_{\calL}(D,G) := \{(g(Q_1),g(Q_2),\cdots,g(Q_n)) \mid g \in \calL(G)\},\] 
+	
+
+	
+%	a $[n, k \geq \ell(G)]_{\mathbb{F}_{q^2}}$ code. If $ \deg (G) < n $, its dimension is $\ell(G)$ and its minimum distance $d$ is bounded by the \emph{designed distance} $d^*=n-\deg (G)$.
+	
+	\begin{theorem}\cite[Theorem~2.2.2]{stichtenoth2009algebraic}
+		$C_{\calL}(D, G)$ is an $[n, k, d]$ code with parameters
+		$$
+		k=\ell(G)-\ell(G-D) \quad \text { and } \quad d \geq n-\operatorname{deg} G .
+		$$
+	\end{theorem}
+	
+	The dual of an AG code can be described as a residue code (see \cite{Sti09} for more details), \emph{i.e.}
+	$$ C_{\calL}(D,G)^{\perp} = C_{\Omega}(D,G).$$ 
+
+
+Moreover, the differential code $C_{\Omega}(D, G)$ is analogous to the functional code $C_{\mathcal{L}}(D, W+D-G)$, where $W$ represents a canonical divisor of $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. Notably, they share identical dimensions and minimum distances; however, this correspondence does not preserve all crucial properties of the code.
+	
+	
+\subsection*{Subfield Subcode and trace code}
+For the efficient construction of codes over $\mathbb{F}_q$, one approach involves working with codes originally defined over an extension field, $\mathbb{F}_{q^m}$. When considering a code $\calC$ within $\mathbb{F}_{q^m}^n$, a subfield subcode of $\calC$ is its restriction to the field $\mathbb{F}_q$
+This process, often employed in defining codes like BCH codes, Goppa codes, and alternant codes, plays a foundational role.
+
+Let $q$ be a prime power, and $m$ a positive integer. Let $C$ denote a linear code of parameters $[n,k]$ defined over the finite field $\mathbb{F}_{q^m}$. The \emph{subfield subcode} of $C$ over $\mathbb{F}_q$, represented as $C|_{\mathbb{F}_q}$, is the set
+	\[
+	C|_{\mathbb{F}_q} = C \cap \mathbb{F}_q^n,
+	\]
+	which consists of all codewords in $C$ that have their components in $\mathbb{F}_q$. 
+
+
+The subfield subcode $C|_{\mathbb{F}_q}$ is a linear code over $\mathbb{F}_q$ with parameters $[n,k_0,d_0]$, satisfying the inequalities $d \leq d_0 \leq n$ and $n-k \leq n-k_0 \leq m(n-k)$. Moreover, a parity check matrix for $C$ over $\mathbb{F}_q$ provides up to $m(n-k)$ linearly independent parity check equations over $\mathbb{F}_q$ for the subfield subcode $C|_{\mathbb{F}_q}$.
+
+Typically, the minimum distance $d_0$ of the subfield subcode exceeds that of the original code $C$.
+
+Let $T_{\mathbb{F}_{q^m} / \mathbb{F}_q}$ denote the trace function from $\mathbb{F}_{q^m}$ down to $\mathbb{F}_q$, expressed as
+\[
+T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(x) = x + x^q + x^{q^2} + \ldots + x^{q^{m-1}}.
+\]
+For any vector $c = (c_1, c_2, \ldots, c_n) \in \mathbb{F}_q^n$, we define
+\[
+T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(c) = \left( T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(c_1), T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(c_2), \ldots, T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(c_n) \right).
+\]
+Furthermore, for a linear code $C$ of length $n$ and dimension $k$ over $\mathbb{F}_{q^m}$, the code $T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(C)$ is a linear code of length $n$ and dimension $k_1$ over $\mathbb{F}_q$.
+
+A seminal result by Delsarte connects subfield subcodes with trace codes:
+
+\begin{theorem}[\cite{Del75}]\label{delsarte}
+	Let $C$ be a $[n,k]$ linear code over $\mathbb{F}_q$. Then the dual of the subfield subcode of $C$ is the trace code of the dual code of $C$, i.e., 
+	\[
+	(C|_{\mathbb{F}_q})^{\perp} = T_{\mathbb{F}_{q^m} / \mathbb{F}_q}(C^{\perp}).
+	\]
+\end{theorem}
+Finding the exact dimension of a subfield subcode of a linear code is typically a hard problem. However, a basic estimation can be obtained by applying Delsarte's theorem {\cite{Del75}}:
+\begin{equation}
+	\dim C|_{\fq} \geq n - m(n-k).
+\end{equation}
+
+
+
+In Chapter 9 of Stichtenoth's work \cite{stichtenoth2009algebraic}, various results are presented on subfield subcodes and trace codes of AG codes. We will extend and adapt these results to the context of Hermitian codes in this section, focusing on some specific cases for detailed discussion.
+
+
+
+Applying  Theorem~9.1.6 in \cite{stichtenoth2009algebraic} to Hermitian codes:
+
+\begin{theorem}
+
+Consider the Hermitian codes
+
+\[\calC_{\calL}:= C_{\calL}(D,G) \text{ and } \calC_{\Omega}:=C_{\Omega}(D,G),\]
+
+where $D=Q_1+\ldots+Q_n$ (with pairwise distinct places $Q_1, \ldots, Q_n$ of degree one), and $G=sP$ where $P$ is a degree $r$ pace on $\mathscr{H}_q$ with $\operatorname{supp} D \cap \operatorname{supp} G=\emptyset$ and $\operatorname{deg} G<n$. Suppose that $G_1$ is a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ satisfying
+
+\begin{align}
+	G_1 \leq G \quad \text { and } \quad q \cdot G_1 \leq G . \label{condi}
+\end{align}
+
+Then
+
+\begin{equation}\label{esti1}
+	\operatorname{dim} \operatorname{T_{\mathbb{F}_{q^2} / \mathbb{F}_q}}\left(\calC_{\mathcal{L}}\right) \leq \begin{cases}m\left(\ell(G)-\ell\left(G_1\right)\right)+1 & \text { if } G_1 \geq 0, \\ m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \ngtr 0,\end{cases}
+\end{equation}
+and
+\begin{equation}\label{esti2}
+	\left.\operatorname{dim} C_{\Omega}\right|_{\mathbb{F}_q} \geq \begin{cases}n-1-m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \geq 0, \\ n-m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \ngtr 0 .\end{cases}
+\end{equation}
+
+\end{theorem}
+
+The biggest divisor $G_1$ that satisfies the condition \ref{condi} (with respect to the degree) is the following:
+\[G_1= \left[ \frac{q(q-1)}{r}\right]P \quad \text{ and } \quad  G=q.G_1, \]
+in \ref{esti1} and \ref{esti2} we can replace $\ell (G_1)$ and $\ell(G)$ by $\deg G_1$ and $\deg G$ since $\deg G_1= q(q-1)=2\mathfrak{g}$, which  follows immediately from the Riemann-Roch Theorem.
+Moreover, we derive the following corollary from Theorem~9.1.6~\cite{stichtenoth2009algebraic}
+
+\begin{corollary}\label{coroll}
+	With the notation as above. Let $P$ be a place on $\mathscr{H}_q$ of degree $r$ such that:
+	\[G_1= \left[ \frac{q(q-1)}{r}\right]P \quad \text{ and } \quad  G=q.G_1, \]
+	then 
+	\[\dim C_{\mathcal{L}}(D,G_1)_{\mid \mathbb{F}_q}= 1.\]
+\end{corollary}
+
+\begin{proof}
+	Let $f$ be a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(G)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(G)$), hence $f^q - f \in  \mathscr{L}(G-D)$ where
+	 \[\mathscr{L}(G-D) = \operatorname{Ker}\left(\operatorname{ev}_{\calP}\right)=\left\{x \in \mathscr{L}(G) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} ,\]
+	 since we assumed that $\deg (G-D)<n$, it follows that $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)_{\mid \mathbb{F}_q}= 1$.
+\end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+	
+	\section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
+	
+The main result of this paper deals with an $\mathbb{F}_{q^2}$-rational divisor $G=sP$ where $P$ is a degree-3 place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and s is a positive integer. As stated above, in the extended constant field of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $3$, let $P_1, P_2, P_3$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^6}(\mathscr{H}_q)$, and, by appropriately labeling the indices, $P_{j+1} = \text{Fr}(P_j)$, where $\text{Fr}$ is the $q^2$-th power Frobenius map and indices are considered modulo $3$. Additionally, $P$ can be identified with the $\mathbb{F}_{q^2}$-rational divisor $P_1+P_2+P_3$ in $\mathbb{F}_{q^6}(\mathscr{H}_q)$. The Riemann-Roch space associated with the divisor $sP$ \cite{korchmaros2013hermitian} is defined as:
+	
+	\[
+	\mathscr{L}(sP) = \left\{ \frac{f}{(\ell_1\ell_2\ell_3)^u} \mid f \in \mathbb{F}_{q^2}[X,Y], \deg f \leq 3u, v_{P_i}(f) \geq v \right\} \cup \{0\},
+	\]
+	
+	where $\ell_i=0$ represents the equation of the tangent line at $P_i$ on $\mathscr{H}_q$, and $s = u(q+1) - v$ with $0 \leq v \leq q$.
+	
+	
+	Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^2}$-rational affine points of $\mathscr{H}_q$. For a positive integer $s$, we denote by $C_{\calL}(D,sP)$ the degree-3 place functional AG code. This has length $n=q^3$. If $2 \mathfrak{g}-2<s<n$, then the dimension of $C_{\calL}(D,sP)$ is $k=3s-\mathfrak{g}+1$ which is equal to the dimension of the Riemann-Roch space $\mathscr{L}\left(s P\right)$, and  the designed minimum distance of $C_{\calL}(D,sP)$ is $d=q^3-3s$.
+	
+	
+	
+	In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
+	
+	\textcolor{red}{some facts on the Hermitian codes and their subfield subcodes}
+	\begin{proposition}
+		
+		Let $q\geq 3$, and $C_{\mathcal{L}}(D,G)$ be the Hermitian code associated with the divisor $G=(q-1)P$, where $P$ is a degree 3 place, then
+		\[\dim C_{\mathcal{L}}(D,G)=4.\] 
+		
+	\end{proposition}
+	
+	\begin{proof}
+		\textcolor{red}{A voir (rewrite)}
+		
+		Let $\ell_i=0$ be the line $P_iP_{i+1}$, it is the tangent to $\mathscr{H}_q$ at $P_i$. More precisely, the intersection divisor of $\ell_i$ and $\mathscr{H}_q$ is $qP_i+P_{i+1}$. This implies that the principal divisor of $\ell_1/\ell_2$ satisfies
+		\[\mathrm{div}(\ell_i/\ell_{i+1})=qP_i-(q-1)P_{i+1}-P_{i+2}.\]
+		For $\alpha \in \mathbb{F}_{q^6}$, w define the function
+		\begin{eqnarray*}
+			w_\alpha&=&\alpha\ell_1/\ell_2+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}}+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}^2}\\
+			&=&\alpha\ell_1/\ell_2+\alpha^{q^2}\ell_2/\ell_3+\alpha^{q^4}\ell_3/\ell_1.
+		\end{eqnarray*}
+		On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in \cite[Theorem ~3.1]{korchmaros2013hermitian}
+		\[v_{P_i}(w_\alpha)=-q+1.\]
+		Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. In fact, $\dim\mathcal{L}((q-1)P)=4$ and $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. 
+	\end{proof}
+	
+	
+	
+	
+	
+
+
+\begin{conjecture} 
+	For a prime power $q \geq 3$, let  $\calC_{\mathcal{L}}=\calC_{\mathcal{L}}( D, (q-1)P)$ be the Hermitian code, where $P$ is a degree 3 place. Let $Tr(\calC_{\mathcal{L}})$ denotes the trace code $T_{\mathbb{F}_{q^2} / \mathbb{F}_q}(\calC_{\mathcal{L}})$. We conjecture that:
+	\[\dim Tr(\calC_{\mathcal{L}}) = 7 .\]
+\end{conjecture}
+
+
+Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension of $C_{\mathcal{L}}(D,sP)_{\mid \mathbb{F}_q}$ is $1$. Additionally, in the corollary \ref{coroll} presented earlier demonstrates this result for $ s =\frac{q(q-1)}{3}=\frac{2}{3} \g$.
+
+
+
+ \begin{theorem}
+ 	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( \mathcal{P},G)_{|_{\mathbb{F}_q}}$ denote the subfield subcode of the degree-3 place one-point Hermitian code. Then 
+\[ \operatorname{dim} C_{q}(s)= \begin{cases} 1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 7 & \text { for } s=2\mathfrak{g}\end{cases}\]
+ 	
+ 	
+ \end{theorem}
+\begin{proof}
+	\textbf{Case 1: $\mathbf{0 \leq s <\frac{2}{3}\g}$} or \textcolor{red}{from corollary ...}\\
+	Observe that constant polynomials belong to $\mathscr{L}(sP)$ for all non-negative $s$, ensuring that $\dim C_{q}(s)\geq 1$. To establish that $\dim C_{q}(s) = 1$ for $0 \leq s <\frac{2}{3}\g$, we fix an arbitrary integer $s$ in this range and consider a generic element $(c_1,\ldots,c_{q^3}) \in C_{q}(s)$. This corresponds to a function $g$ in $\mathscr{L}(sP)$ such that $c_i=g(Q_i)$ is an element of $\mathbb{F}_q$ for each $i=1,\ldots,q^3$. 
+	
+	Next, we note that there exists a $\gamma \in \mathbb{F}_q$ such that at least $q^2$ of the $c_i$ values are equal to $\gamma$. In other words, the function $g-\gamma$ is in $\mathscr{L}(sP)$ and has at least $q^2$ zeros on $\mathscr{H}_q$. However, a non-zero function in $\mathscr{L}(sP)$ cannot have more than $q(q-1)$ zeros, leading us to conclude that $g-\gamma$ must be the zero function. This implies that every $c_i$ is equal to $\gamma$, and hence, $C_{q}(s)$ consists of constant vectors. This completes the proof, demonstrating that $\dim C_{q}(s) = 1$ for $0 \leq s <\frac{2}{3}\g$.
+	
+	\textbf{Case 1 part 2: $s=2\mathfrak{g}-1$?}\\
+	
+	
+	
+	\textbf{Case 2: $s=2\mathfrak{g}$}\\
+
+
+	
+	Let $\ell_i=0$ be the line $P_iP_{i+1}$, it is the tangent to $\mathscr{H}_q$ at $P_i$. More precisely, the intersection divisor of $\ell_i$ and $\mathscr{H}_q$ is $qP_i+P_{i+1}$. This implies that the principal divisor of $\ell_1/\ell_2$ satisfies
+	\[\mathrm{div}(\ell_i/\ell_{i+1})=qP_i-(q-1)P_{i+1}-P_{i+2}.\]
+	For $\alpha \in \mathbb{F}_{q^6}$, w define the function
+	\begin{eqnarray*}
+		w_\alpha&=&\alpha\ell_1/\ell_2+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}}+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}^2}\\
+		&=&\alpha\ell_1/\ell_2+\alpha^{q^2}\ell_2/\ell_3+\alpha^{q^4}\ell_3/\ell_1.
+	\end{eqnarray*}
+	On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in [KN2013, Theorem 3.1]
+	\[v_{P_i}(w_\alpha)=-q+1.\]
+	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. In fact, $\dim\mathcal{L}((q-1)P)=4$ and $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. 
+	
+	This implies
+	\[w_\alpha^q\in \mathcal{L}(q(q-1)P),\]
+	and for all $\beta \in \mathbb{F}_{q^2}$, 
+	\[W_{\alpha,\beta}=\beta w_\alpha +(\beta w_\alpha)^q\in \mathcal{L}(q(q-1)P).\]
+	The following claims are straightforward to show:
+	\begin{enumerate}
+		\item For any $\mathbb{F}_{q^2}$-rational affine place $Q_i$, $W_{\alpha,\beta}(Q_i)\in \mathbb{F}_q$. 
+		\item $\mathcal{W}=\{W_{\alpha,\beta} \mid \alpha \in \mathbb{F}_{q^6}, \beta \in \mathbb{F}_{q^2}\}$ is a linear space over $\mathbb{F}_q$. 
+		\item $\dim_{\mathbb{F}_q}\mathcal{W}=6$ and $\dim_{\mathbb{F}_q}(\mathbb{F}_q+ \mathcal{W})=7$.
+		\item $\mathrm{eval}_D(\mathbb{F}_q+ \mathcal{W})$ is a subspace of $C_{q(q-1)}$ of dimension $7$. 
+	\end{enumerate}
+	This finishes the proof.
+	
+	
+\end{proof}
+
+	
+\textcolor{red}{special case $q=2$ the dimension is 5 }
+
+	
+	
+	\newpage
+	\bibliography{sample}
+	\bibliographystyle{alpha}
+\end{document}
