@@ -44,20 +44,27 @@ mm:=mm/mm[1][1];
 mm^(q^2-q+1);
 aa:=Hermitian_CurveAutomorphism(Hq,mm);
 
-NumeratorOfRationalFunction((Y[1]^(q+1)-Y[2]-Y[2]^q)^aa)/(Y[1]^(q+1)-Y[2]-Y[2]^q);
+hcurveaut_on_fnct:=function(f,a)
+    local y,b;
+    y:=IndeterminatesOfHermitianRatFunc(f);
+    if y=[] then return f; fi;
+    b:=[y[1],y[2],1]*(a!.mat^(-1));
+    return Value(f,y,[b[1]/b[3],b[2]/b[3]]);
+end;
 
-(ell/ell^fr)^aa=beta*(ell/ell^fr);
-(ell^fr/ell^(fr^2))^aa=beta^(q^2)*(ell^fr/ell^(fr^2));
-(ell^(fr^2)/ell)^aa=beta^(q^4)*(ell^(fr^2)/ell);
+NumeratorOfRationalFunction(hcurveaut_on_fnct(Y[1]^(q+1)-Y[2]-Y[2]^q,aa))/(Y[1]^(q+1)-Y[2]-Y[2]^q);
 
-(ell/ell^fr)^aa=beta*(ell/ell^fr);
-(ell^fr/ell^(fr^2))^aa=beta^(q-1)*(ell^fr/ell^(fr^2));
-(ell^(fr^2)/ell)^aa=beta^(-q)*(ell^(fr^2)/ell);
+hcurveaut_on_fnct(ell/ell^fr,aa)=beta*(ell/ell^fr);
+hcurveaut_on_fnct(ell^fr/ell^(fr^2),aa)=beta^(q^2)*(ell^fr/ell^(fr^2));
+hcurveaut_on_fnct(ell^(fr^2)/ell,aa)=beta^(q^4)*(ell^(fr^2)/ell);
+
+hcurveaut_on_fnct(ell/ell^fr,aa)=beta*(ell/ell^fr);
+hcurveaut_on_fnct(ell^fr/ell^(fr^2),aa)=beta^(q-1)*(ell^fr/ell^(fr^2));
+hcurveaut_on_fnct(ell^(fr^2)/ell,aa)=beta^(-q)*(ell^(fr^2)/ell);
 
 f:=ell^(1-q)*(ell^fr)^q/ell^(fr^2);;
-(f)^aa/f;
+hcurveaut_on_fnct(f,aa)/f;
 ff:=f+f^fr+f^(fr^2);;
-#(ff)^aa/ff;
+#hcurveaut_on_fnct(ff,aa)/ff;
 List(AllRationalPlacesOfHermitian_Curve(Hq),x->Value(ff,x));;
 List(Set(last),x->Number(last,y->x=y));
-
