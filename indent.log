@@ -1,0 +1,26 @@
+INFO:  latexindent version 3.15, 2022-01-21, a script to indent .tex files
+       latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
+       Sat Feb 17 19:55:25 2024
+       Filename: On The Dimension of Degree-3 Hermitian subfield subcodes.tex
+INFO:  Processing switches:
+       -w|--overwrite: Overwrite mode active, will make a back up of On The Dimension of Degree-3 Hermitian subfield subcodes.tex first
+INFO:  Directory for backup files and indent.log: .
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
+       Home directory is /home/nagyg (didn't find either indentconfig.yaml or .indentconfig.yaml)
+       To specify user settings you would put indentconfig.yaml here: /home/nagyg/indentconfig.yaml
+       Alternatively, you can use the hidden file .indentconfig.yaml as: /home/nagyg/.indentconfig.yaml
+INFO:  Backup procedure (-w flag active):
+       copying On The Dimension of Degree-3 Hermitian subfield subcodes.tex to ./On The Dimension of Degree-3 Hermitian subfield subcodes.bak0
+       Backup file: ./On The Dimension of Degree-3 Hermitian subfield subcodes.bak0
+       On The Dimension of Degree-3 Hermitian subfield subcodes.tex will be overwritten after indentation
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Overwriting file On The Dimension of Degree-3 Hermitian subfield subcodes.tex
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl
