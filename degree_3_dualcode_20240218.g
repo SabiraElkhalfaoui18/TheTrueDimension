@@ -32,3 +32,11 @@ rcode:=RestrictVectorSpace(hcode,GF(q));
 [Length(Zero(rcode)),Dimension(rcode)];
 rcode_plus:=RestrictVectorSpace(hcode_plus,GF(q));
 [Length(Zero(rcode_plus)),Dimension(rcode_plus)];
+
+# Valuation at infinite point in the package is WRONG!!!!
+
+###
+
+# This proves: R(X,Y) = X^(q^2) - X and X*R(X,Y) = Y^(q^2) - Y.
+HERM_PolynomialReduction_NC(R-(Y[1]^(q^2)-Y[1]),Y[1],Y[2],q);
+HERM_PolynomialReduction_NC(Y[1]^q*R-(Y[2]^(q^2)-Y[2]),Y[1],Y[2],q);
