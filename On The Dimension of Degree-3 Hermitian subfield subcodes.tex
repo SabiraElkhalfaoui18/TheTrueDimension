@@ -356,7 +356,25 @@ The main result of this paper deals with an $\mathbb{F}_{q^2}$-rational divisor 
 \]
 
 where $\ell_i=0$ represents the equation of the tangent line at $P_i$ on $\mathscr{H}_q$, and $s = u(q+1) - v$ with $0 \leq v \leq q$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+	\[\textcolor{blue}{\begin{aligned}
+		& \mathscr{L}(s P)=\left\langle\left(\frac{l_i}{l_{i+2}}\right)^u\left(\frac{l_{i+1}}{l_i}\right)^{v_{-} \mu} \left\lvert\, \begin{array}{l}
+			0 \leqslant v \leqslant q \\
+			v+1 \leqslant 3 u \\
+			i=1,2,3
+		\end{array} \quad(q+1) u-v \leqslant s\right.\right\rangle \\
+	\end{aligned}}\]
+	
+	\[\textcolor{blue}{\begin{aligned}
+		& \mathscr{L}(s P) / \mathcal{L}((s-1) P)=\left\langle\left.\left(\frac{l_i}{l_{i+2}}\right)^u\left(\frac{l_{i+1}}{l_i}\right)^{v-u} \right\rvert\, \begin{array}{l}
+			i=1,2,3 \\
+			s=(q+1) u-v
+		\end{array}\right\rangle
+	\end{aligned}}\]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^2}$-rational affine points of $\mathscr{H}_q$. For a positive integer $s$, we denote by $C_{\calL}(D,sP)$ the degree-3 place functional AG code. This has length $n=q^3$. If $2 \mathfrak{g}-2<s<n$, then the dimension of $C_{\calL}(D,sP)$ is $k=3s-\mathfrak{g}+1$ which is equal to the dimension of the Riemann-Roch space $\mathscr{L}\left(s P\right)$, and  the designed minimum distance of $C_{\calL}(D,sP)$ is $d=q^3-3s$.
 
@@ -405,7 +423,7 @@ Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension
 
 \begin{theorem}
 	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( \mathcal{P},G)_{|_{\mathbb{F}_q}}$ denote the subfield subcode of the degree-3 place one-point Hermitian code. Then 
-	\[ \dim C_{q}(s)= \begin{cases} 1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 7 & \text { for } s=2\mathfrak{g}\end{cases}\]
+	\[ \dim C_{q}(s)= \begin{cases} 1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 7 & \text { for } s=2\mathfrak{g} \text{ and } q>2\\ 10 & \text{ for } s=2\g +1 \text{ and } q>3\end{cases}\]
 	
 	
 \end{theorem}
