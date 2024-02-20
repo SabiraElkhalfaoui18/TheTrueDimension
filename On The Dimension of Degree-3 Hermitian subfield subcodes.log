@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.24)  20 FEB 2024 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.24)  20 FEB 2024 20:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1094,19 +1094,21 @@ LaTeX Warning: Citation `Sti09' on page 3 undefined on input line 248.
 Underfull \vbox (badness 8151) has occurred while \output is active []
 
  [4]
-Underfull \vbox (badness 5203) has occurred while \output is active []
-
- [5]
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
 
  []
 
-[6] [7] (On The Dimension of Degree-3 Hermitian subfield subcodes.bbl) [8]
+
+Underfull \vbox (badness 4995) has occurred while \output is active []
+
+ [6]
+[7] (On The Dimension of Degree-3 Hermitian subfield subcodes.bbl) [8]
 (On The Dimension of Degree-3 Hermitian subfield subcodes.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
@@ -1118,13 +1120,13 @@ LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `"On The Dimension of Degree-3 Hermitian subf
 ield subcodes".out' has not changed.
-(rerunfilecheck)             Checksum: 2F2F87984509FE6E7096FC256D303C8F;1663.
+(rerunfilecheck)             Checksum: A74C38D2D6EFBDAC224B70F674EBAB59;2452.
  ) 
 Here is how much of TeX's memory you used:
- 32947 strings out of 475550
- 648219 string characters out of 5763005
- 1934238 words of memory out of 5000000
- 53485 multiletter control sequences out of 15000+600000
+ 32952 strings out of 475550
+ 648290 string characters out of 5763005
+ 1935238 words of memory out of 5000000
+ 53487 multiletter control sequences out of 15000+600000
  568015 words of font info for 75 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  83i,15n,87p,930b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1154,9 +1156,9 @@ sbm5.pfb><C:/Users/dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb><C:/Users/dell/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/rsfs/rsfs10.pfb>
 Output written on "On The Dimension of Degree-3 Hermitian subfield subcodes.pdf
-" (8 pages, 299221 bytes).
+" (8 pages, 302916 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
