@@ -245,7 +245,7 @@ The functional AG code associated with the divisor $G$ is
 	\]
 \end{theorem}
 
-The dual of an AG code can be described as a residue code (see \cite{Sti09} for more details), \emph{i.e.}
+The dual of an AG code can be described as a residue code (see \cite{stichtenoth2009algebraic} for more details), \emph{i.e.}
 \[ C_{\calL}(D,G)^{\perp} = C_{\Omega}(D,G).\]
 
 
@@ -301,30 +301,28 @@ Applying  Theorem~9.1.6 in \cite{stichtenoth2009algebraic} to Hermitian codes:
 \begin{theorem}
 
 	Consider the Hermitian codes
-	
 	\[\calC_{\calL}:= C_{\calL}(D,G) \text{ and } \calC_{\Omega}:=C_{\Omega}(D,G),\]
-	
 	where $D=Q_1+\ldots+Q_n$ (with pairwise distinct places $Q_1, \ldots, Q_n$ of degree one), and $G=sP$ where $P$ is a degree $r$ pace on $\mathscr{H}_q$ with $\operatorname{supp} D \cap \operatorname{supp} G=\emptyset$ and $\deg G<n$. Suppose that $G_1$ is a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ satisfying
 	
 	\begin{align}
-		G_1 \leq G \quad \text { and } \quad q \cdot G_1 \leq G . \label{condi}
+		G_1 \leq G \quad \text { and } \quad q \cdot G_1 \leq G . \label{eq:condi}
 	\end{align}
 	
 	Then
 	
-	\begin{equation}\label{esti1}
+	\begin{equation}\label{eq:esti1}
 		\dim \trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}\left(\calC_{\mathcal{L}}\right) \leq \begin{cases}m\left(\ell(G)-\ell\left(G_1\right)\right)+1 & \text { if } G_1 \geq 0, \\ m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \ngtr 0,\end{cases}
 	\end{equation}
 	and
-	\begin{equation}\label{esti2}
+	\begin{equation}\label{eq:esti2}
 		\left.\dim C_{\Omega}\right|_{\mathbb{F}_q} \geq \begin{cases}n-1-m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \geq 0, \\ n-m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \ngtr 0 .\end{cases}
 	\end{equation}
 	
 \end{theorem}
 
-The biggest divisor $G_1$ that satisfies the condition \ref{condi} (with respect to the degree) is the following:
+The biggest divisor $G_1$ that satisfies the condition \eqref{eq:condi} (with respect to the degree) is the following:
 \[G_1= \left[ \frac{q(q-1)}{r}\right]P \quad \text{ and } \quad  G=q.G_1, \]
-in \ref{esti1} and \ref{esti2} we can replace $\ell (G_1)$ and $\ell(G)$ by $\deg G_1$ and $\deg G$ since $\deg G_1= q(q-1)=2\mathfrak{g}$, which  follows immediately from the Riemann-Roch Theorem.
+in \eqref{eq:esti1} and \eqref{eq:esti2} we can replace $\ell (G_1)$ and $\ell(G)$ by $\deg G_1$ and $\deg G$ since $\deg G_1= q(q-1)=2\mathfrak{g}$, which  follows immediately from the Riemann-Roch Theorem.
 Moreover, we derive the following corollary from Theorem~9.1.6~\cite{stichtenoth2009algebraic}
 
 \begin{corollary}\label{coroll}

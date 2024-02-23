@@ -45,3 +45,9 @@ od;
 Product(cs,c->Y[1]-c);
 
 f1/f1^(fr^2);
+
+###
+
+R:=Y[1]*Product(Filtered(GF(q^2),c->c<>-c^q),c->Y[2]-c);
+dR:=Derivative(R,Y[1])+Y[1]^q*Derivative(R,Y[2]);
+dR_values:=List(AllRationalAffinePlacesOfHermitian_Curve(Hq),x->Value(dR,x));;
