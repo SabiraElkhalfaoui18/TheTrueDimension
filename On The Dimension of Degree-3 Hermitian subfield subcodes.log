@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.24)  29 FEB 2024 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.24)  29 FEB 2024 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,23 +1090,19 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-[6]
-Underfull \vbox (badness 1014) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+ [6]
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
 
  []
 
 
-Underfull \vbox (badness 4995) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
 
- [8]
+ []
+
 [9] (On The Dimension of Degree-3 Hermitian subfield subcodes.bbl) [10]
 (On The Dimension of Degree-3 Hermitian subfield subcodes.aux)
  ***********
@@ -1115,11 +1111,11 @@ L3 programming layer <2023-06-30>
  ***********
 Package rerunfilecheck Info: File `"On The Dimension of Degree-3 Hermitian subf
 ield subcodes".out' has not changed.
-(rerunfilecheck)             Checksum: 62F478A6E49314592FDF4B47ABB76E6C;2722.
+(rerunfilecheck)             Checksum: A4E234EF973676103DC8BB9D76181628;2722.
  ) 
 Here is how much of TeX's memory you used:
- 32966 strings out of 475550
- 648431 string characters out of 5763005
+ 32967 strings out of 475550
+ 648442 string characters out of 5763005
  1937238 words of memory out of 5000000
  53494 multiletter control sequences out of 15000+600000
  568015 words of font info for 75 fonts, out of 8000000 for 9000
@@ -1151,9 +1147,9 @@ sbm5.pfb><C:/Users/dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb><C:/Users/dell/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/rsfs/rsfs10.pfb>
 Output written on "On The Dimension of Degree-3 Hermitian subfield subcodes.pdf
-" (10 pages, 319453 bytes).
+" (10 pages, 324445 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

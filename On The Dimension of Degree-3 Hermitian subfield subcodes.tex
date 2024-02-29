@@ -405,14 +405,19 @@ Then
 and
 \[0=x^{q+1}-y-y^q = \langle (x,y,1), (x,y,1) \rangle = \frac{\ell_1\ell_{2}^q}{\gamma_1^q} + \frac{\ell_2\ell_{3}^q}{\gamma_2^q} + \frac{\ell_3\ell_{1}^q}{\gamma_3^q}.\]
 
+\textcolor{red}{
+In our study, we make use of a polynomial denoted as $R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c)$, where $c$ ranges over $\mathbb{F}_{q^2}$ with $c^q + c \neq 0$. This polynomial plays a crucial role in our investigation of differential codes arising from a degree 3 place on the Hermitian curve $H$ defined over $\mathbb{F}_{q^2}$. We utilize its properties to derive our results, which are discussed further in this work.
+In the function field, we observe a fundamental relationship which is expressed in the following propos
+\begin{proposition}
+	In the function field, we have $x^{q}R(x, y) = y^{q^2} - y$ and $R(x, y) = x^{q^2} - x$.
+\end{proposition} 
+\begin{proof}
+	contenu...
+\end{proof}
+This proposition highlights a key aspect of the relationship between lines and Hermitian curves, specifically regarding their tangential interactions and intersections. For more in-depth insights into this topic, readers are encouraged to consult \cite[Section~2]{korchmaros2013hermitian}.}
 
+\subsection{\textcolor{red}{Riemann-Roch basis associated with a degree 3 place}}
 
-
-
-
-
-\section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
-\subsection{Riemann-Roch basis associated with a degree 3 place}
 The main result of this paper deals with an $\mathbb{F}_{q^2}$-rational divisor $G=sP$ where $P$ is a degree-3 place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and $s$ is a positive integer. As stated above, in the extended constant field of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $3$, let $P_1, P_2, P_3$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^6}(\mathscr{H}_q)$, and, by appropriately labeling the indices, $P_{j+1} = \text{Fr}(P_j)$, where $\text{Fr}$ is the $q^2$-th power Frobenius map and indices are considered modulo $3$. Additionally, $P$ can be identified with the $\mathbb{F}_{q^2}$-rational divisor $P_1+P_2+P_3$ in $\mathbb{F}_{q^6}(\mathscr{H}_q)$. The Riemann-Roch space associated with the divisor $sP$ \cite{korchmaros2013hermitian} is defined as:
 
 \begin{equation}\label{ba1}
@@ -422,6 +427,9 @@ The main result of this paper deals with an $\mathbb{F}_{q^2}$-rational divisor 
 
 where $\ell_i=0$ represents the equation of the tangent line at $P_i$ on $\mathscr{H}_q$, and $s = u(q+1) - v$ with $0 \leq v \leq q$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textcolor{red}{
+After establishing the Riemann Roch space as outlined in Equation \ref{ba1} we introduce a set of fundamentals, in Equation \ref{ba2}. In contrast to the basis this new framework provides insights into the characteristics of the space. It comprises components of the type $\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{\ell_i}\right)^{v. U}$, where $\ell_i$ denotes the equation of the line at $P_i$, on $\mathscr{H}_q$ as previously indicated. The parameters $u$ and  $v$ are bound by conditions.}
 
 \begin{equation} \label{ba2}
 	\mathscr{L}(s P)=\left\langle\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{l_i}\right)^{v - u} \left\lvert\, \begin{array}{l}
@@ -442,12 +450,13 @@ where $\ell_i=0$ represents the equation of the tangent line at $P_i$ on $\maths
 	The basis \ref{ba2} consists of eigenvectors of $\alpha$.
 \end{proposition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
 \subsection{Hermitian codes and their subfield subcodes from degree 3 place}
 Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^2}$-rational affine points of $\mathscr{H}_q$. For a positive integer $s$, we denote by $C_{\calL}(D,sP)$ the degree-3 place functional AG code. This has length $n=q^3$. If $2 \mathfrak{g}-2<s<n$, then the dimension of $C_{\calL}(D,sP)$ is $k=3s-\mathfrak{g}+1$ which is equal to the dimension of the Riemann-Roch space $\mathscr{L}\left(s P\right)$, and  the designed minimum distance of $C_{\calL}(D,sP)$ is $d=q^3-3s$.
 
-\begin{proposition}
+\textcolor{red}{\begin{proposition}
 	The generators of $C_{\mathcal{C}}\left(D+P_{\infty}, s P\right)$ can be expressed in terms of the basis \ref{ba2} for $s=2 \g$ and $s=2 \g+1$.
-\end{proposition}
+\end{proposition}}
 
 In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
 
