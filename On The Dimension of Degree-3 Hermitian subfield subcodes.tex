@@ -201,8 +201,7 @@ For a divisor $D$, its Frobenius image is given by
 	\text{Fr}_{q^2}(D) = n_1 \text{Fr}_{q^2}(Q_1) + \cdots + n_k \text{Fr}_{q^2}(Q_k).
 \]
 $D$ is $\mathbb{F}_{q^2}$-rational if $D = \text{Fr}_{q^2}(D)$. Notably, if all points $Q_1, \ldots, Q_k$ are in $\mathscr{H}_q(\mathbb{F}_{q^2})$, then $D$ is inherently $\mathbb{F}_{q^2}$-rational.
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Riemann-Roch space}
 
@@ -416,41 +415,39 @@ and
 \subsection{Riemann-Roch basis associated with a degree 3 place}
 The main result of this paper deals with an $\mathbb{F}_{q^2}$-rational divisor $G=sP$ where $P$ is a degree-3 place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and $s$ is a positive integer. As stated above, in the extended constant field of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $3$, let $P_1, P_2, P_3$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^6}(\mathscr{H}_q)$, and, by appropriately labeling the indices, $P_{j+1} = \text{Fr}(P_j)$, where $\text{Fr}$ is the $q^2$-th power Frobenius map and indices are considered modulo $3$. Additionally, $P$ can be identified with the $\mathbb{F}_{q^2}$-rational divisor $P_1+P_2+P_3$ in $\mathbb{F}_{q^6}(\mathscr{H}_q)$. The Riemann-Roch space associated with the divisor $sP$ \cite{korchmaros2013hermitian} is defined as:
 
-\[
+\begin{equation}\label{ba1}
 	\mathscr{L}(sP) = \left\{ \frac{f}{(\ell_1\ell_2\ell_3)^u} \mid f \in \mathbb{F}_{q^2}[X,Y], \deg f \leq 3u, v_{P_i}(f) \geq v \right\} \cup \{0\},
-\]
+\end{equation}
+
 
 where $\ell_i=0$ represents the equation of the tangent line at $P_i$ on $\mathscr{H}_q$, and $s = u(q+1) - v$ with $0 \leq v \leq q$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\[\textcolor{blue}{\begin{aligned}
-		& \mathscr{L}(s P)=\left\langle\left(\frac{l_i}{l_{i+2}}\right)^u\left(\frac{l_{i+1}}{l_i}\right)^{v_{-} \mu} \left\lvert\, \begin{array}{l}
-			0 \leqslant v \leqslant q \\
-			v+1 \leqslant 3 u \\
-			i=1,2,3
-		\end{array} \quad(q+1) u-v \leqslant s\right.\right\rangle \\
-	\end{aligned}}\]
-	
-	\[\textcolor{blue}{\begin{aligned}
-		& \mathscr{L}(s P) / \mathcal{L}((s-1) P)=\left\langle\left.\left(\frac{l_i}{l_{i+2}}\right)^u\left(\frac{l_{i+1}}{l_i}\right)^{v-u} \right\rvert\, \begin{array}{l}
-			i=1,2,3 \\
-			s=(q+1) u-v
-		\end{array}\right\rangle
-	\end{aligned}}\]
+\begin{equation} \label{ba2}
+	\mathscr{L}(s P)=\left\langle\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{l_i}\right)^{v - u} \left\lvert\, \begin{array}{l}
+		0 \leqslant v \leqslant q \\
+		v+1 \leqslant 3 u \\
+		i=1,2,3
+	\end{array} \quad(q+1) u-v \leqslant s\right.\right\rangle \\
+\end{equation}
 
+\begin{equation}\label{ba3}
+	\mathscr{L}(s P) / \mathcal{L}((s-1) P)=\left\langle\left.\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{\ell_i}\right)^{v-u} \right\rvert\, \begin{array}{l}
+		i=1,2,3 \\
+		s=(q+1) u-v 
+	\end{array}\right\rangle
+\end{equation}
 
 \begin{proposition}
-	In the function field, we have $x^q R(x, y)=y^{q^2}-y$ and $R(x, y)=x^{q^2}-x$.
+	The basis \ref{ba2} consists of eigenvectors of $\alpha$.
 \end{proposition}
-
-\begin{proof}
-	contenu...
-\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hermitian codes and their subfield subcodes from degree 3 place}
 Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^2}$-rational affine points of $\mathscr{H}_q$. For a positive integer $s$, we denote by $C_{\calL}(D,sP)$ the degree-3 place functional AG code. This has length $n=q^3$. If $2 \mathfrak{g}-2<s<n$, then the dimension of $C_{\calL}(D,sP)$ is $k=3s-\mathfrak{g}+1$ which is equal to the dimension of the Riemann-Roch space $\mathscr{L}\left(s P\right)$, and  the designed minimum distance of $C_{\calL}(D,sP)$ is $d=q^3-3s$.
 
-
+\begin{proposition}
+	The generators of $C_{\mathcal{C}}\left(D+P_{\infty}, s P\right)$ can be expressed in terms of the basis \ref{ba2} for $s=2 \g$ and $s=2 \g+1$.
+\end{proposition}
 
 In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
 
