@@ -386,7 +386,7 @@ where $h(X,Y)$ is polynomial of degree $n$. The line $a_{13}X+a_{23}Y+a_{33}=0$ 
 
 The linear transformation $A$ is unitary, if
 \[\langle uA, vA \rangle = \langle u,v \rangle\]
-holds for all $u,v$. Since $\langle .,. \rangle$ is non-trivial, unitary transformations are invertible. Moreover, for all $u,v$ one has
+holds for all $u,v$. Since $\langle .,. \rangle$ is non-degenerate, unitary transformations are invertible. Moreover, for all $u,v$ one has
 \begin{align*}
 \langle (v^\Frob)A, uA \rangle &= \langle v^\Frob,u \rangle \\
 &= \langle u,v \rangle^q \\
@@ -408,11 +408,21 @@ Let $a_1,b_1 \in \mathbb{F}_{q^6}\setminus \mathbb{F}_{q^2}$ be scalars such tha
 \begin{align*} %\label{eq:}
 0=\langle p_i,p_i \rangle ^q = \langle p_i^\Frob,p_i \rangle = \langle p_{i+1},p_i \rangle
 \end{align*}
-hold for $i=1,2,3$, the indices taken modulo $3$. Since $\langle .,. \rangle$ is nontrivial, $\gamma_i = \langle p_i,p_{i+1} \rangle \neq 0$. Clearly, $\gamma_{i+1} = \gamma_i^{q^2}$. 
+hold for $i=1,2,3$, the indices taken modulo $3$. Since $\langle .,. \rangle$ is non-trivial, $\gamma_i = \langle p_i,p_{i+1} \rangle \in \mathbb{F}_{q^6}\setminus \{0\}$. More precisely,
+\begin{align*} %\label{eq:}
+\gamma_1^{q^3}=\langle p_1,p_{2} \rangle^{q^3} = \langle p_2^\Frob,p_{1} \rangle^{q^2} = \langle p_2^{\Frob^2},p_{1}^\Frob \rangle = \langle p_1,p_2 \rangle = \gamma_1,
+\end{align*}
+which shows $\gamma_i \in \mathbb{F}_{q^3}\setminus \{0\}$. Clearly, $\gamma_{i+1} = \gamma_i^{q^2}$ and $\gamma_{i+2} = \gamma_i^{q}$. By $\gamma_i\neq 0$, the vectors $p_1,p_2,p_3$ are linearly independent over $\mathbb{F}_{q^6}$. 
 
-BASIS?
-
-In the basis $\{p_1,p_2,p_3\}$, the Hermitian form has the shape
+Let $K$ be a field containing $\mathbb{F}_{q^6}$. Since $p_1,p_2,p_3$ is a basis in $K^3$, any $u\in K^3$ can be written as
+\begin{align*} %\label{eq:}
+u=x_1p_1+x_2p_2+x_3p_3,
+\end{align*}
+with $x_i\in K$. Computing
+\begin{align*}
+\langle u, p_{i+1} \rangle = \langle x_1p_1+x_2p_2+x_3p_3, p_{i+1} \rangle = x_i \langle p_{i}, p_{i+1} \rangle,
+\end{align*}
+we obtain $x_i=\langle u,p_{i+1} \rangle / \gamma_i$. In the basis $p_1,p_2,p_3$, the Hermitian form has the shape
 \begin{align*}
 \langle u,v \rangle &= \langle x_1p_1+x_2p_2+x_3p_3,y_1p_1+y_2p_2+y_3p_3 \rangle \\
 &= x_1y_2^q \langle p_1,p_2 \rangle + x_2y_3^q \langle p_2,p_3 \rangle + x_3y_1^q \langle p_3,p_1 \rangle\\
@@ -469,23 +479,22 @@ with $x_i=\langle u,p_{i+1} \rangle / \gamma_i$, and define
 \begin{align} \label{eq:Bdef}
 u'=x_1p_1'+x_2p_2'+x_3p_3' = x_1\beta_1 p_1+x_2\beta_2p_2+x_3\beta_3p_3.
 \end{align}
-The extension $B$ is unique. Moreover, $B$ commutes with the Frobenius map $\Frob$:
-\begin{align*} %\label{eq:}
-(p_i')^\Frob = (\beta_ip_i)^\Frob = \beta_i^{q^2} p_{i+1} = \beta_{i+1}p_{i+1} = p_{i+1}' = (p_i^\Frob)'.
-\end{align*}
-In other words, $B=B(\beta_1)$ is a well-defined element of the general unitary group $GU(3,q)$. The set $\mathcal{B}=\{B(\beta_1) \mid \beta_1 \in \mathbb{F}_{q^6}, \; \beta_1^{q^3+1}=1\}$ is a cyclic group of unitary transformations, whose order is $|\mathcal{B}|=q^3+1$. 
+The extension $B$ is a unique unitary transformation. As we have seen above, this implies that $B=B(\beta_1)$ is a well-defined element of the general unitary group $GU(3,q)$. The set 
+\[\mathcal{B}=\{B(\beta_1) \mid \beta_1 \in \mathbb{F}_{q^6}, \; \beta_1^{q^3+1}=1\}\]
+is a cyclic subgroup of $GU(3,q)$, whose order is $|\mathcal{B}|=q^3+1$. 
 
 In the projective plane, $B$ induces a projective linear transformation $\hat{B}$. $\hat{B}$ is trivial if and only if $\beta_1=\beta_2=\beta_1^{q^2}$, that is, if and only if $\beta_i\in \mathbb{F}_{q^2}$. As $\gcd(q^3+1,q^2-1)=q+1$, $\hat{B}$ is trivial if and only if $\beta_1^{q+1}=1$. The set $\hat{\mathcal{B}} = \{\hat{B} \mid B\in \mathcal{B}\}$ is a cyclic group of unitary projective linear transformations, whose order is $|\hat{\mathcal{B}}|=q^2-q+1$. 
 
-Similarly, let $\delta_1\in \mathbb{F}_{q^6}$ be such that $\delta_1^{q^3+1}=\gamma_1^{1-q^2}$. Since
-\begin{align*} %\label{eq:}
-\gamma_1^{q^3}=\langle p_1,p_{2} \rangle^{q^3} = \langle p_2^\Frob,p_{1} \rangle^{q^2} = \langle p_2^{\Frob^2},p_{1}^\Frob \rangle = \langle p_1,p_2 \rangle = \gamma_1,
-\end{align*}
-we have $\gamma_1 \in \mathbb{F}_{q^3}$, and there are $q^3+1$ solutions for $\delta_1^{q^3+1}=\gamma_1^{1-q^2}$. Write $\delta_2=\delta_1^{q^2}$, $\delta_3=\delta_2^{q^2}$. As before, the map $p_i\mapsto \delta_i p_{i+1}$ preserves the Hermitian form, hence it extends to a unitary linear map $\Delta$, which commutes with $\Frob$ and normalizes $\mathcal{B}$. $\Delta^3$ maps $p_i$ to $\delta_1\delta_2\delta_3 p_i$. This implies that $\Delta$ induces a projective linear map $\hat{\Delta}$ of order $3$. 
+In a similary way, we fix and element $\delta_1\in \mathbb{F}_{q^6}$ such that $\delta_1^{q^3+1}=\gamma_1^{1-q}$. Since $\gamma_1 \in \mathbb{F}_{q^3}$, there are $q^3+1$ solutions for $\delta_1$. Write $\delta_2=\delta_1^{q^2}$, $\delta_3=\delta_2^{q^2}$. As before, the map 
+\[\Delta:p_i\mapsto p_i''=\delta_i p_{i-1}\]
+preserves the Hermitian form:
+\[\langle p_i'',p_{i+1}'' \rangle = \langle \delta_{i} p_{i-1}, \delta_{i+1} p_{i} \rangle = \delta_{i}^{q^3+1} \langle p_{i-1},p_{i} \rangle = \gamma_i^{1-q} \gamma_{i-1} =\gamma_i.\]
+Hence, $\Delta$ extends to a unitary linear map, which commutes with $\Frob$ and normalizes $\mathcal{B}$. Indeed,
+\[ p_{i}^{\Delta^{-1}B\Delta} = (\delta_{i+1}^{-1}p_{i+1})^{B\Delta} = (\delta_{i+1}^{-1}\beta_{i+1} p_{i+1})^\Delta = \beta_{i+1} p_i, \]
+hence, $\Delta^{-1}B\Delta=B^{q^2}$. As $\Delta^3$ maps $p_i$ to $\delta_1\delta_2\delta_3 p_i$ the induced projective linear map $\hat{\Delta}$ has order $3$. 
 
-
-
-In this way, the unitary linear maps $B$ and $\Delta$ induce automorphisms of the function field, which we denote by $B^*$ and $\Delta^*$.
+As introduced above, the unitary transformation $B$ and $\Delta$ induce automorphisms $B^*$ and $\Delta^*$ of the function field. The group $\mathcal{B}^* = \{B^* \mid B \in \mathcal{B}\}$ of curve automorphisms has order $q^2-q+1$, and $\Delta^*$ normalizes $\mathcal{B}^*$ by 
+\[(\Delta^*)^{-1}B^*\Delta^*=(B^*)^{q^2}=(B^*)^{q-1}.\]
 
 
 
