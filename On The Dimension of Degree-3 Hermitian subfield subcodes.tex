@@ -583,13 +583,25 @@ For $t\in H(P)$, $\mathcal{W}_t$ is the set of $\mathbb{F}_{q^2}$-rational funct
 TODO
 
 \section{Hermitian codes of degree $3$ places and their duals}
-\subsection{Hermitian codes of degree $3$ places}
+\subsection{Functional Hermitian codes of degree $3$ places}
 
-In this section, we define Hermitian codes associated with divisors $D$ and $D+P_{\infty}$, where $D=Q_1+Q_2+\cdots+Q_n$ is the sum of $\mathbb{F}_{q^2}$-rational affine points on the Hermitian curve $\mathscr{H}_q$, with $n=q^3$. Let $P$ denote a degree $3$ place. For a positive integer $s$, we introduce the degree-3 place functional AG code as $C_{\mathcal{L}}(D',sP)$, where $D'$ can be either $D$ or $D+P_{\infty}$. 
+Let $P$ be a degree $3$ place on the Hermitian curve $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, representing the sum of $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, where $n=q^3$. For a positive integer $s$, we define the degree $3$ place functional Hermitian code $C_{\mathcal{L}}(D,sP)$ as:
 
-The Hermitian code $C_{\mathcal{L}}(D,sP)$ exhibits a length of $n$ and a dimension of $k\geq 3s-\g+1$, achieving equality if $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Moreover, the designed minimum distance is $d=q^3-3s$. Conversely, $C_{\mathcal{L}}(D+P_{\infty},sP)$ has a length of $n+1$.
+\[C_{\mathcal{L}}(D,sP):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathcal{L}(sP) \right\rbrace, \]
+
+The code $C_{\mathcal{L}}(D,sP)$ forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Additionally, the designed minimum distance is $d=q^3-3s$.
+
+In addition to $C_{\mathcal{L}}(D,sP)$, we can define a complementary degree $3$ place functional Hermitian code associated with $sP$, denoted by $C_{\mathcal{L}}(D+P_{\infty},sP)$. This code is constructed as follows:
+
+\[C_{\mathcal{L}}(D+P_{\infty},sP):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(P_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(sP)\right\rbrace ,\]
+
+It shares the same dimension $k$ as $C_{\mathcal{L}}(D,sP)$ but has a length of $n+1$.
 
 
+\subsection{Differential Hermitian codes of degree $3$ places}
+
+
+\textcolor{red}{there exist specialvalues of $s$ for which such Hermitian differential code has bigger minimum distance}
 \section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
 
 \subsection{Dual codes}
