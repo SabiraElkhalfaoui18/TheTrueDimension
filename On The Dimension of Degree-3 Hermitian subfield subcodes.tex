@@ -364,13 +364,91 @@ The point $u$ is self-conjugate, if
 \end{align*}
 This is the projective equation $X^{q+1}-YZ^q-Y^qZ=0$ of the Hermitian curve $\mathscr{H}_q$. 
 
+Let $u=(u_1:u_2u_3)$ be a projective point. The polar line of $u$ has equation
+\[u^\perp: \langle (X_1,X_2,X_3), u \rangle = u_1^qX_1-u_3X_2-u_2X_3=0.\]
+If $u$ is on $\mathscr{H}_q$, then $u^\perp$ is the tangent line at $u$. More precisely, $u^\perp$ intersects $\mathscr{H}_q$ at $u$ and $u^\Frob$ with multiplicities $q$ and $1$, respectively. If $u$ is $\mathbb{F}_{q^2}$-rational, then $u=u^\Frob$, and the intersection multiplicity is $q+1$. 
+
+\subsection{Unitary transformations and curve automorphism}
+
+Let $A$ be a $3\times 3$ matrix. The linear map $u\mapsto uA$ will be denoted by $A$ as well. If $A$ is invertible, then it induces a projective linear transformation, denoted by $\hat{A}:(u_1:u_2:u_3)\mapsto (u_1':u_2':u_3')=(u_1:u_2:u_3)^{\hat{A}}$, where
+\begin{align*} %\label{eq:}
+u_1' &= a_{11}u_1+a_{21}u_2+a_{31}u_3, \\
+u_2' &= a_{12}u_1+a_{22}u_2+a_{32}u_3, \\
+u_3' &= a_{13}u_1+a_{23}u_2+a_{33}u_3. 
+\end{align*}
+We use the same notation $\hat{A}:(X,Y) \mapsto (X',Y')=(X,Y)^{\hat{A}}$ for the partial affine map
+\begin{align*} %\label{eq:}
+(X,Y) \mapsto (X',Y') = \left(\frac{a_{11}X+a_{21}Y+a_{31}}{a_{13}X+a_{23}Y+a_{33}}, \frac{a_{12}X+a_{22}Y+a_{32}}{a_{13}X+a_{23}Y+a_{33}}\right).
+\end{align*}
+The action $f(X,Y) \mapsto f((X,Y)^{\hat{A}^{-1}})$ of $\hat{A}$ on rational functions will be denoted by $A^*$. If $f(X,Y)$ is a polynomial of total degree $n$, then
+\[f^{A^*}(X,Y)=\frac{h(X,Y)}{(a_{13}X+a_{23}Y+a_{33})^n},\]
+where $h(X,Y)$ is polynomial of degree $n$. The line $a_{13}X+a_{23}Y+a_{33}=0$ can be seen as the pre-image of  the line at infinity under $\hat{A}$. 
+
+The linear transformation $A$ is unitary, if
+\[\langle uA, vA \rangle = \langle u,v \rangle\]
+holds for all $u,v$. Since $\langle .,. \rangle$ is non-trivial, unitary transformations are invertible. Moreover, for all $u,v$ one has
+\begin{align*}
+\langle (v^\Frob)A, uA \rangle &= \langle v^\Frob,u \rangle \\
+&= \langle u,v \rangle^q \\
+&= \langle uA,vA \rangle^q \\
+&= \langle (vA)^\Frob,uA \rangle. \\
+\end{align*}
+This implies $(v^\Frob)A = (vA)^\Frob$ for all $v$, that is, $A$ and $\Frob$ commute. This shows that unitary transformations are defined over $\mathbb{F}_{q^2}$. They form a group, which is denoted by $GU(3,q)$. A useful fact is that if $b_1,b_2,b_3$ is a basis and
+\[\langle b_iA, b_jA \rangle = \langle b_i,b_j \rangle\]
+for all $i,j\in \{1,2,3\}$, then $A$ is unitary. 
+
+Let $A\in GU(3,q)$. If $(x,y)$ is a generic point of $\mathscr{H}_q$, then $(x',y')=(x,y)^{\hat{A}}$ satisfies 
+\[(x')^{q+1}-y'-(y')^q=\langle x',y' \rangle = \langle x,y \rangle=0. \]
+Hence, $(x',y')$ is a generic point of $\mathscr{H}_q$, and $A^*$ induces an automorphism of the function field $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. If $A$ is defined over $\Frob$, then $A^*$ is an automorphism of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. 
+
+
+
+\subsection{Places of degree 3 and their lines}
 Let $a_1,b_1 \in \mathbb{F}_{q^6}\setminus \mathbb{F}_{q^2}$ be scalars such that $a_1^{q+1}=b_1+b_1^q$. In other words, $(a_1,b_1)$ is an affine point of $\mathscr{H}_q:X^{q+1}=Y+Y^q$, defined over $\mathbb{F}_{q^6}$. Write $a_2=a_1^{q^2}$, $b_2=b_1^{q^2}$, $a_3=a_2^{q^2}$, $b_3=b_2^{q^2}$, and $p_i=(a_i,b_i,1)$. Then $p_{i+1}=p_i^\Frob$, $\langle p_i,p_i \rangle = 0$, and 
 \begin{align*} %\label{eq:}
 0=\langle p_i,p_i \rangle ^q = \langle p_i^\Frob,p_i \rangle = \langle p_{i+1},p_i \rangle
 \end{align*}
 hold for $i=1,2,3$, the indices taken modulo $3$. Since $\langle .,. \rangle$ is nontrivial, $\gamma_i = \langle p_i,p_{i+1} \rangle \neq 0$. Clearly, $\gamma_{i+1} = \gamma_i^{q^2}$. 
 
-\subsection{Unitary transformations and curve automorphism}
+BASIS?
+
+In the basis $\{p_1,p_2,p_3\}$, the Hermitian form has the shape
+\begin{align*}
+\langle u,v \rangle &= \langle x_1p_1+x_2p_2+x_3p_3,y_1p_1+y_2p_2+y_3p_3 \rangle \\
+&= x_1y_2^q \langle p_1,p_2 \rangle + x_2y_3^q \langle p_2,p_3 \rangle + x_3y_1^q \langle p_3,p_1 \rangle\\
+&=\gamma_1 x_1y_2^q+\gamma_1^{q^2} x_2y_3^q+\gamma_1^{q^4} x_3y_1^q.
+\end{align*}
+In this coordinate frame, the Hermitian curve has projective equation
+\begin{align*} %\label{eq:}
+\gamma_1 X_1X_2^q+\gamma_1^{q^2} X_2X_3^q+\gamma_1^{q^4} X_3X_1^q=0.
+\end{align*}
+
+Let $x,y$ be the generators of the function field $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ such that $x^{q+1}=y+y^q$. Write
+\begin{align*} %\label{eq:}
+\ell_i=\langle (x,y,1), p_i \rangle = a_i^qx-y-b_i^q.
+\end{align*}
+Then
+\begin{align*} %\label{eq:}
+(x,y,1)=\frac{\ell_{2}}{\gamma_1} p_1+\frac{\ell_{3}}{\gamma_2} p_2+\frac{\ell_{1}}{\gamma_3} p_3
+\end{align*}
+and
+\begin{align} \label{eq:ell-q-lin-dep}
+0=x^{q+1}-y-y^q = \langle (x,y,1), (x,y,1) \rangle = \frac{\ell_1\ell_{2}^q}{\gamma_1^q} + \frac{\ell_2\ell_{3}^q}{\gamma_2^q} + \frac{\ell_3\ell_{1}^q}{\gamma_3^q}.
+\end{align}
+The Hermitian curve $\mathscr{H}_q$ is non-singular, the places of $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ correspond to the projective points over the algebraic closure $\bar{\mathbb{F}}_{q^2}$. Let $P_i$ denote the place corresponding to $(a_i:b_i:1)$. $P_i$ is defined over $\mathbb{F}_{q^6}$, $P_{i+1}=P_i^\Frob$, and 
+\begin{align*} %\label{eq:}
+P=P_1+P_2+P_3
+\end{align*}
+is an $\mathbb{F}_{q^2}$-rational place of degree $3$. 
+
+The line $a_i^qX-Y-b_i^q=0$ is tangent to $\mathscr{H}_q$ at $p_i$, the intersection multiplicities are $q$ and $1$ at $p_i$ and $p_{i+1}$, respectively. This implies that the zero divisor $(\ell_i)_0$ is $qP_i+P_{i+1}$, and the principal divisor of $\ell_i$ is
+\begin{align} \label{eq:div-ell-i}
+(\ell_i)=qP_i+P_{i+1}-(q+1)Q_\infty.
+\end{align}
+
+
+
+\subsection{The stabilizer of a degree 3 place}
 Let $\beta_1\in \mathbb{F}_{q^6}$ be an element such that $\beta_1^{q^3+1}=1$. Define $\beta_2=\beta_1^{q^2}$, $\beta_3=\beta_2^{q^2}$. Then 
 \begin{align*} %\label{eq:}
 \beta_i\beta_{i+1}^q=\beta_i^{q^3+1}=1.
@@ -405,54 +483,10 @@ Similarly, let $\delta_1\in \mathbb{F}_{q^6}$ be such that $\delta_1^{q^3+1}=\ga
 \end{align*}
 we have $\gamma_1 \in \mathbb{F}_{q^3}$, and there are $q^3+1$ solutions for $\delta_1^{q^3+1}=\gamma_1^{1-q^2}$. Write $\delta_2=\delta_1^{q^2}$, $\delta_3=\delta_2^{q^2}$. As before, the map $p_i\mapsto \delta_i p_{i+1}$ preserves the Hermitian form, hence it extends to a unitary linear map $\Delta$, which commutes with $\Frob$ and normalizes $\mathcal{B}$. $\Delta^3$ maps $p_i$ to $\delta_1\delta_2\delta_3 p_i$. This implies that $\Delta$ induces a projective linear map $\hat{\Delta}$ of order $3$. 
 
-Notice that a linear transformation
-\begin{align*} %\label{eq:}
-A:\begin{cases}
-X_1' &= a_{11}X_1+a_{12}X_2+a_{13}X_3 \\
-X_2' &= a_{21}X_1+a_{22}X_2+a_{23}X_3 \\
-X_3' &= a_{31}X_1+a_{32}X_2+a_{33}X_3 
-\end{cases}
-\end{align*}
-determines a partial affine map
-\begin{align*} %\label{eq:}
-(X,Y) \mapsto \left(\frac{a_{11}X+a_{12}Y+a_{13}}{a_{31}X+a_{32}Y+a_{33}}, \frac{a_{21}X+a_{22}Y+a_{23}}{a_{31}X+a_{32}Y+a_{33}}\right),
-\end{align*}
-which is well-defined on the projective plane; we denote the projective action by $\hat{A}$. $\hat{A}$ acts on rational functions by $f(X,Y) \mapsto f((X,Y)^{\hat{A}^{-1}})$. If $A$ is unitary, then $(x',y')=(x,y)^{\hat{A}}$ satisfies $(x')^{q+1}=y'+(y')^q$, and $\alpha$ induces a field automorphism of $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. In this way, the unitary linear maps $B$ and $\Delta$ induce automorphisms of the function field, which we denote by $B^*$ and $\Delta^*$.
 
-\subsection{Places of degree 3 and their lines}
-In the basis $\{p_1,p_2,p_3\}$, the Hermitian form has the shape
-\begin{align*}
-\langle u,v \rangle &= \langle x_1p_1+x_2p_2+x_3p_3,y_1p_1+y_2p_2+y_3p_3 \rangle \\
-&= x_1y_2^q \langle p_1,p_2 \rangle + x_2y_3^q \langle p_2,p_3 \rangle + x_3y_1^q \langle p_3,p_1 \rangle\\
-&=\gamma_1 x_1y_2^q+\gamma_1^{q^2} x_2y_3^q+\gamma_1^{q^4} x_3y_1^q.
-\end{align*}
-In this coordinate frame, the Hermitian curve has projective equation
-\begin{align*} %\label{eq:}
-\gamma_1 X_1X_2^q+\gamma_1^{q^2} X_2X_3^q+\gamma_1^{q^4} X_3X_1^q=0.
-\end{align*}
 
-Let $x,y$ be the generators of the function field $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ such that $x^{q+1}=y+y^q$. Write
-\begin{align*} %\label{eq:}
-\ell_i=\langle (x,y,1), p_i \rangle = a_i^qx-y-b_i^q.
-\end{align*}
-Then
-\begin{align*} %\label{eq:}
-(x,y,1)=\frac{\ell_{2}}{\gamma_1} p_1+\frac{\ell_{3}}{\gamma_2} p_2+\frac{\ell_{1}}{\gamma_3} p_3
-\end{align*}
-and
-\begin{align} \label{eq:ell-q-lin-dep}
-0=x^{q+1}-y-y^q = \langle (x,y,1), (x,y,1) \rangle = \frac{\ell_1\ell_{2}^q}{\gamma_1^q} + \frac{\ell_2\ell_{3}^q}{\gamma_2^q} + \frac{\ell_3\ell_{1}^q}{\gamma_3^q}.
-\end{align}
-The Hermitian curve $\mathscr{H}_q$ is non-singular, the places of $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ correspond to the projective points over the algebraic closure $\bar{\mathbb{F}}_{q^2}$. Let $P_i$ denote the place corresponding to $(a_i:b_i:1)$. $P_i$ is defined over $\mathbb{F}_{q^6}$, $P_{i+1}=P_i^\Frob$, and 
-\begin{align*} %\label{eq:}
-P=P_1+P_2+P_3
-\end{align*}
-is an $\mathbb{F}_{q^2}$-rational place of degree $3$. 
+In this way, the unitary linear maps $B$ and $\Delta$ induce automorphisms of the function field, which we denote by $B^*$ and $\Delta^*$.
 
-The line $a_i^qX-Y-b_i^q=0$ is tangent to $\mathscr{H}_q$ at $p_i$, the intersection multiplicities are $q$ and $1$ at $p_i$ and $p_{i+1}$, respectively. This implies that the zero divisor $(\ell_i)_0$ is $qP_i+P_{i+1}$, and the principal divisor of $\ell_i$ is
-\begin{align} \label{eq:div-ell-i}
-(\ell_i)=qP_i+P_{i+1}-(q+1)Q_\infty.
-\end{align}
 
 
 
