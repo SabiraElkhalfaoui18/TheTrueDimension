@@ -592,28 +592,30 @@ For $t\in H(P)$, $\mathcal{W}_t$ is the set of $\mathbb{F}_{q^2}$-rational funct
 TODO
 
 \section{Hermitian codes of degree $3$ places and their duals}
+
+TODO \textcolor{red}{set the parameters $G=sP$ and $\tilde{D}=D+P_{\infty}$}
 \subsection{Functional Hermitian codes of degree $3$ places}
 
 Let $P$ be a degree $3$ place on the Hermitian curve $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, representing the sum of $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, where $n=q^3$. For a positive integer $s$, we define the degree $3$ place functional Hermitian code $C_{\mathcal{L}}(D,sP)$ as:
 
 \[C_{\mathcal{L}}(D,sP):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathcal{L}(sP) \right\rbrace, \]
 
-The code $C_{\mathcal{L}}(D,sP)$ forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Additionally, the designed minimum distance is $d=q^3-3s$.
+This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Moreover, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
 
-In addition to $C_{\mathcal{L}}(D,sP)$, we can define a complementary degree $3$ place functional Hermitian code associated with $sP$, denoted by $C_{\mathcal{L}}(D+P_{\infty},sP)$. This code is constructed as follows:
+Additionally, another degree $3$ place functional Hermitian code associated with $sP$, denoted by $C_{\mathcal{L}}(D+P_{\infty},sP)$, is constructed by evaluating functions in $\mathcal{L}(sP)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $P_{\infty}$, as follows:
 
 \[C_{\mathcal{L}}(D+P_{\infty},sP):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(P_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(sP)\right\rbrace ,\]
 
-It shares the same dimension $k$ as $C_{\mathcal{L}}(D,sP)$ but has a length of $n+1$.
+It shares the same dimension $k$ as $C_{\mathcal{L}}(D,sP)$ but has a length of $n+1$. 
 
 
 \subsection{Differential Hermitian codes of degree $3$ places}
-The dual code $C_{\Omega}(D,sP)$ of $C_{\mathcal{L}}(D,sP)$ is referred to as the differential code. It constitutes an $[n, \ell(sP -D)-\ell(sP) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(sP) - (2\g -2 )$, with $\deg(sP) - (2\g -2 )$ is its designed distance.
+Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,sP)$ of $C_{\mathcal{L}}(D,sP)$ is referred to as the differential code. It constitutes an $[n, \ell(sP -D)-\ell(sP) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(sP) - (2\g -2)$, with $\deg(sP) - (2\g -2)$ being its designed distance.
 
 In \cite[Proposition 2.2]{korchmaros2013hermitian}, the authors provide an explicit description of an equivalence between the codes $C_{\Omega}(D,sP)$ and $C_{\mathcal{L}}(D,(q^3+q^2-q-2)P_{\infty}-sP)$ constructed on $\mathscr{H}_q$. This equivalence is related to the equivalence $C_{\Omega}(D,sP)= C_{\mathcal{L}}(D,W + D - sP)$ given in Section \ref{sec}.
 
+Furthermore, the dual code $C_{\Omega}(D+P_{\infty},sP)$ of $C_{\mathcal{L}}(D+P_{\infty},sP)$ is denoted as $C_{\Omega}(D+P_{\infty},sP)$, which is equivalent to $C_{\mathcal{L}}(D+P_{\infty},W + D+ P_{\infty} - sP)$ and shares the same parameters as $C_{\Omega}(D+P_{\infty},sP)$ except for the length, which is $n+1$.
 
-Moreover, the dual code $C_{\Omega}(D+P_{\infty},sP)$ of $C_{\mathcal{L}}(D+P_{\infty},sP)$
 \section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
 
 \subsection{Dual codes}
@@ -668,7 +670,7 @@ After establishing the Riemann Roch space as outlined in Equation \ref{ba1} we i
 Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^2}$-rational affine points of $\mathscr{H}_q$. For a positive integer $s$, we denote by $C_{\calL}(D,sP)$ the degree-3 place functional AG code. This has length $n=q^3$. If $2 \mathfrak{g}-2<s<n$, then the dimension of $C_{\calL}(D,sP)$ is $k=3s-\mathfrak{g}+1$ which is equal to the dimension of the Riemann-Roch space $\mathscr{L}\left(s P\right)$, and  the designed minimum distance of $C_{\calL}(D,sP)$ is $d=q^3-3s$.
 
 \textcolor{red}{\begin{proposition}
-	The generators of $C_{\mathcal{C}}\left(D+P_{\infty}, s P\right)$ can be expressed in terms of the basis \ref{ba2} for $s=2 \g$ and $s=2 \g+1$.
+	The generators of $C_{\mathcal{L}}\left(D+P_{\infty}, s P\right)$ can be expressed in terms of the basis \ref{ba2} for $s=2 \g$ and $s=2 \g+1$.
 \end{proposition}}
 
 In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
