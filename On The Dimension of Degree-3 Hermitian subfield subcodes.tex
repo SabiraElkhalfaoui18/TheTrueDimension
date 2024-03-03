@@ -615,9 +615,9 @@ By assumption, $b^{q+1}$ has order $q^2-q+1$. The claim follows from the facts t
 
 The following lemma shows that the basis elements in $\mathcal{U}(s)$ are eigenvectors of $\mathcal{B}^*$. 
 
-\begin{lemma}
+\begin{lemma} \label{lm:B-start-on-U}
 Let $\beta_1 \in \mathbb{F}_{q^6}$ be an element such that $\beta_1^{q^3+1}=1$. Define $\beta_2=\beta_1^{q^2}$, $\beta_3=\beta_2^{q^2}$, and the unitary map $B=B(\beta_1) \in \mathcal{B}$. Then
-\[U_{t,i}^{B^*} = \beta_i^{t(q+1)} U_{t,i}.\]
+\[(U_{t,i})^{B^*} = \beta_i^{t(q+1)} U_{t,i}.\]
 \end{lemma}
 \begin{proof}
 Proposition \ref{pr:B-star-elli} implies
@@ -632,12 +632,34 @@ The result follows from the definition of $u$ and $v$.
 
 \begin{proposition}
 \begin{enumerate}[(i)]
+\item Let $\beta_1 \in \mathbb{F}_{q^6}$ be an element such that $\beta_1^{q^3+1}=1$, and $B=B(\beta_1) \in \mathcal{B}$. Then
+\[(W_{t,\alpha})^{B^*} = W_{t,\beta_1^{t(q+1)}\alpha}.\]
 \item The subspaces $\mathcal{W}_t$, $t\in H(P)$ are $\mathcal{B}^*$-invariant. 
-\item For $\mathcal{W}_t$ and $\mathcal{W}_s$ are isomorphic $\mathbb{F}_{q^2}\mathcal{B}^*$-modules if and only if $s\equiv t \pmod{q^2-q+1}$, $s\equiv (q-1)t \pmod{q^2-q+1}$, or $s\equiv -qt \pmod{q^2-q+1}$. 
+\item The $\mathbb{F}_{q^2}\mathcal{B}^*$-modules $\mathcal{W}_t$ and $\mathcal{W}_s$ are isomorphic if and only if one of the following holds:
+\begin{enumerate}[a)]
+\item $s\equiv t \pmod{q^2-q+1}$, 
+\item $s\equiv (q-1)t \pmod{q^2-q+1}$, or 
+\item $s\equiv -qt \pmod{q^2-q+1}$. 
+\end{enumerate}
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-content...
+(i) and (ii) follow from Lemma \ref{lm:B-start-on-U}. (iii) The $\Phi:\mathcal{W}_t \to \mathcal{W}_s$ be an $\mathbb{F}_{q^2}\mathcal{B}^*$-module isomorphism can be written as
+\[(W_{t,\alpha})^\Phi = W_{t,\alpha \varphi},\]
+where $\varphi:\mathbb{F}_{q^6}\to \mathbb{F}_{q^6}$ is an $\mathbb{F}_{q^2}$-linear bijection. Moreover,
+\begin{align*}
+(W_{t,\alpha})^{B^*\Phi} & = (W_{t,\beta_1^{t(q+1)} \alpha})^\Phi = W_{s,(\beta_1^{t(q+1)}\alpha)\varphi}, \\
+(W_{t,\alpha})^{\Phi B^*} & = (W_{s,\alpha\varphi})^{B^*} = W_{s,\beta_1^{s(q+1)}(\alpha\varphi)}.
+\end{align*}
+Since $b=\beta_1^{q+1}$ satisfies $b^{q^2-q+1}=1$, this means that for any $\alpha, b\in \mathbb{F}_{q^6}$, $b^{q^2-q+1}$, we have
+\[(b^t \alpha) \varphi = b^s(\alpha\varphi).\]
+Let $b$ be an element of order $q^2-q+1$ in $\mathbb{F}_{q^6}$. If $b^t$ or $b^s$ is in $\mathbb{F}_{q^2}$, then $b^t=b^s$ and a) holds. Assume that neither $b^t$ nor $b^s$ is in $\mathbb{F}_{q^2}$. Then $\mathbb{F}_{q^6}=\mathbb{F}_{q^2}(b^t)=\mathbb{F}_{q^2}(b^s)$, and over $\mathbb{F}_{q^2}$, the minimal polynomial of $b^t$ has degree $3$. Assume $b^{3t}+c_1b^{2t}+c_2b^t+c_3=0$ with $c_0,c_1,c_2\in \mathbb{F}_{q^2}$. Then
+\begin{align*}
+0&=(b^{3t}+c_1b^{2t}+c_2b^t+c_3)\varphi \\
+&= (b^{3t}\varphi)+c_1(b^{2t}\varphi)+c_2(b^t\varphi)+c_3(1\varphi) \\
+&= (b^{3s}+c_1b^{2s}+c_2b^s+c_3)(1\varphi). \\
+\end{align*}
+As $\varphi$ is bijective, $0=b^{3s}+c_1b^{2s}+c_2b^s+c_3$ follows. This means that $b^s$ has the same minimal polynomial, and $b^t \to b^s$ extends to a field automorphism of $\mathbb{F}_{q^6}$ over $\mathbb{F}_{q^2}$. This implies $b^s=b^t$, $b^s=(b^t)^{q^2}$ or $b^s=(b^t)^{q^4}$, and the claim follows. 
 \end{proof}
 
 \section{Hermitian codes of degree $3$ places and their duals}
