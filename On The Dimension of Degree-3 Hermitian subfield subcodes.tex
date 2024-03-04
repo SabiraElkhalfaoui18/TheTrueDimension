@@ -109,6 +109,11 @@
 %%%%%% Bibliography %%%%%%
 % Replace "sample" in the \addbibresource line below with the name of your .bib file.
 
+\makeatletter
+\providecommand{\keywords}[1]{%
+	\def\@keywords{\textbf{Keywords---} #1}
+}
+\makeatother
 
 
 \title{On the dimension of Hermitian subfield subcodes from higher degree place}
@@ -127,7 +132,7 @@
 \onehalfspacing
 
 \begin{document}
-
+\maketitle
 
 
 %%%%%% Abstract %%%%%%
@@ -135,9 +140,11 @@
 Our research delves into the complexities of Hermitian curves over finite fields, with a specific focus on degree 3 places and their significance in constructing Hermitian codes. Initially, we explore the structure of the Riemann-Roch space associated with these degree 3 places, aiming to reveal their fundamental characteristics, such as the basis. Our investigation extends to Hermitian codes, where we analyze both functional and differential codes, examining their parameters and relationships. Furthermore, we delve into the study of subfield subcodes and trace codes, uncovering their structure by accurately determining their dimensions, presenting a challenging problem in coding theory. Through this comprehensive exploration, our objective is to deepen our understanding of Hermitian codes and their associated subfield subcodes connected to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography.
 \end{abstract}
 
+\keywords{Hermitian curves, Degree 3 places, Riemann-Roch space, Hermitian codes, Subfield subcodes}
+
 %%%%%% Main Text %%%%%%
 
-\maketitle
+
 
 \section{Introduction}
 
