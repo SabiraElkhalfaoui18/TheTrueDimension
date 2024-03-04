@@ -132,7 +132,7 @@
 
 %%%%%% Abstract %%%%%%
 \begin{abstract}
-
+Our research delves into the complexities of Hermitian curves over finite fields, with a specific focus on degree 3 places and their significance in constructing Hermitian codes. Initially, we explore the structure of the Riemann-Roch space associated with these degree 3 places, aiming to reveal their fundamental characteristics, such as the basis. Our investigation extends to Hermitian codes, where we analyze both functional and differential codes, examining their parameters and relationships. Furthermore, we delve into the study of subfield subcodes and trace codes, uncovering their structure by accurately determining their dimensions, presenting a challenging problem in coding theory. Through this comprehensive exploration, our objective is to deepen our understanding of Hermitian codes and their associated subfield subcodes connected to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography.
 \end{abstract}
 
 %%%%%% Main Text %%%%%%
@@ -664,28 +664,54 @@ As $\varphi$ is bijective, $0=b^{3s}+c_1b^{2s}+c_2b^s+c_3$ follows. This means t
 
 \section{Hermitian codes of degree $3$ places and their duals}
 
-TODO \textcolor{red}{set the parameters $G=sP$ and $\tilde{D}=D+P_{\infty}$}
+In this section, we explore Hermitian codes of degree $3$ places on the Hermitian curve $\mathscr{H}_q$. Let $P$ be a degree $3$ place on $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, where $n=q^3$ and $Q_i$ are $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, we set the parameters $G=sP$ and $\tilde{D}=D+P_{\infty}$ for a positive integer $s$.
+
+
 \subsection{Functional Hermitian codes of degree $3$ places}
+Given a divisor $D$ and $G$, we define the degree $3$ place functional Hermitian code $C_{\mathcal{L}}(D,sP)$ as:
 
-Let $P$ be a degree $3$ place on the Hermitian curve $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, representing the sum of $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, where $n=q^3$. For a positive integer $s$, we define the degree $3$ place functional Hermitian code $C_{\mathcal{L}}(D,sP)$ as:
-
-\[C_{\mathcal{L}}(D,sP):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathcal{L}(sP) \right\rbrace, \]
+\[C_{\mathcal{L}}(D,G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathcal{L}(G) \right\rbrace, \]
 
 This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Moreover, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
 
-Additionally, another degree $3$ place functional Hermitian code associated with $sP$, denoted by $C_{\mathcal{L}}(D+P_{\infty},sP)$, is constructed by evaluating functions in $\mathcal{L}(sP)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $P_{\infty}$, as follows:
+Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\tilde{D},G)$, is constructed by evaluating functions in $\mathcal{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $P_{\infty}$, as follows:
 
-\[C_{\mathcal{L}}(D+P_{\infty},sP):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(P_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(sP)\right\rbrace ,\]
+\[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(P_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(G)\right\rbrace ,\]
 
-It shares the same dimension $k$ as $C_{\mathcal{L}}(D,sP)$ but has a length of $n+1$. 
+It shares the same dimension $k$ as $C_{\mathcal{L}}(D,G)$ but has a length of $n+1$. 
 
 
 \subsection{Differential Hermitian codes of degree $3$ places}
-Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,sP)$ of $C_{\mathcal{L}}(D,sP)$ is referred to as the differential code. It constitutes an $[n, \ell(sP -D)-\ell(sP) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(sP) - (2\g -2)$, with $\deg(sP) - (2\g -2)$ being its designed distance.
 
-In \cite[Proposition 2.2]{korchmaros2013hermitian}, the authors provide an explicit description of an equivalence between the codes $C_{\Omega}(D,sP)$ and $C_{\mathcal{L}}(D,(q^3+q^2-q-2)P_{\infty}-sP)$ constructed on $\mathscr{H}_q$. This equivalence is related to the equivalence $C_{\Omega}(D,sP)= C_{\mathcal{L}}(D,W + D - sP)$ given in Section \ref{sec}.
+Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
 
-Furthermore, the dual code $C_{\Omega}(D+P_{\infty},sP)$ of $C_{\mathcal{L}}(D+P_{\infty},sP)$ is denoted as $C_{\Omega}(D+P_{\infty},sP)$, which is equivalent to $C_{\mathcal{L}}(D+P_{\infty},W + D+ P_{\infty} - sP)$ and shares the same parameters as $C_{\Omega}(D+P_{\infty},sP)$ except for the length, which is $n+1$.
+In \cite[Proposition 2.2]{korchmaros2013hermitian}, the authors provide an explicit description of an equivalence between the codes $C_{\Omega}(D,G)$ and $C_{\mathcal{L}}(D,(q^3+q^2-q-2)P_{\infty}-G)$ constructed on $\mathscr{H}_q$. This equivalence is related to the equivalence $C_{\Omega}(D,G)= C_{\mathcal{L}}(D,W + D - G)$ given in Section \ref{sec}.
+
+Furthermore, the dual code $C_{\Omega}(D+P_{\infty},G)$ of $C_{\mathcal{L}}(D+P_{\infty},G)$ is denoted as $C_{\Omega}(D+P_{\infty},G)$, which is equivalent to $C_{\mathcal{L}}(D+P_{\infty},W + D+ P_{\infty} - G)$ and shares the same parameters as $C_{\Omega}(D+P_{\infty},G)$ except for the length, which is $n+1$.
+
+\textcolor{red}{What content or discussion is required before Proposition 5.1?}
+
+\begin{proposition}
+	
+	Let $q\geq 3$, and $C_{\mathcal{L}}(D,G)$ be the Hermitian code associated with the divisor $G=(q-1)P$, where $P$ is a degree 3 place, then
+	\[\dim C_{\mathcal{L}}(D,G)=4.\]
+	
+\end{proposition}
+
+\begin{proof}
+	\textcolor{red}{A voir (rewrite)}
+	
+	Let $\ell_i=0$ be the line $P_iP_{i+1}$, it is the tangent to $\mathscr{H}_q$ at $P_i$. More precisely, the intersection divisor of $\ell_i$ and $\mathscr{H}_q$ is $qP_i+P_{i+1}$. This implies that the principal divisor of $\ell_1/\ell_2$ satisfies
+	\[\mathrm{div}(\ell_i/\ell_{i+1})=qP_i-(q-1)P_{i+1}-P_{i+2}.\]
+	For $\alpha \in \mathbb{F}_{q^6}$, w define the function
+	\begin{eqnarray*}
+		w_\alpha&=&\alpha\ell_1/\ell_2+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}}+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}^2}\\
+		&=&\alpha\ell_1/\ell_2+\alpha^{q^2}\ell_2/\ell_3+\alpha^{q^4}\ell_3/\ell_1.
+	\end{eqnarray*}
+	On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in \cite[Theorem ~3.1]{korchmaros2013hermitian}
+	\[v_{P_i}(w_\alpha)=-q+1.\]
+	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. Then $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. Thus, $\dim\mathcal{L}((q-1)P)=4$.
+\end{proof}
 
 \section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
 
@@ -747,27 +773,7 @@ Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^
 In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
 
 
-\begin{proposition}
-
-	Let $q\geq 3$, and $C_{\mathcal{L}}(D,G)$ be the Hermitian code associated with the divisor $G=(q-1)P$, where $P$ is a degree 3 place, then
-	\[\dim C_{\mathcal{L}}(D,G)=4.\]
-	
-\end{proposition}
-
-\begin{proof}
-	\textcolor{red}{A voir (rewrite)}
-	
-	Let $\ell_i=0$ be the line $P_iP_{i+1}$, it is the tangent to $\mathscr{H}_q$ at $P_i$. More precisely, the intersection divisor of $\ell_i$ and $\mathscr{H}_q$ is $qP_i+P_{i+1}$. This implies that the principal divisor of $\ell_1/\ell_2$ satisfies
-	\[\mathrm{div}(\ell_i/\ell_{i+1})=qP_i-(q-1)P_{i+1}-P_{i+2}.\]
-	For $\alpha \in \mathbb{F}_{q^6}$, w define the function
-	\begin{eqnarray*}
-		w_\alpha&=&\alpha\ell_1/\ell_2+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}}+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}^2}\\
-		&=&\alpha\ell_1/\ell_2+\alpha^{q^2}\ell_2/\ell_3+\alpha^{q^4}\ell_3/\ell_1.
-	\end{eqnarray*}
-	On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in \cite[Theorem ~3.1]{korchmaros2013hermitian}
-	\[v_{P_i}(w_\alpha)=-q+1.\]
-	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. In fact, $\dim\mathcal{L}((q-1)P)=4$ and $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. 
-\end{proof}
+\textcolor{red}{proposition 7.2 }
 
 
 
