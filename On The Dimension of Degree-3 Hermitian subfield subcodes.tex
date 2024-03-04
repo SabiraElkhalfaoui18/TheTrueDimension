@@ -61,7 +61,7 @@
 
 %\DeclareMathOperator{\tr}{Tr}
 
-\newcommand{\C}{C_L(D,sP_{\infty})|_{\mathbb{F}_q}}
+\newcommand{\C}{C_L(D,sQ_{\infty})|_{\mathbb{F}_q}}
 
 \newcommand{\trf}[2]{\tr_{\mathbb{F}_{#1}/\mathbb{F}_{#2}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,7 +117,12 @@
 
 
 \title{On the dimension of Hermitian subfield subcodes from higher degree place}
-\author{Sabira El Khalfaoui, G\'abor Nagy, Jade Nardi}
+\author{G\'{a}bor P. Nagy}
+\address{Bolyai Institute, University of Szeged, Aradi V\'{e}rtan\'{u}k tere 1, H-6720 Szeged, Hungary; and 
+Institute of Mathematics, Budapest University of Technology and Economics, M\H{u}egyetem rkp. 3, H-1111 Budapest, Hungary.}
+\email{nagyg@math.u-szeged.hu, nagy.gabor.peter@ttk.bme.hu}
+
+\author{Sabira El Khalfaoui}
 
 %%%%%% Affiliations %%%%%%
 %\affil[1]{}
@@ -137,16 +142,9 @@
 
 %%%%%% Abstract %%%%%%
 \begin{abstract}
-The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of
-degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space
-associated with these degree 3 places, aiming to determine essential characteristics such as the basis.
+The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space associated with these degree 3 places, aiming to determine essential characteristics such as the basis. The investigation then turns to Hermitian codes, where we analyze both functional and differential codes, focusing on their parameters and interrelationships. Additionally, we delve into the study of subfield subcodes and trace codes, determining their structure by accurately calculating their dimensions. This presents a complex problem in coding theory.
 
-The investigation then turns to Hermitian codes, where we analyze both functional and differential codes, focusing on their
-parameters and interrelationships. Additionally, we delve into the study of subfield subcodes and trace codes, determining
-their structure by accurately calculating their dimensions. This presents a complex problem in coding theory.
-
-Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes
-related to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography."
+Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes related to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography."
 \end{abstract}
 
 \keywords{Hermitian curves, Degree 3 places, Riemann-Roch space, Hermitian codes, Subfield subcodes}
@@ -182,7 +180,7 @@ For more details we refer the readers to \cite{stichtenoth2009algebraic, stepano
 %	\mathscr{H}_q: Y^q + Y = X^{q+1}.
 %	\]
 %	
-%	This curve is characterized by a genus $\mathfrak{g} = \frac{q(q-1)}{2}$, classifying it as a maximal curve. This classification is further substantiated by the property $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Notably, $\mathscr{H}_q$ encompasses a singular point at infinity, which is denoted as $P_{\infty}$.
+%	This curve is characterized by a genus $\mathfrak{g} = \frac{q(q-1)}{2}$, classifying it as a maximal curve. This classification is further substantiated by the property $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Notably, $\mathscr{H}_q$ encompasses a singular point at infinity, which is denoted as $Q_{\infty}$.
 %	
 %	The Frobenius automorphism, denoted by $\text{Fr}_{q^2}$, is defined through the mapping:
 %	
@@ -205,7 +203,7 @@ The Hermitian curve, denoted as $\mathscr{H}_q$, over the finite field $\mathbb{
 \[
 	\mathscr{H}_q: Y^q + Y = X^{q+1}.
 \]
-This curve has a genus $g = \frac{q(q-1)}{2}$, classifying it as a maximal curve because it achieves the maximum number of $\mathbb{F}_{q^2}$-rational points, which is $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Additionally, $\mathscr{H}_q$ possesses a unique singular point at infinity, denoted $P_{\infty}$.
+This curve has a genus $g = \frac{q(q-1)}{2}$, classifying it as a maximal curve because it achieves the maximum number of $\mathbb{F}_{q^2}$-rational points, which is $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Additionally, $\mathscr{H}_q$ possesses a unique singular point at infinity, denoted $Q_{\infty}$.
 
 A divisor on $\mathscr{H}_q$ is a formal sum $D = n_1 Q_1 + \cdots + n_k Q_k$ where $n_1, \cdots, n_k$ are integers, and $Q_1, \cdots, Q_k$ are points on $\mathscr{H}_q$. The degree of the divisor $D$ is defined as $\deg(D) = \sum_{i=1}^k n_i$. The valuation of $D$ at a point $Q_i$ is $v_{Q_i}(D) = n_i$, and the support of $D$ is the set $\{ Q_i \mid n_i \neq 0 \}$.
 
@@ -617,7 +615,9 @@ For $t\in H(P)$, we have
 3 & \text{otherwise.}
 \end{cases}\]
 The $\mathbb{F}_{q^2}$-rational Riemann-Roch space $\mathscr{L}(sP)$ has the direct sum decomposition
-\[\mathscr{L}(sP) = \bigoplus_{t\in H(P), \, t\leq s} \mathcal{W}_t.\]
+\begin{align} \label{eq:LsP-decomp}
+\mathscr{L}(sP) = \bigoplus_{t\in H(P), \, t\leq s} \mathcal{W}_t.
+\end{align}
 \end{proposition}
 \begin{proof}
 For $t\in H(P)$, $\mathcal{W}_t$ is the set of $\mathbb{F}_{q^2}$-rational functions in the space spanned by $U_{t,1}, U_{t,2}, U_{t,3}$. The claims follow from Proposition \ref{pr:Uti-props}. 
@@ -683,7 +683,7 @@ As $\varphi$ is bijective, $0=b^{3s}+c_1b^{2s}+c_2b^s+c_3$ follows. This means t
 
 \section{Hermitian codes of degree $3$ places and their duals}
 
-In this section, we explore Hermitian codes of degree $3$ places on the Hermitian curve $\mathscr{H}_q$. Let $P$ be a degree $3$ place on $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, where $n=q^3$ and $Q_i$ are $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, we set the parameters $G=sP$ and $\tilde{D}=D+P_{\infty}$ for a positive integer $s$.
+In this section, we explore Hermitian codes of degree $3$ places on the Hermitian curve $\mathscr{H}_q$. Let $P$ be a degree $3$ place on $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, where $n=q^3$ and $Q_i$ are $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, we set the parameters $G=sP$ and $\tilde{D}=D+Q_{\infty}$ for a positive integer $s$.
 
 
 \subsection{Functional Hermitian codes of degree $3$ places}
@@ -693,9 +693,9 @@ Given a divisor $D$ and $G$, we define the degree $3$ place functional Hermitian
 
 This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Moreover, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
 
-Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\tilde{D},G)$, is constructed by evaluating functions in $\mathcal{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $P_{\infty}$, as follows:
+Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\tilde{D},G)$, is constructed by evaluating functions in $\mathcal{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
 
-\[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(P_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(G)\right\rbrace ,\]
+\[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(G)\right\rbrace ,\]
 
 It shares the same dimension $k$ as $C_{\mathcal{L}}(D,G)$ but has a length of $n+1$. 
 
@@ -704,11 +704,14 @@ It shares the same dimension $k$ as $C_{\mathcal{L}}(D,G)$ but has a length of $
 
 Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
 
-In \cite[Proposition 2.2]{korchmaros2013hermitian}, the authors provide an explicit description of an equivalence between the codes $C_{\Omega}(D,G)$ and $C_{\mathcal{L}}(D,(q^3+q^2-q-2)P_{\infty}-G)$ constructed on $\mathscr{H}_q$. This equivalence is related to the equivalence $C_{\Omega}(D,G)= C_{\mathcal{L}}(D,W + D - G)$ given in Section \ref{sec}.
+In \cite[Proposition 2.2]{korchmaros2013hermitian}, the authors provide an explicit description of an equivalence between the codes $C_{\Omega}(D,G)$ and $C_{\mathcal{L}}(D,(q^3+q^2-q-2)Q_{\infty}-G)$ constructed on $\mathscr{H}_q$. This equivalence is related to the equivalence $C_{\Omega}(D,G)= C_{\mathcal{L}}(D,W + D - G)$ given in Section \ref{sec}.
 
-Furthermore, the dual code $C_{\Omega}(D+P_{\infty},G)$ of $C_{\mathcal{L}}(D+P_{\infty},G)$ is denoted as $C_{\Omega}(D+P_{\infty},G)$, which is equivalent to $C_{\mathcal{L}}(D+P_{\infty},W + D+ P_{\infty} - G)$ and shares the same parameters as $C_{\Omega}(D+P_{\infty},G)$ except for the length, which is $n+1$.
+Furthermore, the dual code $C_{\Omega}(D+Q_{\infty},G)$ of $C_{\mathcal{L}}(D+Q_{\infty},G)$ is denoted as $C_{\Omega}(D+Q_{\infty},G)$, which is equivalent to $C_{\mathcal{L}}(D+Q_{\infty},W + D+ Q_{\infty} - G)$ and shares the same parameters as $C_{\Omega}(D+Q_{\infty},G)$ except for the length, which is $n+1$.
 
 \textcolor{red}{What content or discussion is required before Proposition 5.1?}
+
+
+MORE PRECISE INFORMATION ON $\dim C_{\mathcal{L}}(D,sP)$, $s$ SMALL, USING Prop 4.3 AND THE DECOMPOSITION (10).
 
 \begin{proposition}
 	
@@ -733,11 +736,8 @@ Furthermore, the dual code $C_{\Omega}(D+P_{\infty},G)$ of $C_{\mathcal{L}}(D+P_
 	
 \end{proof}
 
-\section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
-
 \subsection{Dual codes}
 
-\textcolor{red}{
 In our study, we make use of a polynomial denoted as $R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c)$, where $c$ ranges over $\mathbb{F}_{q^2}$ with $c^q + c \neq 0$. This polynomial plays a crucial role in our investigation of differential codes arising from a degree 3 place on the Hermitian curve $H$ defined over $\mathbb{F}_{q^2}$. We utilize its properties to derive our results, which are discussed further in this work.
 In the function field, we observe a fundamental relationship which is expressed in the following propos
 \begin{proposition}
@@ -746,48 +746,15 @@ In the function field, we observe a fundamental relationship which is expressed 
 \begin{proof}
 	contenu...
 \end{proof}
-This proposition highlights a key aspect of the relationship between lines and Hermitian curves, specifically regarding their tangential interactions and intersections. For more in-depth insights into this topic, readers are encouraged to consult \cite[Section~2]{korchmaros2013hermitian}.}
+This proposition highlights a key aspect of the relationship between lines and Hermitian curves, specifically regarding their tangential interactions and intersections. For more in-depth insights into this topic, readers are encouraged to consult \cite[Section~2]{korchmaros2013hermitian}.
 
 
-\subsection{Riemann-Roch basis associated with a degree 3 place}
-The main result of this paper deals with an $\mathbb{F}_{q^2}$-rational divisor $G=sP$ where $P$ is a degree-3 place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and $s$ is a positive integer. As stated above, in the extended constant field of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $3$, let $P_1, P_2, P_3$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^6}(\mathscr{H}_q)$, and, by appropriately labeling the indices, $P_{j+1} = \text{Fr}(P_j)$, where $\text{Fr}$ is the $q^2$-th power Frobenius map and indices are considered modulo $3$. Additionally, $P$ can be identified with the $\mathbb{F}_{q^2}$-rational divisor $P_1+P_2+P_3$ in $\mathbb{F}_{q^6}(\mathscr{H}_q)$. The Riemann-Roch space associated with the divisor $sP$ \cite{korchmaros2013hermitian} is defined as:
-
-\begin{equation}\label{ba1}
-	\mathscr{L}(sP) = \left\{ \frac{f}{(\ell_1\ell_2\ell_3)^u} \mid f \in \mathbb{F}_{q^2}[X,Y], \deg f \leq 3u, v_{P_i}(f) \geq v \right\} \cup \{0\},
-\end{equation}
-
-
-where $\ell_i=0$ represents the equation of the tangent line at $P_i$ on $\mathscr{H}_q$, and $s = u(q+1) - v$ with $0 \leq v \leq q$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\textcolor{red}{
-After establishing the Riemann Roch space as outlined in Equation \ref{ba1} we introduce a set of fundamentals, in Equation \ref{ba2}. In contrast to the basis this new framework provides insights into the characteristics of the space. It comprises components of the type $\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{\ell_i}\right)^{v. U}$, where $\ell_i$ denotes the equation of the line at $P_i$, on $\mathscr{H}_q$ as previously indicated. The parameters $u$ and  $v$ are bound by conditions.}
-
-\begin{equation} \label{ba2}
-	\mathscr{L}(s P)=\left\langle\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{l_i}\right)^{v - u} \left\lvert\, \begin{array}{l}
-		0 \leqslant v \leqslant q \\
-		v+1 \leqslant 3 u \\
-		i=1,2,3
-	\end{array} \quad(q+1) u-v \leqslant s\right.\right\rangle \\
-\end{equation}
-
-\begin{equation}\label{ba3}
-	\mathscr{L}(s P) / \mathcal{L}((s-1) P)=\left\langle\left.\left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{\ell_i}\right)^{v-u} \right\rvert\, \begin{array}{l}
-		i=1,2,3 \\
-		s=(q+1) u-v 
-	\end{array}\right\rangle
-\end{equation}
-
-\begin{proposition}
-	The basis \ref{ba2} consists of eigenvectors of $\alpha$.
-\end{proposition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
-\subsection{Hermitian codes and their subfield subcodes from degree 3 place}
-Let $n=q^3$ and the divisor $D=Q_1+Q_2+\cdots+Q_n$ be the sum of $\mathbb{F}_{q^2}$-rational affine points of $\mathscr{H}_q$. For a positive integer $s$, we denote by $C_{\calL}(D,sP)$ the degree-3 place functional AG code. This has length $n=q^3$. If $2 \mathfrak{g}-2<s<n$, then the dimension of $C_{\calL}(D,sP)$ is $k=3s-\mathfrak{g}+1$ which is equal to the dimension of the Riemann-Roch space $\mathscr{L}\left(s P\right)$, and  the designed minimum distance of $C_{\calL}(D,sP)$ is $d=q^3-3s$.
+\section{Hermitian ubfield subcodes from degree 3 places}
+
 
 \textcolor{red}{\begin{proposition}
-	The generators of $C_{\mathcal{L}}\left(D+P_{\infty}, s P\right)$ can be expressed in terms of the basis \ref{ba2} for $s=2 \g$ and $s=2 \g+1$.
+	The generators of $C_{\mathcal{L}}\left(D+Q_{\infty}, s P\right)$ can be expressed in terms of the decomposition given in Proposition \ref{pr:Wt-props} for $s=2 \g$ and $s=2 \g+1$.
 \end{proposition}}
 
 In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
@@ -796,7 +763,7 @@ In our study, we carried out experiments to accurately compute the exact dimensi
 \textcolor{red}{proposition 7.2 }
 
 
-
+FEW WORDS ON THE NUMERICAL EXPERIMENTS.
 
 
 
