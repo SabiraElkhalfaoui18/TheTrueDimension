@@ -137,7 +137,16 @@
 
 %%%%%% Abstract %%%%%%
 \begin{abstract}
-Our research delves into the complexities of Hermitian curves over finite fields, with a specific focus on degree 3 places and their significance in constructing Hermitian codes. Initially, we explore the structure of the Riemann-Roch space associated with these degree 3 places, aiming to reveal their fundamental characteristics, such as the basis. Our investigation extends to Hermitian codes, where we analyze both functional and differential codes, examining their parameters and relationships. Furthermore, we delve into the study of subfield subcodes and trace codes, uncovering their structure by accurately determining their dimensions, presenting a challenging problem in coding theory. Through this comprehensive exploration, our objective is to deepen our understanding of Hermitian codes and their associated subfield subcodes connected to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography.
+The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of
+degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space
+associated with these degree 3 places, aiming to determine essential characteristics such as the basis.
+
+The investigation then turns to Hermitian codes, where we analyze both functional and differential codes, focusing on their
+parameters and interrelationships. Additionally, we delve into the study of subfield subcodes and trace codes, determining
+their structure by accurately calculating their dimensions. This presents a complex problem in coding theory.
+
+Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes
+related to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography."
 \end{abstract}
 
 \keywords{Hermitian curves, Degree 3 places, Riemann-Roch space, Hermitian codes, Subfield subcodes}
@@ -156,6 +165,9 @@ The advent of quantum computers poses significant threats to classical cryptogra
 
 \textcolor{red}{	This paper, we investigate subfield subcodes of Hermitian codes from higher degree place, with a particular emphasis on determining their exact dimensions...  \\An important application of subfield subcodes of AG codes is in the McEliece cryptosystem, a public-key encryption scheme that has withstood for several years and is renowned for its security against quantum attacks. The security of the McEliece cryptosystem hinges on the hardness of decoding random linear codes. By using subfield subcodes of AG codes as the underlying codes, we can achieve a system that not only inherits the quantum-resistant properties of these codes but also benefits from their efficient decoding algorithms.\\
 	In this paper ....}
+
+	
+Our contribution,...	
 
 
 \section{Algebraic Geometry (AG) codes \label{sec}}
@@ -706,7 +718,6 @@ Furthermore, the dual code $C_{\Omega}(D+P_{\infty},G)$ of $C_{\mathcal{L}}(D+P_
 \end{proposition}
 
 \begin{proof}
-	\textcolor{red}{A voir (rewrite)}
 	
 	Let $\ell_i=0$ be the line $P_iP_{i+1}$, it is the tangent to $\mathscr{H}_q$ at $P_i$. More precisely, the intersection divisor of $\ell_i$ and $\mathscr{H}_q$ is $qP_i+P_{i+1}$. This implies that the principal divisor of $\ell_1/\ell_2$ satisfies
 	\[\mathrm{div}(\ell_i/\ell_{i+1})=qP_i-(q-1)P_{i+1}-P_{i+2}.\]
@@ -717,7 +728,9 @@ Furthermore, the dual code $C_{\Omega}(D+P_{\infty},G)$ of $C_{\mathcal{L}}(D+P_
 	\end{eqnarray*}
 	On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in \cite[Theorem ~3.1]{korchmaros2013hermitian}
 	\[v_{P_i}(w_\alpha)=-q+1.\]
-	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. Then $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. Thus, $\dim\mathcal{L}((q-1)P)=4$.
+	
+	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. Then $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ form an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. Thus, $\dim\mathcal{L}((q-1)P)=4$.
+	
 \end{proof}
 
 \section{The dimension of Hermitian subfield subcodes from degree 3 place (main result)}
