@@ -109,11 +109,6 @@
 %%%%%% Bibliography %%%%%%
 % Replace "sample" in the \addbibresource line below with the name of your .bib file.
 
-\makeatletter
-%\providecommand{\keywords}[1]{%
-%	\def\@keywords{\textbf{Keywords---} #1}
-%}
-\makeatother
 
 
 \title{On the dimension of Hermitian subfield subcodes from higher degree place}
@@ -125,19 +120,16 @@ Institute of Mathematics, Budapest University of Technology and Economics, M\H{u
 \author{Sabira El Khalfaoui}
 \address{Univ Rennes, IRMAR - UMR 6625, F-35000 Rennes, France}
 \email{sabiraelkhalfaoui@gmail.com}
-%%%%%% Affiliations %%%%%%
-%\affil[1]{}
-
 
 %%%%%% Date %%%%%%
 % Date is optional
-\date{}
+\date{\today}
 
 %%%%%% Spacing %%%%%%
 % Use paragraph spacing of 1.5 or 2 (for double spacing, use command \doublespacing)
 \onehalfspacing
 
-\keywords{Hermitian curves, Degree 3 places, Riemann-Roch space, Hermitian codes, Subfield subcodes}
+\keywords{Hermitian curves, Degree 3 places, Riemann-Roch space, Hermitian codes, Subfield subcodes, Automorphisms of Hermitian codes}
 
 \begin{document}
 \maketitle
@@ -145,9 +137,9 @@ Institute of Mathematics, Budapest University of Technology and Economics, M\H{u
 
 %%%%%% Abstract %%%%%%
 \begin{abstract}
-The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space associated with these degree 3 places, aiming to determine essential characteristics such as the basis. The investigation then turns to Hermitian codes, where we analyze both functional and differential codes, focusing on their parameters and interrelationships. Additionally, we delve into the study of subfield subcodes and trace codes, determining their structure by accurately calculating their dimensions. This presents a complex problem in coding theory.
+The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space associated with these degree 3 places, aiming to determine essential characteristics such as the basis. The investigation then turns to Hermitian codes, where we analyze both functional and differential codes of degree 3 places, focusing on their parameters and automorphisms. Additionally, we delve into the study of subfield subcodes and trace codes, determining their structure by giving lower bounds for their dimensions. This presents a complex problem in coding theory. Based on numerical experiments, we formulate a conjecture for the dimension of some subfield subcodes of Hermitian codes. 
 
-Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes related to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography."
+Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes related to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography.
 \end{abstract}
 
 
@@ -160,7 +152,7 @@ Our comprehensive exploration seeks to deepen the understanding of Hermitian cod
 The advent of quantum computers poses significant threats to classical cryptographic schemes, necessitating the development of post-quantum cryptographic primitives that are resilient against quantum attacks. In this context, Algebraic-Geometry (AG) codes have gained considerable attention due to their excellent error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes stand out for their inherent resistance to structural attacks, making them prime candidates for deployment in post-quantum cryptography.
 
 
-\textcolor{red}{Constructingg subfield subcodes, a process also known as restriction, is a simple yet effective technique in cryptography for hiding a code's structure. This is especially useful in the McEliece cryptosystem, where it's important that the code's structure isn't easily recognized. Subfield subcodes help meet this security need, making them a fundamental element in designing secure cryptographic systems.}
+\textcolor{red}{Constructing subfield subcodes, a process also known as restriction, is a simple yet effective technique in cryptography for hiding a code's structure. This is especially useful in the McEliece cryptosystem, where it's important that the code's structure isn't easily recognized. Subfield subcodes help meet this security need, making them a fundamental element in designing secure cryptographic systems.}
 
 
 \textcolor{red}{	This paper, we investigate subfield subcodes of Hermitian codes from higher degree place, with a particular emphasis on determining their exact dimensions...  \\An important application of subfield subcodes of AG codes is in the McEliece cryptosystem, a public-key encryption scheme that has withstood for several years and is renowned for its security against quantum attacks. The security of the McEliece cryptosystem hinges on the hardness of decoding random linear codes. By using subfield subcodes of AG codes as the underlying codes, we can achieve a system that not only inherits the quantum-resistant properties of these codes but also benefits from their efficient decoding algorithms.\\
@@ -169,6 +161,9 @@ The advent of quantum computers poses significant threats to classical cryptogra
 	
 Our contribution,...	
 
+TWO IMPORTANT PAPRES: \cite{cossidente1999curves,beelen2023weierstrass}.
+
+ADD FURTHER REFERENCES!
 
 \section{Algebraic Geometry (AG) codes \label{sec}}
 
