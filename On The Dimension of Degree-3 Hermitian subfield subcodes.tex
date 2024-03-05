@@ -713,6 +713,33 @@ If $f\in \ker \ev_D$, then $f\in \mathcal{L}(sP-D)$, which is trivial if $s<q^3/
 Numerical experiments show that $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
 \end{remark}
 
+In the study of the divisors $D$ and $\tilde{D}$, we make use of the polynomial 
+\[R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c).\] 
+As shown in \cite[Section~2]{korchmaros2013hermitian}, the principal divisor of $R(x,y) \in \mathbb{F}_{q^2}(\mathscr{H}_q)$ is
+\[(R(x,y)) = D-q^3 Q_\infty.\]
+Further properties of $R(x,y)$ are given in the following proposition.
+\begin{proposition} \label{pr:Rxy-props}
+In the function field, we have 
+\[x^{q}R(x, y) = y^{q^2} - y \qquad \text{and} \qquad R(x, y) = x^{q^2} - x.\]
+The differential of $R(x,y)$ is 
+\[d(R(x,y))=-dx. \]
+\end{proposition} 
+\begin{proof}
+Clearly,
+\[\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c = 0}} (Y-c) = Y^q+Y,\]
+and
+\[\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c) = \frac{\prod\limits_{c \in \mathbb{F}_{q^2}} (Y-c)}{\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c = 0}} (Y-c)} = \frac{Y^{q^2}-Y}{Y^q+Y}.\]
+Hence, by $x^{q+1}=y+y^q$, 
+\[x^qR(x,y) = x^{q+1} \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (y-c) = x^{q+1}\frac{y^{q^2}-y}{y^q+y} = y^{q^2}-y.\]
+Using this we obtain
+\begin{align*}
+x^q(x^{q^2}-x) = (x^{q+1})^q-x^{q+1} = y^q+y^{q^2} - (y+y^q) = y^{q^2}-y = x^qR(x,y).
+\end{align*}
+Canceling by $x^q$, we get $R(x,y)=x^{q^2}-x$, and $d(R(x,y))=-dx$ follows immediately. 
+\end{proof}
+
+
+
 \subsection{Differential Hermitian codes of degree $3$ places}
 
 Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
@@ -751,15 +778,6 @@ MORE PRECISE INFORMATION ON $\dim C_{\mathcal{L}}(D,sP)$, $s$ SMALL, USING Prop 
 
 \subsection{Dual codes}
 
-In our study, we make use of a polynomial denoted as $R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c)$, where $c$ ranges over $\mathbb{F}_{q^2}$ with $c^q + c \neq 0$. This polynomial plays a crucial role in our investigation of differential codes arising from a degree 3 place on the Hermitian curve $H$ defined over $\mathbb{F}_{q^2}$. We utilize its properties to derive our results, which are discussed further in this work.
-In the function field, we observe a fundamental relationship which is expressed in the following propos
-\begin{proposition}
-	In the function field, we have $x^{q}R(x, y) = y^{q^2} - y$ and $R(x, y) = x^{q^2} - x$.
-\end{proposition} 
-\begin{proof}
-	contenu...
-\end{proof}
-This proposition highlights a key aspect of the relationship between lines and Hermitian curves, specifically regarding their tangential interactions and intersections. For more in-depth insights into this topic, readers are encouraged to consult \cite[Section~2]{korchmaros2013hermitian}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
