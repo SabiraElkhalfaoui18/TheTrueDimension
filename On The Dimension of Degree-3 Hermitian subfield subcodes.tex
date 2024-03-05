@@ -697,8 +697,17 @@ Additionally, another degree $3$ place functional Hermitian code associated with
 
 \[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(G)\right\rbrace ,\]
 
-It shares the same dimension $k$ as $C_{\mathcal{L}}(D,G)$ but has a length of $n+1$. 
+Clearly, $C_{\mathcal{L}}(\tilde{D},G)$ has length of $n+1$. Concerning the dimension, we have the following result.
+\begin{proposition}
+If $s< q^3/3$, then $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension. 
+\end{proposition}
+\begin{proof}
+If $f\in \ker \ev_D$, then $f\in \mathcal{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\tilde{D}}$ is trivial as well. 
+\end{proof}
 
+\begin{remark}
+Numerical experiments show that $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
+\end{remark}
 
 \subsection{Differential Hermitian codes of degree $3$ places}
 
@@ -818,7 +827,7 @@ Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension
 		\item For any $\mathbb{F}_{q^2}$-rational affine place $Q_i$, $W_{\alpha,\beta}(Q_i)\in \mathbb{F}_q$.
 		\item $\mathcal{W}=\{W_{\alpha,\beta} \mid \alpha \in \mathbb{F}_{q^6}, \beta \in \mathbb{F}_{q^2}\}$ is a linear space over $\mathbb{F}_q$.
 		\item $\dim_{\mathbb{F}_q}\mathcal{W}=6$ and $\dim_{\mathbb{F}_q}(\mathbb{F}_q+ \mathcal{W})=7$.
-		\item $\mathrm{eval}_D(\mathbb{F}_q+ \mathcal{W})$ is a subspace of $C_{q(q-1)}$ of dimension $7$.
+		\item $\ev_D(\mathbb{F}_q+ \mathcal{W})$ is a subspace of $C_{q(q-1)}$ of dimension $7$.
 	\end{enumerate}
 	This finishes the proof.
 	
