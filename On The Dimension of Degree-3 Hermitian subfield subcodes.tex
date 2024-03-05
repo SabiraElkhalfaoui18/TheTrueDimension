@@ -149,14 +149,13 @@ Our comprehensive exploration seeks to deepen the understanding of Hermitian cod
 
 \section{Introduction}
 
-The rise of quantum computers poses significant threats to classical cryptographic schemes, necessitating the development of post-quantum cryptographic primitives that are resilient against quantum attacks. In this context, Algebraic-Geometry (AG) codes have gained considerable attention due to their excellent error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes stand out for their inherent resistance to structural attacks, making them prime candidates for deployment in post-quantum cryptography.
+The emergence of quantum computers present significant threats to classical cryptographic schemes, necessitating the development of post-quantum cryptographic primitives that are resilient against quantum attacks. In this context, Algebraic-Geometry (AG) codes have gained considerable attention due to their excellent error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes stand out for their inherent resistance to structural attacks, making them prime candidates for deployment in post-quantum cryptography.
 
 
 
-In the realm of linear codes over finite field extensions, the process of constructing subfield subcodes, commonly known as restriction, involves converting a linear code $C$ defined over a larger finite field extension $\mathbb{F}_{q^n}$ into a code confined within a subfield $\mathbb{F}_{q^m}$, where $m$ is a divisor of $n$. This strategic adaptation confines the codewords of $C$ to elements within the smaller field $\mathbb{F}_{q^m}$, thereby concealing the intricate structural details inherent to $C$. This concept is exemplified by Reed-Solomon codes, widely recognized and utilized in practical applications, with their subfield subcodes represented by Goppa codes. Notably, in cryptography, particularly within the McEliece cryptosystem, subfield subcodes are crucial for hiding the code's structure, thus enhancing its resistance against distinguisher attacks \cite{sendrier2002security, faugere2013distinguisher}. The consistent strength of the McEliece cryptosystem, based on Goppa codes as introduced by McEliece in 1978 \cite{mceliece1978public}, emphasizes its effectiveness in resisting such attacks. Despite subsequent proposals leveraging Reed-Solomon codes \cite{couvreur2014distinguisher}, AG codes, and their subcodes \cite{couvreur2017cryptanalysis}, all have been vulnerable to structural attacks. By applying restriction, cryptographic systems can enhancing their security by reducing the risk of potential attacks targeting the distinguishability of the original linear code.
+In the realm of linear codes over finite field extensions, the process of constructing subfield subcodes, commonly known as restriction, involves converting a linear code $C$ defined over a larger finite field extension $\mathbb{F}_{q^n}$ into a code confined within a subfield $\mathbb{F}_{q^m}$, where $m$ is a divisor of $n$. This strategic adaptation confines the codewords of $C$ to elements within the smaller field $\mathbb{F}_{q^m}$, thereby concealing the intricate structural details inherent to $C$. This concept is exemplified by Reed-Solomon codes, which are AG codes constructed over a projective line. They are  widely recognized and utilized in practical applications, with their subfield subcodes represented by Goppa codes. Notably, in cryptography, particularly within the McEliece cryptosystem, subfield subcodes are crucial for hiding the code's structure, thus enhancing its resistance against distinguisher attacks \cite{sendrier2002security, faugere2013distinguisher}. The consistent strength of the McEliece cryptosystem, based on Goppa codes as introduced by McEliece in 1978 \cite{mceliece1978public}, emphasizes its effectiveness in resisting such attacks. Despite subsequent proposals leveraging Reed-Solomon codes \cite{couvreur2014distinguisher}, AG codes, and their subcodes \cite{couvreur2017cryptanalysis}, all have been vulnerable to structural attacks. By applying restriction, cryptographic systems can enhance their security by reducing the risk of potential attacks targeting the distinguishability of the chosen subfield subcode. Given the increasing interest in AG codes, particularly Hermitian codes, they are being assessed as feasible alternatives to Reed-Solomon codes in specific applications \cite{macdonald2003hermitian}. Hermitian codes have been extensively investigated in previous studies \cite{stichtenoth1988note, little1997structure, yang1992true,korchmaros2019codes, ren2004structure}, particularly those associated with the point at infinity of the Hermitian curve. However, in \cite{korchmaros2013hermitian, matthews2005one}, authors introduced an alternative construction of Hermitian codes associated with higher-degree places on the Hermitian curve. 
 
-
-Given the increasing interest in AG codes, particularly Hermitian codes, they are being assessed as feasible alternatives to Reed-Solomon codes in specific contexts \cite{macdonald2003hermitian}. Hermitian codes have been extensively investigated in previous studies \cite{stichtenoth1988note, little1997structure, yang1992true,korchmaros2019codes, ren2004structure}, particularly those associated with the point at infinity of the Hermitian curve. However, in \cite{korchmaros2013hermitian, matthews2005one}, authors introduced an alternative construction of Hermitian codes associated with higher-degree places on the Hermitian curve. Further investigation into Hermitian codes is necessary to derive additional properties and establish explicit bases associated with degree 3 places on the Hermitian curve as it was done previously in \cite{korchmaros2013hermitian}.
+Our contribution involves conducting further investigation into Hermitian codes associated with degree $3$ places  to derive additional properties and establish explicit bases for the corresponding Riemann-Roch spaces, aligning with prior findings presented in \cite{korchmaros2013hermitian}.
 
 
 In consideration of the necessity for explicit and simplified bases to substantiate assertions concerning Hermitian codes, and given the advantageous properties demonstrated by their subfield subcodes, which adhere to the security assumptions of the McEliece cryptosystem, our investigation endeavors to delve deeper into this code family. Our objective is to derive additional properties that can be utilized in constructing a secure McEliece cryptosystem.
@@ -713,33 +712,6 @@ If $f\in \ker \ev_D$, then $f\in \mathcal{L}(sP-D)$, which is trivial if $s<q^3/
 Numerical experiments show that $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
 \end{remark}
 
-In the study of the divisors $D$ and $\tilde{D}$, we make use of the polynomial 
-\[R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c).\] 
-As shown in \cite[Section~2]{korchmaros2013hermitian}, the principal divisor of $R(x,y) \in \mathbb{F}_{q^2}(\mathscr{H}_q)$ is
-\[(R(x,y)) = D-q^3 Q_\infty.\]
-Further properties of $R(x,y)$ are given in the following proposition.
-\begin{proposition} \label{pr:Rxy-props}
-In the function field, we have 
-\[x^{q}R(x, y) = y^{q^2} - y \qquad \text{and} \qquad R(x, y) = x^{q^2} - x.\]
-The differential of $R(x,y)$ is 
-\[d(R(x,y))=-dx. \]
-\end{proposition} 
-\begin{proof}
-Clearly,
-\[\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c = 0}} (Y-c) = Y^q+Y,\]
-and
-\[\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c) = \frac{\prod\limits_{c \in \mathbb{F}_{q^2}} (Y-c)}{\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c = 0}} (Y-c)} = \frac{Y^{q^2}-Y}{Y^q+Y}.\]
-Hence, by $x^{q+1}=y+y^q$, 
-\[x^qR(x,y) = x^{q+1} \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (y-c) = x^{q+1}\frac{y^{q^2}-y}{y^q+y} = y^{q^2}-y.\]
-Using this we obtain
-\begin{align*}
-x^q(x^{q^2}-x) = (x^{q+1})^q-x^{q+1} = y^q+y^{q^2} - (y+y^q) = y^{q^2}-y = x^qR(x,y).
-\end{align*}
-Canceling by $x^q$, we get $R(x,y)=x^{q^2}-x$, and $d(R(x,y))=-dx$ follows immediately. 
-\end{proof}
-
-
-
 \subsection{Differential Hermitian codes of degree $3$ places}
 
 Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
@@ -778,6 +750,15 @@ MORE PRECISE INFORMATION ON $\dim C_{\mathcal{L}}(D,sP)$, $s$ SMALL, USING Prop 
 
 \subsection{Dual codes}
 
+In our study, we make use of a polynomial denoted as $R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c)$, where $c$ ranges over $\mathbb{F}_{q^2}$ with $c^q + c \neq 0$. This polynomial plays a crucial role in our investigation of differential codes arising from a degree 3 place on the Hermitian curve $H$ defined over $\mathbb{F}_{q^2}$. We utilize its properties to derive our results, which are discussed further in this work.
+In the function field, we observe a fundamental relationship which is expressed in the following propos
+\begin{proposition}
+	In the function field, we have $x^{q}R(x, y) = y^{q^2} - y$ and $R(x, y) = x^{q^2} - x$.
+\end{proposition} 
+\begin{proof}
+	contenu...
+\end{proof}
+This proposition highlights a key aspect of the relationship between lines and Hermitian curves, specifically regarding their tangential interactions and intersections. For more in-depth insights into this topic, readers are encouraged to consult \cite[Section~2]{korchmaros2013hermitian}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
