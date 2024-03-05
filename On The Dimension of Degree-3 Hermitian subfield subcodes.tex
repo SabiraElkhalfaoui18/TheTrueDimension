@@ -569,7 +569,7 @@ where $\varepsilon=0$ if $q\equiv0,1\pmod3$, and $\varepsilon=1$ if $q\equiv 2\p
 
 It is useful to have a decomposition of $\mathscr{L}(sP)$ over $\mathbb{F}_{q^2}$.
 
-\begin{proposition} \label{pr:Wt-props}
+\begin{theorem} \label{th:Wt-props}
 For $t\geq 0$ integer and $\alpha \in \mathbb{F}_{q^6}$ define the rational function 
 \[W_{t,\alpha} = \alpha U_{t,1} + \alpha^{q^2} U_{t,2} + \alpha^{q^4} U_{t,3}\]
 and the $\mathbb{F}_{q^2}$-linear space
@@ -584,7 +584,7 @@ The $\mathbb{F}_{q^2}$-rational Riemann-Roch space $\mathscr{L}(sP)$ has the dir
 \begin{align} \label{eq:LsP-decomp}
 \mathscr{L}(sP) = \bigoplus_{t\in H(P), \, t\leq s} \mathcal{W}_t.
 \end{align}
-\end{proposition}
+\end{theorem}
 \begin{proof}
 For $t\in H(P)$, $\mathcal{W}_t$ is the set of $\mathbb{F}_{q^2}$-rational functions in the space spanned by $U_{t,1}, U_{t,2}, U_{t,3}$. The claims follow from Proposition \ref{pr:Uti-props}. 
 \end{proof}
@@ -675,53 +675,125 @@ If $f\in \ker \ev_D$, then $f\in \mathcal{L}(sP-D)$, which is trivial if $s<q^3/
 Numerical experiments show that $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
 \end{remark}
 
+
+In the study of the divisors $D$ and $\tilde{D}$, we make use of the polynomial 
+\[R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c).\] 
+As shown in \cite[Section~2]{korchmaros2013hermitian}, the principal divisor of $R(x,y) \in \mathbb{F}_{q^2}(\mathscr{H}_q)$ is
+\begin{align} \label{eq:Rxy-pricdiv}
+(R(x,y)) = D-q^3 Q_\infty.
+\end{align}
+Further properties of $R(x,y)$ are given in the following proposition.
+\begin{proposition} \label{pr:Rxy-props}
+In the function field, we have 
+\[x^{q}R(x, y) = y^{q^2} - y \qquad \text{and} \qquad R(x, y) = x^{q^2} - x.\]
+The differential of $R(x,y)$ is 
+\[d(R(x,y))=-dx. \]
+\end{proposition} 
+\begin{proof}
+Clearly,
+\[\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c = 0}} (Y-c) = Y^q+Y,\]
+and
+\[\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c) = \frac{\prod\limits_{c \in \mathbb{F}_{q^2}} (Y-c)}{\prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c = 0}} (Y-c)} = \frac{Y^{q^2}-Y}{Y^q+Y}.\]
+Hence, by $x^{q+1}=y+y^q$, 
+\[x^qR(x,y) = x^{q+1} \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (y-c) = x^{q+1}\frac{y^{q^2}-y}{y^q+y} = y^{q^2}-y.\]
+Using this we obtain
+\begin{align*}
+x^q(x^{q^2}-x) = (x^{q+1})^q-x^{q+1} = y^q+y^{q^2} - (y+y^q) = y^{q^2}-y = x^qR(x,y).
+\end{align*}
+Canceling by $x^q$, we get $R(x,y)=x^{q^2}-x$, and $d(R(x,y))=-dx$ follows immediately. 
+\end{proof}
+
 \subsection{Differential Hermitian codes of degree $3$ places}
 
 Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
 
-In \cite[Proposition 2.2]{korchmaros2013hermitian}, the authors provide an explicit description of an equivalence between the codes $C_{\Omega}(D,G)$ and $C_{\mathcal{L}}(D,(q^3+q^2-q-2)Q_{\infty}-G)$ constructed on $\mathscr{H}_q$. This equivalence is related to the equivalence $C_{\Omega}(D,G)= C_{\mathcal{L}}(D,W + D - G)$ given in Section \ref{sec}.
-
-Furthermore, the dual code $C_{\Omega}(D+Q_{\infty},G)$ of $C_{\mathcal{L}}(D+Q_{\infty},G)$ is denoted as $C_{\Omega}(D+Q_{\infty},G)$, which is equivalent to $C_{\mathcal{L}}(D+Q_{\infty},W + D+ Q_{\infty} - G)$ and shares the same parameters as $C_{\Omega}(D+Q_{\infty},G)$ except for the length, which is $n+1$.
-
-\textcolor{red}{What content or discussion is required before Proposition 5.1?}
-
-
-MORE PRECISE INFORMATION ON $\dim C_{\mathcal{L}}(D,sP)$, $s$ SMALL, USING Prop 4.3 AND THE DECOMPOSITION (10).
-
+\cite[Proposition 8.1.2]{stichtenoth2009algebraic} provides an explicit description of the differential code as functional code
+\[C_\Omega(D,G) = C_\mathcal{L}(D-G+(dt)-(t)),\]
+where $t$ is an element of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ such that $v_{Q_i}(t)=1$ for all $i\in \{1,\ldots,q^3,\infty\}$. If $G=sP$ and $D=Q_1+\cdots+Q_{q^3}$, then $t=R(x,y)$ is a good choice with 
+\[(dt)=(-dx)=(2\g-2)Q_{\infty}=(q-2)(q+1)Q_{\infty}, \]
+see \cite[Lemma 6.4.4]{stichtenoth2009algebraic}. Then, \eqref{eq:Rxy-pricdiv} implies the following proposition:
 \begin{proposition}
-	
-	Let $q\geq 3$, and $C_{\mathcal{L}}(D,G)$ be the Hermitian code associated with the divisor $G=(q-1)P$, where $P$ is a degree 3 place, then
-	\[\dim C_{\mathcal{L}}(D,G)=4.\]
-	
+\[C_\Omega(D,sP) = C_\mathcal{L}((q^3+q^2-q-2)Q_{\infty}-sP). \qed\]
 \end{proposition}
 
+The computation of $C_\Omega(\tilde{D},sP)$ is more complicated. We claim the next results for prime powers $q\equiv 2 \pmod3$, since the proofs are rather transparent in this case. We are certain that they hold for $q\equiv 1\pmod3$, as well. Our opinion is supported by numerical experiments with $q\leq 8$. 
+
+\begin{lemma}
+Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational function 
+\[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right).\]
+Then
+\[d\left(\frac{R}{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-q+1}{3}}}\right) = - \left(\frac{T}{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-q+1}{3}}}\right) dx.\]
+\end{lemma}
 \begin{proof}
-	
-	Let $\ell_i=0$ be the line $P_iP_{i+1}$, it is the tangent to $\mathscr{H}_q$ at $P_i$. More precisely, the intersection divisor of $\ell_i$ and $\mathscr{H}_q$ is $qP_i+P_{i+1}$. This implies that the principal divisor of $\ell_1/\ell_2$ satisfies
-	\[\mathrm{div}(\ell_i/\ell_{i+1})=qP_i-(q-1)P_{i+1}-P_{i+2}.\]
-	For $\alpha \in \mathbb{F}_{q^6}$, w define the function
-	\begin{eqnarray*}
-		w_\alpha&=&\alpha\ell_1/\ell_2+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}}+(\alpha\ell_1/\ell_2)^{\mathrm{Frob}_{q^2}^2}\\
-		&=&\alpha\ell_1/\ell_2+\alpha^{q^2}\ell_2/\ell_3+\alpha^{q^4}\ell_3/\ell_1.
-	\end{eqnarray*}
-	On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in \cite[Theorem ~3.1]{korchmaros2013hermitian}
-	\[v_{P_i}(w_\alpha)=-q+1.\]
-	
-	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. Then $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ form an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. Thus, $\dim\mathcal{L}((q-1)P)=4$.
-	
+We have $d\ell_i=(a_i-x)^q dx$, and
+\begin{align*}
+\ell_i^{q^2}-\ell_{i+1} &= a_i^{q^3}x^{q^2}-y^{q^2}-b_i^{q^3}-(a_{i+1}^{q}x-y-b_{i+1}^{q}) \\
+&= a_{i+1}^q(x^{q^2}-x)-(y^{q^2}-y) \\
+&= a_{i+1}^q R(x,y) - x^q R(x,y) \\
+&= (a_{i+1}-x)^q R(x,y).
+\end{align*}
+Hence,
+\begin{align*}
+d(\ell_1\ell_{2}\ell_{3}) & = \ell_1\ell_{2}\ell_{3} \cdot \left( \frac{(a_1-x)^q}{\ell_1} + \frac{(a_2-x)^q}{\ell_2} + \frac{(a_3-x)^q}{\ell_3}\right)\, dx \\
+&= \ell_1\ell_{2}\ell_{3} \cdot \left( \frac{\ell_1^{q^2}/\ell_2}{R} + \frac{\ell_2^{q^2}/\ell_3}{R} + \frac{\ell_3^{q^2}/\ell_1}{R}\right)\, dx \\
+&= \frac{\ell_1\ell_{2}\ell_{3}}{R}(3T-3)dx.
+\end{align*}
+This implies
+\begin{multline*}
+d\left(R(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-1}{3}}\right) =\left( -(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-1}{3}}\right) dx + \\R \left(-\frac{1}{3}(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-4}{3}}\right) \frac{\ell_1\ell_{2}\ell_{3}}{R}(3T-3)dx.
+\end{multline*}
+By easy cancellation
+\begin{align*}
+d\left(R(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-1}{3}}\right) &=\left( -(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-1}{3}}\right) dx + -\frac{1}{3}(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-1}{3}} (3T-3)dx\\
+&= - \left(\frac{T}{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-q+1}{3}}}\right) dx. \qedhere
+\end{align*}
 \end{proof}
 
-\subsection{Dual codes}
-
-In our study, we make use of a polynomial denoted as $R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c)$, where $c$ ranges over $\mathbb{F}_{q^2}$ with $c^q + c \neq 0$. This polynomial plays a crucial role in our investigation of differential codes arising from a degree 3 place on the Hermitian curve $H$ defined over $\mathbb{F}_{q^2}$. We utilize its properties to derive our results, which are discussed further in this work.
-In the function field, we observe a fundamental relationship which is expressed in the following propos
-\begin{proposition}
-	In the function field, we have $x^{q}R(x, y) = y^{q^2} - y$ and $R(x, y) = x^{q^2} - x$.
-\end{proposition} 
+\begin{lemma} \label{lm:tildeD-riemann-roch}
+Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
+\[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad R_1=\frac{R}{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-q+1}{3}}}.\]
+Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\tilde{D}$. Then
+\[\mathscr{L}(\tilde{D}-G+(dR_1)-(R_1)) = \mathscr{L}\left( \frac{(q^2-1)(q+1)}{3} P -  G\right) \cdot \frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
+\end{lemma}
 \begin{proof}
-	contenu...
+We have
+\begin{align*}
+\tilde{D}-G+(dR_1)-(R_1) &= \tilde{D}-G+(T)-\frac{q^2-q+1}{3}(\ell_1\ell_2\ell_3)+(dx)-(R)+\frac{q^2-q+1}{3}(\ell_1\ell_2\ell_3) \\
+&= \tilde{D}-G+(T)+(dx)-(R)\\
+&= Q_\infty + q^3 Q_\infty +(2\g-2)Q_\infty-G+(T)\\
+&= (q^2-1)(q+1)Q_\infty -G+(T)\\
+&= \frac{(q^2-1)(q+1)}{3}P-\left((\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}\right) -G+(T).
+\end{align*}
+For the Riemann-Roch spaces, the results follows. 
 \end{proof}
-This proposition highlights a key aspect of the relationship between lines and Hermitian curves, specifically regarding their tangential interactions and intersections. For more in-depth insights into this topic, readers are encouraged to consult \cite[Section~2]{korchmaros2013hermitian}.
+
+\begin{lemma} \label{lm:T1-at-Qinfty}
+Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
+\[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
+Then $T_1(Q_\infty)=1$. 
+\end{lemma}
+\begin{proof}
+We use the local expansion $(t:1:t^{q+1}+\cdots)$ of $\mathscr{H}_q$ at $Q_\infty$. Both the numerator and the denominator have expansions of the form $t^{-(q^2-1)(q+1)}+\cdots$, where the dots stand for higher degree terms. Hence, the expansion of $T_1$ at $Q_\infty$ is $1+\cdots$, which implies $T_1(Q_\infty)=1$. 
+\end{proof}
+
+To state our main result on differential codes, we need the notion of the monomial equivalence of codes. Let $C \leq \mathbb{F}_q^n$ be linear subspaces and $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_n) \in (\mathbb{F}_q^*)^n$ with non-zero entries. We define the Schur product
+\[\boldsymbol{\mu} \star C = \{(\mu_1x_1, \ldots,\mu_nx_n) \mid (x_1,\ldots,x_n) \in C\}.\]
+The vector $\boldsymbol{\mu}$ is also called a multiplier. Clearly, $\boldsymbol{\mu} \star C\leq \mathbb{F}_q^n$. Two linear codes $C_1,C_2 \leq \mathbb{F}_q^n$ are monomially equivalent, if $C_2=\boldsymbol{\mu} \star C_1$ for some multiplier $\boldsymbol{\mu}$. 
+
+\begin{theorem}
+Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
+\[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
+Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\tilde{D}$. Define $\mu_i=T_1(Q_i)$ for $i \in \{1,\ldots,q^3,\infty\}$, and write $\boldsymbol{\mu}=(\mu_i)$. Then all entries $\mu_i\in \mathbb{F}_{q^2}^*$, and
+\[C_\Omega(\tilde{D},G) = \boldsymbol{\mu} \star C_\mathcal{L}(\tilde{D},\frac{(q^2-1)(q+1)}{3}P-G).\]
+\end{theorem}
+\begin{proof}
+If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore, $T(Q_i)=1$ and $T_1(Q_1)$ is a well-defined non-zero element in $\mathbb{F}_q$. Lemma \ref{lm:T1-at-Qinfty} implies $T_1(Q_\infty)=1$. The theorem follows from Lemma \ref{lm:tildeD-riemann-roch}. 
+\end{proof}
+
+\begin{corollary}
+\[C_\Omega(\tilde{D},sP) = \boldsymbol{\mu} \star C_\mathcal{L}\left(\tilde{D},\left(\frac{(q^2-1)(q+1)}{3}-s\right)P\right).\]
+\end{corollary}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -729,7 +801,7 @@ This proposition highlights a key aspect of the relationship between lines and H
 
 
 \textcolor{red}{\begin{proposition}
-	The generators of $C_{\mathcal{L}}\left(D+Q_{\infty}, s P\right)$ can be expressed in terms of the decomposition given in Proposition \ref{pr:Wt-props} for $s=2 \g$ and $s=2 \g+1$.
+	The generators of $C_{\mathcal{L}}\left(D+Q_{\infty}, s P\right)$ can be expressed in terms of the decomposition given in Theorem \ref{th:Wt-props} for $s=2 \g$ and $s=2 \g+1$.
 \end{proposition}}
 
 In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
