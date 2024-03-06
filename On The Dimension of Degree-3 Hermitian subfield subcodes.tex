@@ -763,21 +763,21 @@ FEW WORDS ON THE NUMERICAL EXPERIMENTS.
 
 
 \begin{proposition}
-	Let $G_1$ be a positive divisor. The following properties hold:
-	\begin{itemize}
-		\item $Tr(\mathcal{L}(G_1)) \subseteq \mathcal{L}(qG_1)$, where $Tr =\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}$.
-		\item $Tr(C_{\mathcal{L}}(D,G_1)) \subseteq C_{\mathcal{L}}(D,qG_1)$.
-	\end{itemize}
+	Consider a positive divisor $G_1$. The trace map $Tr = \trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}$ exhibits the following properties:
+	\begin{enumerate}
+		\item For any function $f \in \mathcal{L}(G_1)$, its trace lies within $\mathcal{L}(qG_1)$, implying $Tr(\mathcal{L}(G_1)) \subseteq \mathcal{L}(qG_1)$.
+		\item Correspondingly, for any codeword $c \in C_{\mathcal{L}}(D,G_1)$, its trace also resides in $C_{\mathcal{L}}(D,qG_1)$, denoted as $Tr(C_{\mathcal{L}}(D,G_1)) \subseteq C_{\mathcal{L}}(D,qG_1)$.
+	\end{enumerate}
 \end{proposition}
 
-
 \begin{corollary}
-	Let $G_1$ be a positive divisor with $\deg G_1 < \frac{n}{q}$. Then the map
+	Let $G_1$ be a positive divisor satisfying $\deg G_1 < \frac{n}{q}$. The trace map
 	\[ Tr: C_{\mathcal{L}}(D,G_1) \rightarrow C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q} \]
 	has a kernel of dimension $1$ over $\mathbb{F}_q$.
 	
-	In particular, this map is an embedding, and $\dim_{\mathbb{F}_q} (C_{\mathcal{L}}(D, qG_1)|_{\mathbb{F}_q}) \geq \dim_{\mathbb{F}_q} (C_{\mathcal{L}}(D, G_1)) - 1$.
+	Thus, the trace map acts as an embedding, and the dimension of $C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}$ is at least one less than the dimension of $C_{\mathcal{L}}(D,G_1)$.
 \end{corollary}
+
 
 \begin{conjecture} 
 	For a prime power $q \geq 3$, let  $\calC_{\mathcal{L}}=\calC_{\mathcal{L}}( D, (q-1)P)$ be the Hermitian code, where $P$ is a degree 3 place. Let $Tr(\calC_{\mathcal{L}})$ denotes the trace code $\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}(\calC_{\mathcal{L}})$. We conjecture that:
