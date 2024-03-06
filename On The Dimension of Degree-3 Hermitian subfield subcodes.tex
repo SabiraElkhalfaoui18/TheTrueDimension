@@ -752,11 +752,6 @@ If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore,
 	The generators of $C_{\mathcal{L}}\left(D+Q_{\infty}, s P\right)$ can be expressed in terms of the decomposition given in Theorem \ref{th:Wt-props} for $s=2 \g$ and $s=2 \g+1$.
 \end{proposition}}
 
-In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(D, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
-
-
-\textcolor{red}{proposition 7.2 }
-
 
 FEW WORDS ON THE NUMERICAL EXPERIMENTS.
 
@@ -770,7 +765,7 @@ FEW WORDS ON THE NUMERICAL EXPERIMENTS.
 	\end{enumerate}
 \end{proposition}
 
-\begin{corollary}
+\begin{corollary}\label{corol:6}
 	Let $G_1$ be a positive divisor satisfying $\deg G_1 < \frac{n}{q}$. The trace map
 	\[ Tr: C_{\mathcal{L}}(D,G_1) \rightarrow C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}, \]
 	
@@ -780,21 +775,22 @@ satisfies
 	
 	Therefore, the trace map serves as an embedding, and the dimension of $C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}$ is at least one less than the dimension of $C_{\mathcal{L}}(D,G_1)$.
 \end{corollary}
+In our investigation, we conducted a series of experiments to compute the true dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. alongside, while exploring the dimension of the Hermitian code $ C_{\mathcal{L}}(D, G) $ and its trace code, we observed an unusual behaviour in the dimension when $s = q - 1 $. This observation with Corollary \ref{corol:6} motivates the formulation of the result :
+
+\begin{theorem}
+	For a prime power $q \geq 3$, let  $\calC_{\mathcal{L}}=\calC_{\mathcal{L}}( D, (q-1)P)$ be the Hermitian code associated with a degree $3$ place $P$. Let $Tr(\calC_{\mathcal{L}})$ denotes the trace code $\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}(\calC_{\mathcal{L}})$. Then
+	\[\dim Tr(\calC_{\mathcal{L}}) \geq 7 .\]
+\end{theorem}
 
 
-\begin{conjecture} 
-	For a prime power $q \geq 3$, let  $\calC_{\mathcal{L}}=\calC_{\mathcal{L}}( D, (q-1)P)$ be the Hermitian code, where $P$ is a degree 3 place. Let $Tr(\calC_{\mathcal{L}})$ denotes the trace code $\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}(\calC_{\mathcal{L}})$. We conjecture that:
-	\[\dim Tr(\calC_{\mathcal{L}}) = 7 .\]
-\end{conjecture}
 
-
-Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension of $C_{\mathcal{L}}(D,sP)_{\mid \mathbb{F}_q}$ is $1$. Additionally, in the corollary \ref{coroll} presented earlier demonstrates this result for $ s =\frac{q(q-1)}{3}=\frac{2}{3} \g$.
+Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension of $C_{\mathcal{L}}(D,sP)_{\mid \mathbb{F}_q}$ is $1$. Additionally, in the Proposition \ref{prop:sub} presented earlier demonstrates this result for $ s =\frac{q(q-1)}{3}=\frac{2}{3} \g$.
 
 
 
 \begin{theorem}
-	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( \mathcal{P},G)_{|_{\mathbb{F}_q}}$ denote the subfield subcode of the degree-3 place one-point Hermitian code. Then 
-	\[ \dim C_{q}(s)= \begin{cases} 1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 7 & \text { for } s=2\mathfrak{g} \text{ and } q>2\\ 10 & \text{ for } s=2\g +1 \text{ and } q>3\end{cases}\]
+	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( D,G)_{|_{\mathbb{F}_q}}$ denote the subfield subcode of the degree-3 place one-point Hermitian code. Then 
+	\[ \dim C_{q}(s)= \begin{cases} \geq 1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 7 & \text { for } s=2\mathfrak{g} \text{ and } q>2\\ 10 & \text{ for } s=2\g +1 \text{ and } q>3\end{cases}\]
 	
 	
 \end{theorem}
