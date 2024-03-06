@@ -860,10 +860,32 @@ Our proof was constructive, we used the subfield subcodes given explicitly in th
 	If $q\geq 4$, then equalities hold in Theorem \ref{th:subcodes-dim}.
 \end{conjecture}
 
+The claim of the conjecture has some equivalent formulations.
 
+\begin{proposition} \label{pr:equivalents}
+The following are equivalent.
+\begin{enumerate}[(i)]
+\item $\dim C_\mathcal{L}(D,(q^2-q)P)|_{\mathbb{F}_q}=7$.
+\item $\dim C_\mathcal{L}(D,(q^2-q-1)P)|_{\mathbb{F}_q}=1$.
+\item $\dim C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}=1$ for all $0\leq s\leq 2\g-1=q^2-q-1$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We use the notation of the proof of Theorem \ref{th:subcodes-dim}. Assume (i). We have $\mathscr{L}((q-1)P)=\mathcal{W}_0\oplus \mathcal{W}_{q-1}$. Moreover, $\mathcal{T}$ is an $\mathbb{F}_q \mathcal{B}$-module which decomposes into the direct sum of a $1$-dimensional and a $6$-dimensional submodule. Notice that non-trivial irreducible $\mathbb{F}_q \mathcal{B}$-module have dimension $6$. Since $\mathcal{T}\cap C_\mathcal{L}(D,(q^2-q-1)P)$ is a proper submodule, the only possibility is the it is $1$-dimensional over $\mathbb{F}_q$. (ii) follows. Trivially, (ii) implies (iii). Let us now assume (iii).
+\[\dim_{\mathbb{F}_q} C_\mathcal{L}(D,(q^2-q)P) / C_\mathcal{L}(D,(q^2-q-1)P) = 6,\]
+therefore,
+\[\dim_{\mathbb{F}_q} C_\mathcal{L}(D,(q^2-q)P)|_{\mathbb{F}_q} / C_\mathcal{L}(D,(q^2-q-1)P)|_{\mathbb{F}_q} \leq 6.\]
+This implies $\dim C_\mathcal{L}(D,(q^2-q)P)|_{\mathbb{F}_q} \leq 7$. Together with Theorem \ref{th:subcodes-dim}, we have (i). 
+\end{proof}
 
+We have partial result related to case (iii) of Proposition \ref{pr:equivalents}.
 
-
+\begin{proposition}
+$\dim C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}=1$ for all $0\leq s\leq \frac{2}{3}\g$.
+\end{proposition}
+\begin{proof}
+Fix an arbitrary integer $s$ in the range $0 \leq s <\frac{2}{3}\g$ and consider a generic element $(c_1,\ldots,c_{q^3}) \in C_{q}(s)$. This corresponds to a function $g$ in $\mathscr{L}(sP)$ such that $c_i=g(Q_i)$ is an element of $\mathbb{F}_q$ for each $i=1,\ldots,q^3$. We note that there exists a $\gamma \in \mathbb{F}_q$ such that at least $q^2$ of the $c_i$ values are equal to $\gamma$. In other words, the function $g-\gamma$ is in $\mathscr{L}(sP)$ and has at least $q^2$ zeros on $\mathscr{H}_q$. However, a non-zero function in $\mathscr{L}(sP)$ cannot have more than $\deg(G)\leq 2\g = q(q-1)$ zeros, leading us to conclude that $g-\gamma$ must be the zero function. This implies that every $c_i$ is equal to $\gamma$, and hence, $C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}$ consists of constant vectors. This completes the proof.
+\end{proof}
 
 
 
@@ -874,9 +896,7 @@ Our proof was constructive, we used the subfield subcodes given explicitly in th
 
 \begin{proof}
 	\textbf{Case 1: $\mathbf{0 \leq s <\frac{2}{3}\g}$} or \textcolor{red}{from corollary ...}\\
-	Observe that constant polynomials belong to $\mathscr{L}(sP)$ for all non-negative $s$, ensuring that $\dim C_{q}(s)\geq 1$. To establish that $\dim C_{q}(s) = 1$ for $0 \leq s <\frac{2}{3}\g$, we fix an arbitrary integer $s$ in this range and consider a generic element $(c_1,\ldots,c_{q^3}) \in C_{q}(s)$. This corresponds to a function $g$ in $\mathscr{L}(sP)$ such that $c_i=g(Q_i)$ is an element of $\mathbb{F}_q$ for each $i=1,\ldots,q^3$. 
-	
-	Next, we note that there exists a $\gamma \in \mathbb{F}_q$ such that at least $q^2$ of the $c_i$ values are equal to $\gamma$. In other words, the function $g-\gamma$ is in $\mathscr{L}(sP)$ and has at least $q^2$ zeros on $\mathscr{H}_q$. However, a non-zero function in $\mathscr{L}(sP)$ cannot have more than $q(q-1)$ zeros, leading us to conclude that $g-\gamma$ must be the zero function. This implies that every $c_i$ is equal to $\gamma$, and hence, $C_{q}(s)$ consists of constant vectors. This completes the proof, demonstrating that $\dim C_{q}(s) = 1$ for $0 \leq s <\frac{2}{3}\g$.
+
 	
 	\textbf{Case 1 part 2: $s=2\mathfrak{g}-1$?}\\
 	
