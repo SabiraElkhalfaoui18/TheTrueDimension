@@ -1,10 +1,6 @@
-\documentclass[a4paper]{amsart}
-\usepackage[utf8]{inputenc}
-\usepackage{setspace}
-\usepackage[margin=1.25in]{geometry}
-\usepackage{graphicx}
-\graphicspath{ {./figures/} }
-%\usepackage{subcaption}
+\documentclass[11pt]{amsart}
+\usepackage[utf8x]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,33 +10,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{enumerate}
 \usepackage{xcolor}
-\usepackage{geometry}
 \usepackage{hyperref} %Références cliquables
-%\usepackage{pifont}
-%\usepackage{caption}
-%\usepackage{animate}
-%\usepackage{verbatim}
-%\usepackage{cleveref}
-%\usepackage{csquotes}
-%\usepackage{mathtools}
-%\usepackage{relsize}
-%\usepackage{tcolorbox}
-%\usepackage{tikz}
-%\usepackage{fontawesome5}
-%\usepackage{academicons}
-\usepackage{mdframed}
-\mdfdefinestyle{algoBoxStyle}{%
-	linecolor=black,
-	linewidth=1pt,
-	roundcorner=5pt,
-	innertopmargin=10pt,
-	innerbottommargin=10pt,
-	innerrightmargin=10pt,
-	innerleftmargin=10pt,
-	backgroundcolor=white
-}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%$\usepackage{lineno}
+%\usepackage{lineno}
 %\linenumbers
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
@@ -127,7 +100,7 @@ Institute of Mathematics, Budapest University of Technology and Economics, M\H{u
 
 %%%%%% Spacing %%%%%%
 % Use paragraph spacing of 1.5 or 2 (for double spacing, use command \doublespacing)
-\onehalfspacing
+%\onehalfspacing
 
 \keywords{Hermitian curves, Degree 3 places, Riemann-Roch space, Hermitian codes, Subfield subcodes, Automorphisms of Hermitian codes}
 
@@ -163,7 +136,7 @@ The paper is structred as follows. in Section \ref{sec} we introduce fundamental
 
 \section{Algebraic Geometry (AG) codes \label{sec}}
 
-\subsection*{Hermitian curves and their divisors}
+\subsection{Hermitian curves and their divisors}
 
 For more details we refer the readers to \cite{stichtenoth2009algebraic, stepanov2012codes,cossidente1999curves}.
 
@@ -189,9 +162,9 @@ For a divisor $D$, its Frobenius image is given by
 $D$ is $\mathbb{F}_{q^2}$-rational if $D = \text{Fr}_{q^2}(D)$. Notably, if all points $Q_1, \ldots, Q_k$ are in $\mathscr{H}_q(\mathbb{F}_{q^2})$, then $D$ is inherently $\mathbb{F}_{q^2}$-rational.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Riemann-Roch space}
+\subsection{Riemann-Roch spaces}
 
-For a non-zero function $g$ in the function field $\bar{\mathbb{F}}_{q^2}$ and a place $P$ ,$v_P(g)$ stands for the order of $g$ at $P$. If $v_P(g) > 0$ then $P$ is a zero of $g$, while if $v_P(g) < 0 $,then $P$ is a pole of $g$ with multiplicity  $-v_P(g)$. The principal divisor of a non-zero function $g$ is $(g)= \sum_{P}v_P(g) P$.
+For a non-zero function $g$ in the function field $\overline{\mathbb{F}}_{q^2}$ and a place $P$ ,$v_P(g)$ stands for the order of $g$ at $P$. If $v_P(g) > 0$ then $P$ is a zero of $g$, while if $v_P(g) < 0 $,then $P$ is a pole of $g$ with multiplicity  $-v_P(g)$. The principal divisor of a non-zero function $g$ is $(g)= \sum_{P}v_P(g) P$.
 
 The \emph{Riemann--Roch space} associated with an  $\mathbb{F}_{q^2}$-rational divisor $G$ is the $\mathbb{F}_{q^2}$ vector space \[\mathscr{L}(G) := \set{g \in \mathbb{F}_{q^2}(\mathscr{H}_q) \mid (g) + G \geq 0} \cup {0},\] with dimension $\ell(G)$.
 
@@ -205,7 +178,7 @@ In this work, our primary focus is on an $\mathbb{F}_{q^2}$-rational divisor $G$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Hermitian codes}
+\subsection{Hermitian codes}
 Here, we outline the construction of an AG code from the Hermitian curve
 
 
@@ -234,7 +207,7 @@ The dual of an AG code can be described as a residue code (see \cite{stichtenoth
 Moreover, the differential code $C_{\Omega}(D, G)$ is analogous to the functional code $C_{\mathcal{L}}(D, W+D-G)$, where $W$ represents a canonical divisor of $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. Notably, they share identical dimensions and minimum distances; however, this correspondence does not preserve all crucial properties of the code.
 
 
-\subsection*{Subfield Subcode and trace code}
+\subsection{Subfield subcodes and trace codes}
 For the efficient construction of codes over $\mathbb{F}_q$, one approach involves working with codes originally defined over an extension field, $\mathbb{F}_{q^m}$. When considering a code $\calC$ within $\mathbb{F}_{q^m}^n$, a subfield subcode of $\calC$ is its restriction to the field $\mathbb{F}_q$
 This process, often employed in defining codes like BCH codes, Goppa codes, and alternant codes, plays a foundational role.
 
@@ -311,7 +284,7 @@ Moreover, we derive the following corollary from Theorem~9.1.6~\cite{stichtenoth
 	With the notation as above. Let $P$ be a place on $\mathscr{H}_q$ of degree $r$ such that:
 	\[G_1= \left[ \frac{q(q-1)}{r}\right]P \quad \text{ and } \quad  G=q.G_1. \]
 	Then 
-	\[\dim C_{\mathcal{L}}(D,G_1)_{\mid \mathbb{F}_q}= 1.\]
+	\[\dim C_{\mathcal{L}}(D,G_1)|_{\mathbb{F}_q}= 1.\]
 \end{proposition}
 
 \begin{proof}
@@ -331,7 +304,7 @@ Moreover, we derive the following corollary from Theorem~9.1.6~\cite{stichtenoth
 In this section we collect useful facts on the degree 3 places of the Hermitian curve, their stabilizer subgroups, and Riemann-Roch spaces. 
 
 \subsection{The Hermitian sesquilinear form} \label{ssec:h-form}
-The Hermitian curve $\mathscr{H}_q$ has affine equation $X^{q+1}=Y+Y^q$. The Hermitian function field $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ is generated by $x,y$ such that $x^{q+1}=y+y^q$ holds. The Frobenius field automorphism $\Frob:x\mapsto x^{q^2}$ of the algebraic closure $\bar{\mathbb{F}}_{q^2}$ incudes an action on rational functions, places, divisors and curve automorphisms. For this action, we keep using the notation $\Frob$ in the exponent: $P^\Frob$, $f^\Frob$, $D^\Frob$, etc. 
+The Hermitian curve $\mathscr{H}_q$ has affine equation $X^{q+1}=Y+Y^q$. The Hermitian function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ is generated by $x,y$ such that $x^{q+1}=y+y^q$ holds. The Frobenius field automorphism $\Frob:x\mapsto x^{q^2}$ of the algebraic closure $\overline{\mathbb{F}}_{q^2}$ incudes an action on rational functions, places, divisors and curve automorphisms. For this action, we keep using the notation $\Frob$ in the exponent: $P^\Frob$, $f^\Frob$, $D^\Frob$, etc. 
 
 Let $K$ be a field extension of $\mathbb{F}_{q^2}$. An affine point is a pair $(a,b)\in K^2$. A projective point $(a:b:c)$ is a $1$-dimensional subspace $\{(at,bt,ct) \mid t\in K\}$ of $K^3$. If $c\neq 0$, then the projective point $(a:b:c)$ is identified with the affine point $(a/c,b/c)$. For $u=(u_1,u_2,u_3), v=(v_1,v_2,v_3) \in K^3$, we define the Hermitian form 
 \begin{align*} %\label{eq:}
@@ -385,7 +358,7 @@ for all $i,j\in \{1,2,3\}$, then $A$ is unitary.
 
 Let $A\in GU(3,q)$. If $(x,y)$ is a generic point of $\mathscr{H}_q$, then $(x',y')=(x,y)^{\hat{A}}$ satisfies 
 \[(x')^{q+1}-y'-(y')^q=\langle x',y' \rangle = \langle x,y \rangle=0. \]
-Hence, $(x',y')$ is a generic point of $\mathscr{H}_q$, and $A^*$ induces an automorphism of the function field $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. If $A$ is defined over $\Frob$, then $A^*$ is an automorphism of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. 
+Hence, $(x',y')$ is a generic point of $\mathscr{H}_q$, and $A^*$ induces an automorphism of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. If $A$ is defined over $\Frob$, then $A^*$ is an automorphism of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. 
 
 
 
@@ -419,7 +392,7 @@ In this coordinate frame, the Hermitian curve has projective equation
 \gamma_1 X_1X_2^q+\gamma_1^{q^2} X_2X_3^q+\gamma_1^{q^4} X_3X_1^q=0.
 \end{align*}
 
-Let $x,y$ be the generators of the function field $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ such that $x^{q+1}=y+y^q$. Write
+Let $x,y$ be the generators of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ such that $x^{q+1}=y+y^q$. Write
 \begin{align*} %\label{eq:}
 \ell_i=\langle (x,y,1), p_i \rangle = a_i^qx-y-b_i^q.
 \end{align*}
@@ -431,7 +404,7 @@ and
 \begin{align} \label{eq:ell-q-lin-dep}
 0=x^{q+1}-y-y^q = \langle (x,y,1), (x,y,1) \rangle = \frac{\ell_1\ell_{2}^q}{\gamma_1^q} + \frac{\ell_2\ell_{3}^q}{\gamma_2^q} + \frac{\ell_3\ell_{1}^q}{\gamma_3^q}.
 \end{align}
-The Hermitian curve $\mathscr{H}_q$ is non-singular, the places of $\bar{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ correspond to the projective points over the algebraic closure $\bar{\mathbb{F}}_{q^2}$. Let $P_i$ denote the place corresponding to $(a_i:b_i:1)$. $P_i$ is defined over $\mathbb{F}_{q^6}$, $P_{i+1}=P_i^\Frob$, and 
+The Hermitian curve $\mathscr{H}_q$ is non-singular, the places of $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ correspond to the projective points over the algebraic closure $\overline{\mathbb{F}}_{q^2}$. Let $P_i$ denote the place corresponding to $(a_i:b_i:1)$. $P_i$ is defined over $\mathbb{F}_{q^6}$, $P_{i+1}=P_i^\Frob$, and 
 \begin{align*} %\label{eq:}
 P=P_1+P_2+P_3
 \end{align*}
@@ -510,7 +483,7 @@ where the linear $w=w_1x+w_2y+w$ over $\mathbb{F}_{q^2}$ depends only on $B$. Th
 
 
 \section{Riemann-Roch spaces associated with a degree $3$ place} \label{sec:riemann-roch}
-In this section, we keep using the notation of the previous section: $P_i$ is a degree 1 place of $\mathbb{F}_{q^6}(\mathscr{H}_q)$, associated to the projective point $(a_i:b_i:1)$. $P_i^\Frob=P_{i+1}$; the index $i=1,2,3$ is always taken modulo $3$. $P=P_1+P_2+P_3$ is an $\mathbb{F}_{q^2}$-rational place of degree $3$ of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. The generators $x,y$ of $\bar{\mathbb{F}_{q^2}}(\mathscr{H}_q)$ satisfy $x^{q+1}=y+y^q$. The rational function $\ell_i=a_i^qx-y-b_i^q$ is obtained from the tangent line of $\mathscr{H}_q$ at $P_i$. 
+In this section, we keep using the notation of the previous section: $P_i$ is a degree 1 place of $\mathbb{F}_{q^6}(\mathscr{H}_q)$, associated to the projective point $(a_i:b_i:1)$. $P_i^\Frob=P_{i+1}$; the index $i=1,2,3$ is always taken modulo $3$. $P=P_1+P_2+P_3$ is an $\mathbb{F}_{q^2}$-rational place of degree $3$ of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. The generators $x,y$ of $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ satisfy $x^{q+1}=y+y^q$. The rational function $\ell_i=a_i^qx-y-b_i^q$ is obtained from the tangent line of $\mathscr{H}_q$ at $P_i$. 
 
 \subsection{Basis and decomposition of the Riemann-Roch space}
 Let $s,u,v$ be positive integers such that $v\leq q$ and $s=u(q+1)-v$. Clearly, $u,v$ are uniquely defined by $s$. In \cite{korchmaros2013hermitian}, the Riemann-Roch space associated with the divisor $sP$ is given as
@@ -655,24 +628,24 @@ In this section, we explore Hermitian codes of degree $3$ places on the Hermitia
 \subsection{Functional Hermitian codes of degree $3$ places}
 Given a divisor $D$ and $G$, we define the degree $3$ place functional Hermitian code $C_{\mathcal{L}}(D,sP)$ as:
 
-\[C_{\mathcal{L}}(D,G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathcal{L}(G) \right\rbrace, \]
+\[C_{\mathcal{L}}(D,G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathscr{L}(G) \right\rbrace, \]
 
 This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Moreover, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
 
-Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\tilde{D},G)$, is constructed by evaluating functions in $\mathcal{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
+Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\tilde{D},G)$, is constructed by evaluating functions in $\mathscr{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
 
-\[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathcal{L}(G)\right\rbrace ,\]
+\[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathscr{L}(G)\right\rbrace ,\]
 
 Clearly, $C_{\mathcal{L}}(\tilde{D},G)$ has length of $n+1$. Concerning the dimension, we have the following result.
 \begin{proposition}
-If $s< q^3/3$, then $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension. 
+If $s< q^3/3$, then $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension. 
 \end{proposition}
 \begin{proof}
-If $f\in \ker \ev_D$, then $f\in \mathcal{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\tilde{D}}$ is trivial as well. 
+If $f\in \ker \ev_D$, then $f\in \mathscr{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\tilde{D}}$ is trivial as well. 
 \end{proof}
 
 \begin{remark}
-Numerical experiments show that $\mathcal{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
+Numerical experiments show that $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
 \end{remark}
 
 
@@ -708,12 +681,12 @@ Canceling by $x^q$, we get $R(x,y)=x^{q^2}-x$, and $d(R(x,y))=-dx$ follows immed
 Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
 
 \cite[Proposition 8.1.2]{stichtenoth2009algebraic} provides an explicit description of the differential code as functional code
-\[C_\Omega(D,G) = C_\mathcal{L}(D-G+(dt)-(t)),\]
+\[C_\Omega(D,G) = C_\mathscr{L}(D-G+(dt)-(t)),\]
 where $t$ is an element of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ such that $v_{Q_i}(t)=1$ for all $i\in \{1,\ldots,q^3,\infty\}$. If $G=sP$ and $D=Q_1+\cdots+Q_{q^3}$, then $t=R(x,y)$ is a good choice with 
 \[(dt)=(-dx)=(2\g-2)Q_{\infty}=(q-2)(q+1)Q_{\infty}, \]
 see \cite[Lemma 6.4.4]{stichtenoth2009algebraic}. Then, \eqref{eq:Rxy-pricdiv} implies the following proposition:
 \begin{proposition}
-\[C_\Omega(D,sP) = C_\mathcal{L}(D,(q^3+q^2-q-2)Q_{\infty}-sP). \qed\]
+\[C_\Omega(D,sP) = C_\mathscr{L}(D,(q^3+q^2-q-2)Q_{\infty}-sP). \qed\]
 \end{proposition}
 
 The computation of $C_\Omega(\tilde{D},sP)$ is more complicated. We claim the next results for prime powers $q\equiv 2 \pmod3$, since the proofs are rather transparent in this case. We are certain that they hold for $q\equiv 1\pmod3$, as well. Our opinion is supported by numerical experiments with $q\leq 8$. 
@@ -784,7 +757,7 @@ The vector $\boldsymbol{\mu}$ is also called a multiplier. Clearly, $\boldsymbol
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
 Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\tilde{D}$. Define $\mu_i=T_1(Q_i)$ for $i \in \{1,\ldots,q^3,\infty\}$, and write $\boldsymbol{\mu}=(\mu_i)$. Then all entries $\mu_i\in \mathbb{F}_{q^2}^*$, and
-\[C_\Omega(\tilde{D},G) = \boldsymbol{\mu} \star C_\mathcal{L}(\tilde{D},\frac{(q^2-1)(q+1)}{3}P-G).\]
+\[C_\Omega(\tilde{D},G) = \boldsymbol{\mu} \star C_\mathscr{L}(\tilde{D},\frac{(q^2-1)(q+1)}{3}P-G).\]
 \end{theorem}
 \begin{proof}
 If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore, $T(Q_i)=1$ and $T_1(Q_1)$ is a well-defined non-zero element in $\mathbb{F}_q$. Lemma \ref{lm:T1-at-Qinfty} implies $T_1(Q_\infty)=1$. The theorem follows from Lemma \ref{lm:tildeD-riemann-roch}. 
@@ -854,12 +827,12 @@ Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension
 	\end{eqnarray*}
 	On the one hand, $w_\alpha$ is defined over $\mathbb{F}_{q^2}$. On the other hand, Korchm\'aros and Nagy showed in [KN2013, Theorem 3.1]
 	\[v_{P_i}(w_\alpha)=-q+1.\]
-	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathcal{L}((q-1)P)$. In fact, $\dim\mathcal{L}((q-1)P)=4$ and $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathcal{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. 
+	Hence, $w_\alpha$ is contained in the Riemann-Roch space $\mathscr{L}((q-1)P)$. In fact, $\dim\mathscr{L}((q-1)P)=4$ and $1,w_{\alpha_1}, w_{\alpha_2}, w_{\alpha_3}$ is a basis of $\mathscr{L}((q-1)P)$, provided $\alpha_1,\alpha_2,\alpha_3$ is an $\mathbb{F}_{q^2}$-basis of $\mathbb{F}_{q^6}$. 
 	
 	This implies
-	\[w_\alpha^q\in \mathcal{L}(q(q-1)P),\]
+	\[w_\alpha^q\in \mathscr{L}(q(q-1)P),\]
 	and for all $\beta \in \mathbb{F}_{q^2}$, 
-	\[W_{\alpha,\beta}=\beta w_\alpha +(\beta w_\alpha)^q\in \mathcal{L}(q(q-1)P).\]
+	\[W_{\alpha,\beta}=\beta w_\alpha +(\beta w_\alpha)^q\in \mathscr{L}(q(q-1)P).\]
 	The following claims are straightforward to show:
 	\begin{enumerate}
 		\item For any $\mathbb{F}_{q^2}$-rational affine place $Q_i$, $W_{\alpha,\beta}(Q_i)\in \mathbb{F}_q$.
@@ -877,7 +850,7 @@ Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension
 
 
 
-\newpage
-\bibliography{sample}
+
+\bibliography{hermitian}
 \bibliographystyle{plain}
 \end{document}
