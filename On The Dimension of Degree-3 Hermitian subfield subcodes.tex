@@ -51,7 +51,7 @@
 \newcommand{\calP}{\mathcal{P}}
 \newcommand{\calH}{\mathcal{H}}
 \newcommand{\calL}{\mathcal{L}}
-\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calC}{C}
 \newcommand{\calD}{\mathcal{D}}
 \newcommand{\calO}{\mathcal{O}}
 \newcommand{\calR}{\mathcal{R}}
@@ -186,7 +186,7 @@ In algebraic coding theory, Hermitian codes stand out as a significant class of 
 
 
 
-Given a divisor $D=Q_1+Q_2+\cdots+Q_n$ where all $Q_i$ are distinct rational points, and an $\mathbb{F}_{q^2}$-rational divisor $G$ such that $\Supp(G) \cap \calP = \varnothing$. By numbering the points in $\calP$, we define an evaluation map $\ev_{\calP}$ such that $\ev_{\calP}(g) = (g(Q_1),\dots,g(Q_n))$ for $g \in \calL(G)$. 
+Given a divisor $D=Q_1+Q_2+\cdots+Q_n$ where all $Q_i$ are distinct rational points, and an $\mathbb{F}_{q^2}$-rational divisor $G$ such that $\Supp(G) \cap \calP = \varnothing$. By numbering the points in $\calP$, we define an evaluation map $\ev_{D}$ such that $\ev_{D}(g) = (g(Q_1),\dots,g(Q_n))$ for $g \in \calL(G)$. 
 
 
 The functional AG code associated with the divisor $G$ is
@@ -245,9 +245,7 @@ Finding the exact dimension of a subfield subcode of a linear code is typically 
 	\dim C|_{\fq} \geq n - m(n-k).
 \end{equation}
 
-
-
-In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed regarding subfield subcodes and trace codes of AG codes. This motivated us to formulate the following proposition on the true dimension of the subfield subcodes of AG codes, even from higher degree places:
+In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed regarding subfield subcodes and trace codes of AG codes. This motivated us to formulate the following proposition on the true dimension of the subfield subcodes of AG codes:
 
 \begin{proposition}\label{prop:sub}
 	Let $G_1$ be a positive divisor such that $\deg G_1 < \frac{n}{q}$. Then 
@@ -259,7 +257,7 @@ In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed reg
 
 \begin{proof}
 	Let $f$ being a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(qG_1)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(qG_1)$), hence $f^q - f \in  \mathscr{L}(qG_1-D)$ where
-	\[\mathscr{L}(qG_1-D) = \operatorname{Ker}\left(\operatorname{ev}_{\calP}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} ,\]
+	\[\mathscr{L}(qG_1-D) = \operatorname{Ker}\left(\operatorname{ev}_{D}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} ,\]
 	since we assumed that $\deg (G_1)<\frac{n}{q}$, it follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
 \end{proof}
 
@@ -747,7 +745,7 @@ If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore,
 	The generators of $C_{\mathcal{L}}\left(D+Q_{\infty}, s P\right)$ can be expressed in terms of the decomposition given in Theorem \ref{th:Wt-props} for $s=2 \g$ and $s=2 \g+1$.
 \end{proposition}}
 
-In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(\mathcal{P}, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
+In our study, we carried out experiments to accurately compute the exact dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. Alongside these investigations of the dimension of the Hermitian code $ C_{\mathcal{L}}(D, G) $ and its trace code, we noted an unusual behavior in the dimension when considering $s = q - 1 $, which leads to the following proposition:
 
 
 \textcolor{red}{proposition 7.2 }
@@ -757,6 +755,22 @@ FEW WORDS ON THE NUMERICAL EXPERIMENTS.
 
 
 
+\begin{proposition}
+	Let $G_1$ be a positive divisor. The following properties hold:
+	\begin{itemize}
+		\item $Tr(\mathcal{L}(G_1)) \subseteq \mathcal{L}(qG_1)$, where $Tr =\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}$.
+		\item $Tr(C_{\mathcal{L}}(D,G_1)) \subseteq C_{\mathcal{L}}(D,qG_1)$.
+	\end{itemize}
+\end{proposition}
+
+
+\begin{corollary}
+	Let $G_1$ be a positive divisor with $\deg G_1 < \frac{n}{q}$. Then the map
+	\[ Tr: C_{\mathcal{L}}(D,G_1) \rightarrow C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q} \]
+	has a kernel of dimension $1$ over $\mathbb{F}_q$.
+	
+	In particular, this map is an embedding, and $\dim_{\mathbb{F}_q} (C_{\mathcal{L}}(D, qG_1)|_{\mathbb{F}_q}) \geq \dim_{\mathbb{F}_q} (C_{\mathcal{L}}(D, G_1)) - 1$.
+\end{corollary}
 
 \begin{conjecture} 
 	For a prime power $q \geq 3$, let  $\calC_{\mathcal{L}}=\calC_{\mathcal{L}}( D, (q-1)P)$ be the Hermitian code, where $P$ is a degree 3 place. Let $Tr(\calC_{\mathcal{L}})$ denotes the trace code $\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}(\calC_{\mathcal{L}})$. We conjecture that:
