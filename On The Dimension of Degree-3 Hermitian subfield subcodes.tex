@@ -247,50 +247,20 @@ Finding the exact dimension of a subfield subcode of a linear code is typically 
 
 
 
-In Chapter 9 of Stichtenoth's work \cite{stichtenoth2009algebraic}, various results are presented on subfield subcodes and trace codes of AG codes. We will extend and adapt these results to the context of Hermitian codes in this section, focusing on some specific cases for detailed discussion.
+In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed regarding subfield subcodes and trace codes of AG codes. This motivated us to formulate the following proposition on the true dimension of the subfield subcodes of AG codes, even from higher degree places:
 
-
-
-Applying  Theorem~9.1.6 in \cite{stichtenoth2009algebraic} to Hermitian codes:
-
-\begin{theorem}
-
-	Consider the Hermitian codes
-	\[\calC_{\calL}:= C_{\calL}(D,G) \text{ and } \calC_{\Omega}:=C_{\Omega}(D,G),\]
-	where $D=Q_1+\ldots+Q_n$ (with pairwise distinct places $Q_1, \ldots, Q_n$ of degree one), and $G=sP$ where $P$ is a degree $r$ pace on $\mathscr{H}_q$ with $\operatorname{supp} D \cap \operatorname{supp} G=\emptyset$ and $\deg G<n$. Suppose that $G_1$ is a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ satisfying
-	
-	\begin{align}
-		G_1 \leq G \quad \text { and } \quad q \cdot G_1 \leq G . \label{eq:condi}
-	\end{align}
-	
-	Then
-	
-	\begin{equation}\label{eq:esti1}
-		\dim \trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}\left(\calC_{\mathcal{L}}\right) \leq \begin{cases}m\left(\ell(G)-\ell\left(G_1\right)\right)+1 & \text { if } G_1 \geq 0, \\ m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \ngtr 0,\end{cases}
-	\end{equation}
-	and
-	\begin{equation}\label{eq:esti2}
-		\left.\dim C_{\Omega}\right|_{\mathbb{F}_q} \geq \begin{cases}n-1-m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \geq 0, \\ n-m\left(\ell(G)-\ell\left(G_1\right)\right) & \text { if } G_1 \ngtr 0 .\end{cases}
-	\end{equation}
-	
-\end{theorem}
-
-The biggest divisor $G_1$ that satisfies the condition \eqref{eq:condi} (with respect to the degree) is the following:
-\[G_1= \left[ \frac{q(q-1)}{r}\right]P \quad \text{ and } \quad  G=q.G_1, \]
-in \eqref{eq:esti1} and \eqref{eq:esti2} we can replace $\ell (G_1)$ and $\ell(G)$ by $\deg G_1$ and $\deg G$ since $\deg G_1= q(q-1)=2\mathfrak{g}$, which  follows immediately from the Riemann-Roch Theorem.
-Moreover, we derive the following corollary from Theorem~9.1.6~\cite{stichtenoth2009algebraic}
-
-\begin{proposition}\label{coroll}
-	With the notation as above. Let $P$ be a place on $\mathscr{H}_q$ of degree $r$ such that:
-	\[G_1= \left[ \frac{q(q-1)}{r}\right]P \quad \text{ and } \quad  G=q.G_1. \]
-	Then 
-	\[\dim C_{\mathcal{L}}(D,G_1)|_{\mathbb{F}_q}= 1.\]
+\begin{proposition}\label{prop:sub}
+	Let $G_1$ be a positive divisor such that $\deg G_1 < \frac{n}{q}$. Then 
+	\[
+	\dim C_{\mathcal{L}}(D,G_1) \mid_{\mathbb{F}_q} = 1.
+	\]
 \end{proposition}
 
+
 \begin{proof}
-	Let $f$ being a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(G)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(G)$), hence $f^q - f \in  \mathscr{L}(G-D)$ where
-	\[\mathscr{L}(G-D) = \operatorname{Ker}\left(\operatorname{ev}_{\calP}\right)=\left\{x \in \mathscr{L}(G) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} ,\]
-	since we assumed that $\deg (G-D)<n$, it follows that $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)_{\mid \mathbb{F}_q}= 1$.
+	Let $f$ being a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(qG_1)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(qG_1)$), hence $f^q - f \in  \mathscr{L}(qG_1-D)$ where
+	\[\mathscr{L}(qG_1-D) = \operatorname{Ker}\left(\operatorname{ev}_{\calP}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} ,\]
+	since we assumed that $\deg (G_1)<\frac{n}{q}$, it follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
 \end{proof}
 
 
