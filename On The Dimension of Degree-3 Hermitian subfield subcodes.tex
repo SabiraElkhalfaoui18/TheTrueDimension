@@ -747,15 +747,10 @@ If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore,
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hermitian subfield subcodes from degree 3 places \label{sec:subf}}
 
+In this section, we study the subfield subcodes of $C_\mathcal{L}(D,sP)$. As before, $q$ is a prime power, $s\geq 0$ integer, and $P$ is a place of degree $3$ of the Hermitian curve $\mathscr{H}_q$. The divisor $D=Q_1+\cdots+Q_{n}$, $n=q^3$, is defined as the sum of the $\mathbb{F}_{q^2}$-rational affine places of $\mathscr{H}_q$. The rational place at infinity is $Q_\infty$ and $\tilde{D}=D+Q_\infty$. 
 
-\textcolor{red}{\begin{proposition}
-	The generators of $C_{\mathcal{L}}\left(D+Q_{\infty}, s P\right)$ can be expressed in terms of the decomposition given in Theorem \ref{th:Wt-props} for $s=2 \g$ and $s=2 \g+1$.
-\end{proposition}}
-
-
-FEW WORDS ON THE NUMERICAL EXPERIMENTS.
-
-
+\subsection{Trace maps of Hermitian functions and Hermitian codes}
+We collect properties of the maps $z\mapsto z^q+z$ and $z\mapsto z^q-z$, where $z$ is either a field element, a function, or a vector. 
 
 \begin{proposition}
 	Consider a positive divisor $G_1$. The trace map $Tr = \trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}$ satisfies the following properties:
@@ -765,35 +760,41 @@ FEW WORDS ON THE NUMERICAL EXPERIMENTS.
 	\end{enumerate}
 \end{proposition}
 
-\begin{corollary}\label{corol:6}
+\begin{corollary}
 	Let $G_1$ be a positive divisor satisfying $\deg G_1 < \frac{n}{q}$. The trace map
 	\[ Tr: C_{\mathcal{L}}(D,G_1) \rightarrow C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}, \]
-	
+
 satisfies
 		\[\dim_{\mathbb{F}_q} \ker(Tr) = 1.\]
-	
-	
+
+
 	Therefore, the trace map serves as an embedding, and the dimension of $C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}$ is at least one less than the dimension of $C_{\mathcal{L}}(D,G_1)$.
 \end{corollary}
-In our investigation, we conducted a series of experiments to compute the true dimension of the subfield subcodes $ C_{q}(s) $ for $ q \leq 16 $ and $0 \leq s \leq n$. alongside, while exploring the dimension of the Hermitian code $ C_{\mathcal{L}}(D, G) $ and its trace code, we observed an unusual behaviour in the dimension when $s = q - 1 $. This observation with Corollary \ref{corol:6} motivates the formulation of the result :
 
-\begin{theorem}
-	For a prime power $q \geq 3$, let  $\calC_{\mathcal{L}}=\calC_{\mathcal{L}}( D, (q-1)P)$ be the Hermitian code associated with a degree $3$ place $P$. Let $Tr(\calC_{\mathcal{L}})$ denotes the trace code $\trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}(\calC_{\mathcal{L}})$. Then
-	\[\dim Tr(\calC_{\mathcal{L}}) \geq 7 .\]
+
+\subsection{Explicit subfield subcodes}
+
+\subsection{Main result and a conjecture}
+
+\begin{theorem} \label{th:subcodes-dim}
+	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( D,sP)|_{\mathbb{F}_q}$ denote the subfield subcode of the one-point Hermitian code over the place $P$ of degree $3$. Then 
+	\[ \dim C_{q}(s)\geq \begin{cases} 
+%		1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 
+		7 & \text {for $s=2\mathfrak{g}=q(q-1)$ and $q>2$,} \\ 
+		10 & \text{for $s=2\g +1=q^2-q+1$ and $q>3$.}
+	\end{cases}\]
 \end{theorem}
 
+Our proof is constructive, we explicitly give the subspaces of $C_q(s)$ of dimension $7$ and $10$. Based on computer calculations for small $q$, we have the following conjecture. 
 
+\begin{conjecture} 
+	In Theorem \ref{th:subcodes-dim}, equality holds for $\dim C_(s)$. 
+\end{conjecture}
 
-Experimental results indicate that for $0 \leq s < 2\mathfrak{g}$, the dimension of $C_{\mathcal{L}}(D,sP)_{\mid \mathbb{F}_q}$ is $1$. Additionally, in the Proposition \ref{prop:sub} presented earlier demonstrates this result for $ s =\frac{q(q-1)}{3}=\frac{2}{3} \g$.
+\begin{proof}[Proof of Theorem \ref{th:subcodes-dim}]
 
+\end{proof}
 
-
-\begin{theorem}
-	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( D,G)_{|_{\mathbb{F}_q}}$ denote the subfield subcode of the degree-3 place one-point Hermitian code. Then 
-	\[ \dim C_{q}(s)= \begin{cases} \geq 1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 7 & \text { for } s=2\mathfrak{g} \text{ and } q>2\\ 10 & \text{ for } s=2\g +1 \text{ and } q>3\end{cases}\]
-	
-	
-\end{theorem}
 \begin{proof}
 	\textbf{Case 1: $\mathbf{0 \leq s <\frac{2}{3}\g}$} or \textcolor{red}{from corollary ...}\\
 	Observe that constant polynomials belong to $\mathscr{L}(sP)$ for all non-negative $s$, ensuring that $\dim C_{q}(s)\geq 1$. To establish that $\dim C_{q}(s) = 1$ for $0 \leq s <\frac{2}{3}\g$, we fix an arbitrary integer $s$ in this range and consider a generic element $(c_1,\ldots,c_{q^3}) \in C_{q}(s)$. This corresponds to a function $g$ in $\mathscr{L}(sP)$ such that $c_i=g(Q_i)$ is an element of $\mathbb{F}_q$ for each $i=1,\ldots,q^3$. 
