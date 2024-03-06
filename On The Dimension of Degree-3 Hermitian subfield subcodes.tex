@@ -770,8 +770,8 @@ We collect properties of the maps $z\mapsto z^q+z$ and $z\mapsto z^q-z$, where $
 Since $G_1\geq 0$, we have $\mathscr{L}(G_1), \mathscr{L}(G_1)^q \leq \mathscr{L}(qG_1)$, hence (i) holds. (i) implies (ii). (iii) follows trivially.
 \end{proof}
 
-\begin{proposition}
-	Let $G_1$ be a positive divisor satisfying $\deg G_1 < n/q$. Then $\trace (C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subfield subcode of $C_{\mathcal{L}}(D,qG_1)$. Its dimension is
+\begin{proposition} \label{pr:trace-subcode}
+	Let $G_1$ be a positive divisor satisfying $\deg G_1 < n/q$. Then $\ev_D (\trace (C_{\mathcal{L}}(D,G_1)))$ is an $\mathbb{F}_q$-linear subfield subcode of $C_{\mathcal{L}}(D,qG_1)$. Its dimension is
 	\[ \dim_{\mathbb{F}_q}(\trace (C_{\mathcal{L}}(D,G_1)) = 2\dim_{\mathbb{F}_{q^2}}(\mathscr{L}(G_1))-1. \]
 \end{proposition}
 \begin{proof}
@@ -818,7 +818,7 @@ This proves (i). For (ii):
 \end{align*}
 \end{proof}
 
-\begin{proposition}
+\begin{proposition} \label{pr:3-dim-tildeW}
 The set 
 \[\widetilde{\mathcal{W}} = \{\ev_D(W_{q^2-q+1, \alpha}) \mid \alpha \in \mathbb{F}_{q^3}\}\]
 is a $3$-dimensional $\mathbb{F}_q$-linear subfield subcode of $C_\mathcal{L}(D,(q^2-q+1)P)$.
@@ -833,23 +833,44 @@ Lemma \ref{lm:Uq-Wq}(ii) implies that $\ev_D(W_{q^2-q+1,\alpha})$ has $\mathbb{F
 \subsection{Main result and a conjecture}
 
 \begin{theorem} \label{th:subcodes-dim}
-	For a prime power $q \geq 3$, let $C_q (s)=C_{\mathcal{L}}( D,sP)|_{\mathbb{F}_q}$ denote the subfield subcode of the one-point Hermitian code over the place $P$ of degree $3$. Then 
-	\[ \dim C_{q}(s)\geq \begin{cases} 
+	Let $q \geq 3$ be a prime power, $n=q^3$, $D=Q_1+\cdots+Q_n$ the sum of rational affine places of $\mathbb{F}_{q^2}(\mathscr{H}_q)$, and $P$ a place of degree $3$. For the dimension of the subfield subcode of the one-point Hermitian code yields
+	\[ \dim C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}\geq \begin{cases} 
 %		1 & \text { for } 0 \leq s<2\mathfrak{g} \\ 
-		7 & \text {for $s=2\mathfrak{g}=q(q-1)$ and $q>2$,} \\ 
-		10 & \text{for $s=2\g +1=q^2-q+1$ and $q>3$.}
+		7 & \text {for $s=2\mathfrak{g}=q(q-1)$,} \\ 
+		10 & \text{for $s=2\g +1=q^2-q+1$.}
 	\end{cases}\]
 \end{theorem}
+\begin{proof}%[Proof of Theorem \ref{th:subcodes-dim}]
+Set $G_1=(q-1)P$. By Proposition \ref{pr:trace-subcode},
+\[\mathcal{T}=\ev_D(\trace(\mathscr{L}(G_1)))\]
+is an $\mathbb{F}_q$-linear subspace in $C_\mathcal{L}(D,q(q-1)P)|_{\mathbb{F}_q}$. Since $\dim(\mathscr{L}((q-1)P))=4$, $\mathcal{T}$ has dimension $7$. This proves $\dim C_\mathcal{L}(D,q(q-1)P)|_{\mathbb{F}_q}\geq 7$. 
 
-Our proof is constructive, we explicitly give the subspaces of $C_q(s)$ of dimension $7$ and $10$. Based on computer calculations for small $q$, we have the following conjecture. 
+Let $\widetilde{\mathcal{W}}$ the $3$-dimensional $\mathbb{F}_q$-linear subfield subcode of $C_\mathcal{L}(D,(q^2-q+1)P)$ given in Proposition \ref{pr:3-dim-tildeW}. We show that $\mathcal{T} \cap \widetilde{\mathcal{W}} = \{0\}$; the inequality $\dim C_\mathcal{L}(D,(q^2-q+1)P)|_{\mathbb{F}_q}\geq 10$ will follow. On the one hand,  
+\[\widetilde{\mathcal{W}}\leq \ev_D(\mathcal{W}_{q^2-q+1}).\] 
+On the other hand, using Theorem \ref{th:Wt-props}, we have
+\[\mathcal{T} \leq \ev_D(\mathscr{L}(q(q-1)P)) = \ev_D\left( \bigoplus_{t\in H(P), \, t\leq q(q-1)} \mathcal{W}_t \right).\]
+As $\ev_D$ is injective on $\mathscr{L}((q^2-q+1)P)$, and
+\[\left( \bigoplus_{t\in H(P), \, t\leq q(q-1)} \mathcal{W}_t \right) \cap \mathcal{W}_{q^2-q+1}=\{0\},\]
+we obtain $\mathcal{T} \cap \widetilde{\mathcal{W}} = \{0\}$. This completes the proof.
+\end{proof}
+
+Our proof was constructive, we used the subfield subcodes given explicitly in the previous subsections. Based on computer calculations for small $q$, we have the following conjecture. 
 
 \begin{conjecture} 
-	In Theorem \ref{th:subcodes-dim}, equality holds for $\dim C_(s)$. 
+	If $q\geq 4$, then equalities hold in Theorem \ref{th:subcodes-dim}.
 \end{conjecture}
 
-\begin{proof}[Proof of Theorem \ref{th:subcodes-dim}]
 
-\end{proof}
+
+
+
+
+
+
+
+\bibliography{hermitian}
+\bibliographystyle{plain}
+\end{document}
 
 \begin{proof}
 	\textbf{Case 1: $\mathbf{0 \leq s <\frac{2}{3}\g}$} or \textcolor{red}{from corollary ...}\\
