@@ -245,20 +245,27 @@ Finding the exact dimension of a subfield subcode of a linear code is typically 
 	\dim C|_{\fq} \geq n - m(n-k).
 \end{equation}
 
-In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed regarding subfield subcodes and trace codes of AG codes. This motivated us to formulate the following proposition on the true dimension of the subfield subcodes of AG codes:
 
-\begin{proposition}\label{prop:sub}
-	Let $G_1$ be a positive divisor such that $\deg G_1 < \frac{n}{q}$. Then 
+In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed regarding subfield subcodes and trace codes of AG codes. This motivated us to formulate the following propositions on the  dimension of the subfield subcodes of AG codes, which are useful for the case $G=sP$ with a place $P$ of higher degree.
+
+
+\begin{proposition} \label{prop:sub}
+	Let $G_1$ be a positive divisor of the Hermitian curve $\mathscr{H}_q$, and $D=Q_1+\cdots+Q_n$ the sum of $\mathbb{F}_{q^2}$-rational places such that $\Supp(G)\cap \Supp(D)=\emptyset$. Assume that $\deg G_1 \leq (n+\g-1)/q$. Then 
 	\[
 	\dim C_{\mathcal{L}}(D,G_1) \mid_{\mathbb{F}_q} = 1.
 	\]
 \end{proposition}
-
-
 \begin{proof}
-	Let $f$ being a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(qG_1)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(qG_1)$), hence $f^q - f \in  \mathscr{L}(qG_1-D)$ where
-	\[\mathscr{L}(qG_1-D) = \operatorname{Ker}\left(\operatorname{ev}_{D}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} ,\]
-	since we assumed that $\deg (G_1)<\frac{n}{q}$, it follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
+	Let $f$ be a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(qG_1)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(qG_1)$), hence $f^q - f \in  \mathscr{L}(qG_1-D)$ where
+	\[\mathscr{L}(qG_1-D) = \ker \left(\operatorname{ev}_{D}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} .\]
+	Using the Riemann-Roch Theorem and our assumption,
+	\begin{align*}
+	\dim \mathscr{L}(qG_1-D) &\leq \deg(qG_1-D)+1-\g \\
+	&= q \deg(G_1) -n +1 -\g \\
+	&\leq 0.
+	\end{align*}
+	It follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
+
 \end{proof}
 
 
