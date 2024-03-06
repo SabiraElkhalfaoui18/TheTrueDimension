@@ -66,7 +66,7 @@
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Trm}[1]{\trace_{\mathbb{F}_{q^m}/\fq}\!\left(#1\right)}
-\newcommand{\Tr}[1]{\trace\!\left(#1\right)}
+%\newcommand{\Tr}[1]{\trace\!\left(#1\right)}
 \newcommand{\set}[1]{\left\{#1\right\}}
 \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\Span}[1]{\operatorname{Span}\left(#1\right)}
@@ -250,7 +250,7 @@ In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed reg
 
 
 \begin{proposition} \label{prop:sub}
-	Let $G_1$ be a positive divisor of the Hermitian curve $\mathscr{H}_q$, and $D=Q_1+\cdots+Q_n$ the sum of $\mathbb{F}_{q^2}$-rational places such that $\Supp(G)\cap \Supp(D)=\emptyset$. Assume that $\deg G_1 \leq (n+\g-1)/q$. Then 
+	Let $G_1$ be a positive divisor of the Hermitian curve $\mathscr{H}_q$, and $D=Q_1+\cdots+Q_n$ the sum of $\mathbb{F}_{q^2}$-rational places such that $\Supp(G)\cap \Supp(D)=\emptyset$. Assume that $\deg G_1 < n/q$. Then 
 	\[
 	\dim C_{\mathcal{L}}(D,G_1) \mid_{\mathbb{F}_q} = 1.
 	\]
@@ -258,14 +258,7 @@ In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed reg
 \begin{proof}
 	Let $f$ be a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(qG_1)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(qG_1)$), hence $f^q - f \in  \mathscr{L}(qG_1-D)$ where
 	\[\mathscr{L}(qG_1-D) = \ker \left(\operatorname{ev}_{D}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} .\]
-	Using the Riemann-Roch Theorem and our assumption,
-	\begin{align*}
-	\dim \mathscr{L}(qG_1-D) &\leq \deg(qG_1-D)+1-\g \\
-	&= q \deg(G_1) -n +1 -\g \\
-	&\leq 0.
-	\end{align*}
-	It follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
-
+	Since $\deg(qG_1-D)<0$, it follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
 \end{proof}
 
 
@@ -597,7 +590,7 @@ As $\varphi$ is bijective, $0=b^{3s}+c_1b^{2s}+c_2b^s+c_3$ follows. This means t
 
 \section{Hermitian codes of degree $3$ places and their duals \label{sec:Herm}}
 
-In this section, we explore Hermitian codes of degree $3$ places on the Hermitian curve $\mathscr{H}_q$. Let $P$ be a degree $3$ place on $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, where $n=q^3$ and $Q_i$ are $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, we set the parameters $G=sP$ and $\tilde{D}=D+Q_{\infty}$ for a positive integer $s$.
+In this section, we explore Hermitian codes of degree $3$ places on the Hermitian curve $\mathscr{H}_q$. Let $P$ be a degree $3$ place on $\mathscr{H}_q$. Given a divisor $D=Q_1+Q_2+\cdots+Q_n$, where $n=q^3$ and $Q_i$ are $\mathbb{F}_{q^2}$-rational affine points on $\mathscr{H}_q$, we set the parameters $G=sP$ and $\widetilde{D}=D+Q_{\infty}$ for a positive integer $s$.
 
 
 \subsection{Functional Hermitian codes of degree $3$ places}
@@ -607,24 +600,24 @@ Given a divisor $D$ and $G$, we define the degree $3$ place functional Hermitian
 
 This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n$. Moreover, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
 
-Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\tilde{D},G)$, is constructed by evaluating functions in $\mathscr{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
+Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\widetilde{D},G)$, is constructed by evaluating functions in $\mathscr{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
 
-\[C_{\mathcal{L}}(\tilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathscr{L}(G)\right\rbrace ,\]
+\[C_{\mathcal{L}}(\widetilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathscr{L}(G)\right\rbrace ,\]
 
-Clearly, $C_{\mathcal{L}}(\tilde{D},G)$ has length of $n+1$. Concerning the dimension, we have the following result.
+Clearly, $C_{\mathcal{L}}(\widetilde{D},G)$ has length of $n+1$. Concerning the dimension, we have the following result.
 \begin{proposition}
-If $s< q^3/3$, then $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension. 
+If $s< q^3/3$, then $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\widetilde{D},G)$ have the same dimension. 
 \end{proposition}
 \begin{proof}
-If $f\in \ker \ev_D$, then $f\in \mathscr{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\tilde{D}}$ is trivial as well. 
+If $f\in \ker \ev_D$, then $f\in \mathscr{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\widetilde{D}}$ is trivial as well. 
 \end{proof}
 
 \begin{remark}
-Numerical experiments show that $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\tilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
+Numerical experiments show that $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\widetilde{D},G)$ have the same dimension if $s<(q^3+1)/3+q-1$. 
 \end{remark}
 
 
-In the study of the divisors $D$ and $\tilde{D}$, we make use of the polynomial 
+In the study of the divisors $D$ and $\widetilde{D}$, we make use of the polynomial 
 \[R(X,Y) = X \prod\limits_{\substack{c \in \mathbb{F}_{q^2} \\ c^q + c \neq 0}} (Y-c).\] 
 As shown in \cite[Section~2]{korchmaros2013hermitian}, the principal divisor of $R(x,y) \in \mathbb{F}_{q^2}(\mathscr{H}_q)$ is
 \begin{align} \label{eq:Rxy-pricdiv}
@@ -664,9 +657,9 @@ see \cite[Lemma 6.4.4]{stichtenoth2009algebraic}. Then, \eqref{eq:Rxy-pricdiv} i
 \[C_\Omega(D,sP) = C_\mathscr{L}(D,(q^3+q^2-q-2)Q_{\infty}-sP). \qed\]
 \end{proposition}
 
-The computation of $C_\Omega(\tilde{D},sP)$ is more complicated. We claim the next results for prime powers $q\equiv 2 \pmod3$, since the proofs are rather transparent in this case. We are certain that they hold for $q\equiv 1\pmod3$, as well. Our opinion is supported by numerical experiments with $q\leq 8$. 
+The computation of $C_\Omega(\widetilde{D},sP)$ is more complicated. We claim the next results for prime powers $q\equiv 2 \pmod3$, since the proofs are rather transparent in this case. We are certain that they hold for $q\equiv 1\pmod3$, as well. Our opinion is supported by numerical experiments with $q\leq 8$. 
 
-\begin{lemma}
+\begin{lemma} \label{lm:dR-dT}
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational function 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right).\]
 Then
@@ -700,14 +693,14 @@ d\left(R(\ell_1\ell_{2}\ell_{3})^{\frac{-q^2+q-1}{3}}\right) &=\left( -(\ell_1\e
 \begin{lemma} \label{lm:tildeD-riemann-roch}
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad R_1=\frac{R}{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-q+1}{3}}}.\]
-Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\tilde{D}$. Then
-\[\mathscr{L}(\tilde{D}-G+(dR_1)-(R_1)) = \mathscr{L}\left( \frac{(q^2-1)(q+1)}{3} P -  G\right) \cdot \frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
+Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\widetilde{D}$. Then
+\[\mathscr{L}(\widetilde{D}-G+(dR_1)-(R_1)) = \mathscr{L}\left( \frac{(q^2-1)(q+1)}{3} P -  G\right) \cdot \frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
 \end{lemma}
 \begin{proof}
 We have
 \begin{align*}
-\tilde{D}-G+(dR_1)-(R_1) &= \tilde{D}-G+(T)-\frac{q^2-q+1}{3}(\ell_1\ell_2\ell_3)+(dx)-(R)+\frac{q^2-q+1}{3}(\ell_1\ell_2\ell_3) \\
-&= \tilde{D}-G+(T)+(dx)-(R)\\
+\widetilde{D}-G+(dR_1)-(R_1) &= \widetilde{D}-G+(T)-\frac{q^2-q+1}{3}(\ell_1\ell_2\ell_3)+(dx)-(R)+\frac{q^2-q+1}{3}(\ell_1\ell_2\ell_3) \\
+&= \widetilde{D}-G+(T)+(dx)-(R)\\
 &= Q_\infty + q^3 Q_\infty +(2\g-2)Q_\infty-G+(T)\\
 &= (q^2-1)(q+1)Q_\infty -G+(T)\\
 &= \frac{(q^2-1)(q+1)}{3}P-\left((\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}\right) -G+(T).
@@ -715,13 +708,26 @@ We have
 For the Riemann-Roch spaces, the results follows. 
 \end{proof}
 
+\begin{lemma} \label{lm:elliellj-at-Qinfty}
+For any $i,j\in \{1,2,3\}$, we have
+\[\left(\frac{\ell_i}{\ell_j}\right)(Q_\infty)=1.\]
+\end{lemma}
+\begin{proof}
+We use the local expansion $\tau(t)=(t:1:t^{q+1}+\cdots)$ of $\mathscr{H}_q$ at $Q_\infty$. The dots stand for terms of higher degree. 
+\[\left(\frac{\ell_i}{\ell_j}\right)(\tau(t)) = \frac{a_i^qt -1 -b_i^q(t^{q+1}+\cdots)}{a_j^qt -1 -b_j^q(t^{q+1}+\cdots)},\] 
+which implies 
+\[\left(\frac{\ell_i}{\ell_j}\right)(Q_\infty) = \left(\frac{\ell_i}{\ell_j}\right)(\tau(0)) =1. \qedhere\]
+\end{proof}
+
 \begin{lemma} \label{lm:T1-at-Qinfty}
-Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
+Assume $q\not\equiv 0 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
 Then $T_1(Q_\infty)=1$. 
 \end{lemma}
 \begin{proof}
-We use the local expansion $(t:1:t^{q+1}+\cdots)$ of $\mathscr{H}_q$ at $Q_\infty$. Both the numerator and the denominator have expansions of the form $t^{-(q^2-1)(q+1)}+\cdots$, where the dots stand for higher degree terms. Hence, the expansion of $T_1$ at $Q_\infty$ is $1+\cdots$, which implies $T_1(Q_\infty)=1$. 
+Since 
+\[\frac{\ell_i^{q^2}}{\ell_{i+1}(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}\]
+is the product of terms like $\ell_i/\ell_j$, it takes the value $1$ at $Q_\infty$. This implies $(1/T_1)(Q_\infty)=1$. 
 \end{proof}
 
 To state our main result on differential codes, we need the notion of the monomial equivalence of codes. Let $C \leq \mathbb{F}_q^n$ be linear subspaces and $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_n) \in (\mathbb{F}_q^*)^n$ with non-zero entries. We define the Schur product
@@ -731,15 +737,15 @@ The vector $\boldsymbol{\mu}$ is also called a multiplier. Clearly, $\boldsymbol
 \begin{theorem}
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
-Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\tilde{D}$. Define $\mu_i=T_1(Q_i)$ for $i \in \{1,\ldots,q^3,\infty\}$, and write $\boldsymbol{\mu}=(\mu_i)$. Then all entries $\mu_i\in \mathbb{F}_{q^2}^*$, and
-\[C_\Omega(\tilde{D},G) = \boldsymbol{\mu} \star C_\mathscr{L}(\tilde{D},\frac{(q^2-1)(q+1)}{3}P-G).\]
+Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\widetilde{D}$. Define $\mu_i=T_1(Q_i)$ for $i \in \{1,\ldots,q^3,\infty\}$, and write $\boldsymbol{\mu}=(\mu_i)$. Then all entries $\mu_i\in \mathbb{F}_{q^2}^*$, and
+\[C_\Omega(\widetilde{D},G) = \boldsymbol{\mu} \star C_\mathscr{L}(\widetilde{D},\frac{(q^2-1)(q+1)}{3}P-G).\]
 \end{theorem}
 \begin{proof}
 If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore, $T(Q_i)=1$ and $T_1(Q_1)$ is a well-defined non-zero element in $\mathbb{F}_q$. Lemma \ref{lm:T1-at-Qinfty} implies $T_1(Q_\infty)=1$. The theorem follows from Lemma \ref{lm:tildeD-riemann-roch}. 
 \end{proof}
 
 \begin{corollary}
-\[C_\Omega(\tilde{D},sP) = \boldsymbol{\mu} \star C_\mathcal{L}\left(\tilde{D},\left(\frac{(q^2-1)(q+1)}{3}-s\right)P\right).\]
+\[C_\Omega(\widetilde{D},sP) = \boldsymbol{\mu} \star C_\mathcal{L}\left(\widetilde{D},\left(\frac{(q^2-1)(q+1)}{3}-s\right)P\right).\]
 \end{corollary}
 
 
@@ -747,32 +753,82 @@ If $i\in \{1,\ldots,q^3\}$, then $\ell_i^{q^2}(Q_i)=\ell_{i+1}(Q_i)$. Therefore,
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hermitian subfield subcodes from degree 3 places \label{sec:subf}}
 
-In this section, we study the subfield subcodes of $C_\mathcal{L}(D,sP)$. As before, $q$ is a prime power, $s\geq 0$ integer, and $P$ is a place of degree $3$ of the Hermitian curve $\mathscr{H}_q$. The divisor $D=Q_1+\cdots+Q_{n}$, $n=q^3$, is defined as the sum of the $\mathbb{F}_{q^2}$-rational affine places of $\mathscr{H}_q$. The rational place at infinity is $Q_\infty$ and $\tilde{D}=D+Q_\infty$. 
+In this section, we study the subfield subcodes of $C_\mathcal{L}(D,sP)$. As before, $q$ is a prime power, $s\geq 0$ integer, and $P$ is a place of degree $3$ of the Hermitian curve $\mathscr{H}_q$. The divisor $D=Q_1+\cdots+Q_{n}$, $n=q^3$, is defined as the sum of the $\mathbb{F}_{q^2}$-rational affine places of $\mathscr{H}_q$. The rational place at infinity is $Q_\infty$ and $\widetilde{D}=D+Q_\infty$. 
 
 \subsection{Trace maps of Hermitian functions and Hermitian codes}
-We collect properties of the maps $z\mapsto z^q+z$ and $z\mapsto z^q-z$, where $z$ is either a field element, a function, or a vector. 
+We collect properties of the maps $z\mapsto z^q+z$ and $z\mapsto z^q-z$, where $z$ is either a field element, a function, or a vector. We refer to $z^q+z$ as the trace of $z$, and to the map itself as the trace map $\trace = \trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}$. Clearly, $\trace$ is linear over $\mathbb{F}_q$. 
+
+\begin{lemma} \label{lm:trace-code-props}
+	Consider a positive divisor $G_1$. The trace map satisfies the following properties:
+	\begin{enumerate}[(i)]
+		\item For any function $f \in \mathscr{L}(G_1)$, its trace lies within $\mathscr{L}(qG_1)$, implying $\trace(\mathscr{L}(G_1)) \subseteq \mathscr{L}(qG_1)$.
+		\item Similarly, for any codeword $c \in C_{\mathcal{L}}(D,G_1)$, its trace resides in $C_{\mathcal{L}}(D,qG_1)$. 
+		\item $\trace(C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subspace of $C_{\mathcal{L}}(D,qG_1) \cap \mathbb{F}_q^n$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+Since $G_1\geq 0$, we have $\mathscr{L}(G_1), \mathscr{L}(G_1)^q \leq \mathscr{L}(qG_1)$, hence (i) holds. (i) implies (ii). (iii) follows trivially.
+\end{proof}
 
 \begin{proposition}
-	Consider a positive divisor $G_1$. The trace map $Tr = \trace_{\mathbb{F}_{q^2} / \mathbb{F}_q}$ satisfies the following properties:
-	\begin{enumerate}
-		\item For any function $f \in \mathcal{L}(G_1)$, its trace lies within $\mathcal{L}(qG_1)$, implying $Tr(\mathcal{L}(G_1)) \subseteq \mathcal{L}(qG_1)$.
-		\item Similarly, for any codeword $c \in C_{\mathcal{L}}(D,G_1)$, its trace resides in $C_{\mathcal{L}}(D,qG_1)$, which implies $Tr(C_{\mathcal{L}}(D,G_1)) \subseteq C_{\mathcal{L}}(D,qG_1)$.
-	\end{enumerate}
+	Let $G_1$ be a positive divisor satisfying $\deg G_1 < n/q$. Then $\trace (C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subfield subcode of $C_{\mathcal{L}}(D,qG_1)$. Its dimension is
+	\[ \dim_{\mathbb{F}_q}(\trace (C_{\mathcal{L}}(D,G_1)) = 2\dim_{\mathbb{F}_{q^2}}(\mathscr{L}(G_1))-1. \]
 \end{proposition}
+\begin{proof}
+The first statement follows from Lemma \ref{lm:trace-code-props}. Since $\deg(G_1)<n$, the evaluation map is injective. To compute the dimension, we have to show that the kernel of $\trace: C_{\mathcal{L}}(D,G_1) \to C_{\mathcal{L}}(D,qG_1)$ has dimension $1$ over $\mathbb{F}_q$. Define $\varepsilon\in \mathbb{F}_{q^2}$ such that $\varepsilon=1$ if $q$ is even, and $\varepsilon=g^{(q+1)/2}$, if $q$ is odd and $g$ is a primitive element in $\mathbb{F}_{q^2}$. Then $\varepsilon^{q-1}=-1$. For the codeword $u\in C_{\mathcal{L}}(D,G_1)$, we have
+\begin{align*}
+\trace(u)=u^q+u=0 \Longrightarrow 0 = \varepsilon^q(u^q+u) = (\varepsilon u)^q-(\varepsilon u),
+\end{align*}
+that is, $\varepsilon u \in \mathbb{F}_q^n$. By Proposition \ref{prop:sub}, $C_{\mathcal{L}}(D,G_1)|_{\mathbb{F}_q}$ has dimension $1$, hence the same is true for the kernel of  $\trace: C_{\mathcal{L}}(D,G_1) \to C_{\mathcal{L}}(D,qG_1)$. 
+\end{proof}
 
-\begin{corollary}
-	Let $G_1$ be a positive divisor satisfying $\deg G_1 < \frac{n}{q}$. The trace map
-	\[ Tr: C_{\mathcal{L}}(D,G_1) \rightarrow C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}, \]
+\subsection{An explicit subfield subcode}
 
-satisfies
-		\[\dim_{\mathbb{F}_q} \ker(Tr) = 1.\]
+In this subsection, we study a subfield subcode of $C_\mathcal{L}(D,(q^2-q+1)P)$. As $q^2-q+1=(q-1)(q+1)-(q-1)$, one has
+\[U_{q^2-q+1,i} = \frac{\ell_i^q\ell_{i+2}}{\ell_{i+1}\ell_{i+2}^q}.\]
+The vector space $\mathcal{W}_{q^2-q+1}\leq \mathscr{L}((q^2-q+1)P)$ consists of the functions
+\[W_{q^2-q+1,\alpha} = \alpha \frac{\ell_1^q\ell_3}{\ell_2\ell_3^q} + \alpha^{q^2} \frac{\ell_2^q\ell_1}{\ell_3\ell_1^q} + \alpha^{q^4} \frac{\ell_3^q\ell_2}{\ell_1\ell_2^q}, \qquad \alpha \in \mathbb{F}_{q^6}.\]
+For rational functions $f,g\in \mathbb{F}_{q^6}(\mathscr{H}_q)$, we introduce the relation
+\[f\approx g \Longleftrightarrow f(Q_i)=g(Q_i) \quad \text{for all $i \in \{1,\ldots,q^3,\infty\}$.}\]
+This is clearly an equivalence relation, which can be also written in terms of the principal divisor
+\[f\approx g \Longleftrightarrow (f-g) \geq \widetilde{D},\]
+or in terms of the evaluation map
+\[f\approx g \Longleftrightarrow \ev_{\widetilde{D}}(f) = \ev_{\widetilde{D}}(g).\]
+
+\begin{lemma} \label{lm:Uq-Wq}
+\begin{enumerate}[(i)]
+%\item $\ell_i^{q^2} \equiv \ell_{i+1}$.
+\item $(U_{q^2-q+1,i})^q \approx U_{q^2-q+1,i+2}$.
+\item $(W_{q^2-q+1,\alpha})^q \approx W_{q^2-q+1,\alpha^{q^3}}$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Lemma \ref{lm:elliellj-at-Qinfty} implies $U_{q^2-q+1,i}(Q_\infty)=1$. In the proof of Lemma \ref{lm:dR-dT} we have seen that $\ell_i^{q^2} - \ell_{i+1}=(a_{i+1}-x)^qR(x,y)$. Therefore, $(\ell_i^{q^2} - \ell_{i+1})(Q_i)=0$ for all $i\in \{1,\ldots,q^3\}$. This shows 
+\begin{align*}
+(U_{q^2-q+1,i})^q(Q_i) &= \left(\frac{\ell_i^{q^2}\ell_{i+2}^q}{\ell_{i+1}^q\ell_{i+2}^{q^2}}\right)(Q_i)\\
+&=\left(\frac{\ell_{i+1}\ell_{i+2}^q}{\ell_{i+1}^q\ell_{i}+}\right)(Q_i)\\
+&=U_{q^2-q+1,i+2}(Q_i)
+\end{align*}
+This proves (i). For (ii):
+\begin{align*}
+(W_{q^2-q+1,\alpha})^q &= (\alpha U_{q^2-q+1,1} + \alpha^{q^2} U_{q^2-q+1,2} + \alpha^{q^4} U_{q^2-q+1,3})^q \\
+&\approx \alpha^q U_{q^2-q+1,3} + \alpha^{q^3} U_{q^2-q+1,1} + \alpha^{q^5} U_{q^2-q+1,2} \\
+&=\alpha^{q^3} U_{q^2-q+1,1} + (\alpha^{q^3})^{q^2} U_{q^2-q+1,2} + (\alpha^{q^3})^{q^4} U_{q^2-q+1,3} \\
+&=W_{q^2-q+1,\alpha^{q^3}}. \qedhere
+\end{align*}
+\end{proof}
+
+\begin{proposition}
+The set 
+\[\widetilde{\mathcal{W}} = \{\ev_D(W_{q^2-q+1, \alpha}) \mid \alpha \in \mathbb{F}_{q^3}\}\]
+is a $3$-dimensional $\mathbb{F}_q$-linear subfield subcode of $C_\mathcal{L}(D,(q^2-q+1)P)$.
+\end{proposition}
+\begin{proof}
+Lemma \ref{lm:Uq-Wq}(ii) implies that $\ev_D(W_{q^2-q+1,\alpha})$ has $\mathbb{F}_q$-entries if and only if $\alpha^{q^3}=\alpha$. 
+\end{proof}
 
 
-	Therefore, the trace map serves as an embedding, and the dimension of $C_{\mathcal{L}}(D,qG_1)|_{\mathbb{F}_q}$ is at least one less than the dimension of $C_{\mathcal{L}}(D,G_1)$.
-\end{corollary}
 
-
-\subsection{Explicit subfield subcodes}
 
 \subsection{Main result and a conjecture}
 
