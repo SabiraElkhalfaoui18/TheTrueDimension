@@ -60,9 +60,8 @@
 
 %%%%%% Abstract %%%%%%
 \begin{abstract}
-The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space associated with these degree 3 places, aiming to determine essential characteristics such as the basis. The investigation then turns to Hermitian codes, where we analyze both functional and differential codes of degree 3 places, focusing on their parameters and automorphisms. Additionally, we delve into the study of subfield subcodes and trace codes, determining their structure by giving lower bounds for their dimensions. This presents a complex problem in coding theory. Based on numerical experiments, we formulate a conjecture for the dimension of some subfield subcodes of Hermitian codes. 
-
-Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes related to degree 3 places, thereby contributing to the advancement of algebraic coding theory and code-based cryptography.
+The focus of our research is the examination of Hermitian curves over finite fields, specifically concentrating on places of degree 3 and their role in constructing Hermitian codes. We begin by studying the structure of the Riemann-Roch space associated with these degree 3 places, aiming to determine essential characteristics such as the basis. The investigation then turns to Hermitian codes, where we analyze both functional and differential codes of degree 3 places, focusing on their parameters and automorphisms. In addition, we explore the study of subfield subcodes and trace codes, determining their structure by giving lower bounds for their dimensions. This presents a complex problem in coding theory. Based on numerical experiments, we formulate a conjecture for the dimension of some subfield subcodes of Hermitian codes. 
+Our comprehensive exploration seeks to deepen the understanding of Hermitian codes and their associated subfield subcodes related to degree 3 places, thus contributing to the advancement of algebraic coding theory and code-based cryptography.
 \end{abstract}
 
 \maketitle
@@ -73,69 +72,68 @@ Our comprehensive exploration seeks to deepen the understanding of Hermitian cod
 
 \section{Introduction}
 
-The advent of quantum computers present significant threats to classical cryptographic schemes, which needs the development of post-quantum cryptographic primitives that resist quantum attacks. In this regard, Algebraic-Geometry (AG) codes have gained considerable attention due to their error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes that stand out against structural attacks, making them good candidates for deployment in post-quantum cryptography.
+The advent of quantum computers presents significant threats to classical cryptographic schemes, which need the development of post-quantum cryptographic primitives that resist quantum attacks. In this regard, Algebraic-Geometry (AG) codes have gained considerable attention due to their error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes stand out against structural attacks, making them good candidates for deployment in post-quantum cryptography.
 
 
 
-Within linear codes over finite field extensions, the process of generating subfield subcodes, commonly referred to as restriction, entails converting a given linear code $C$ over a large field extension $\mathbb{F}_{q^n}$ into a code that is defined over a subfield $\mathbb{F}_{q^m}$, where $m$ divides $n$. This strategic approach restricts the codewords of $C$ to elements found within the smaller field $\mathbb{F}_{q^m}$, effectively concealing the details about the structure inherents to $C$. A classic example of this concept is the Reed-Solomon codes, which are algebraic geometry (AG) codes constructed over a projective line. They are widely used in practical applications, with their subfield subcodes represented by Goppa codes. Notably, in cryptography, especially within the McEliece cryptosystem, subfield subcodes play a crucial role in hiding the code's structure, thereby enhancing its resilience against distinguisher attacks \cite{sendrier2002security, faugere2013distinguisher}. The long-lasting security of the McEliece cryptosystem based on Goppa codes \cite{mceliece1978public}, emphasizes its effectiveness in preventing such attacks. Despite subsequent proposals exploring Reed-Solomon codes \cite{couvreur2014distinguisher}, AG codes, and their subcodes \cite{couvreur2017cryptanalysis}, all have been susceptible to structural attacks. By imposing restrictions, cryptographic systems can enhance their security by minimizing the risk of potential attacks aimed at distinguishing the chosen subfield subcode. With growing interest in AG codes, particularly Hermitian codes, they are being evaluated as feasible alternatives to Reed-Solomon codes in specific applications \cite{macdonald2003hermitian}. Hermitian codes have been extensively studied in prior research \cite{stichtenoth1988note, little1997structure, yang1992true, korchmaros2019codes, ren2004structure, lhotel2023goppa}, particularly those associated with the point at infinity of the Hermitian curve. However, in \cite{korchmaros2013hermitian, matthews2005one}, authors introduced an alternative construction of Hermitian codes associated with higher-degree places on the Hermitian curve.
+Within linear codes over finite field extensions, the process of generating subfield subcodes, commonly referred to as restriction, entails converting a given linear code $C$ over a large field extension $\mathbb{F}_{q^n}$ into a code that is defined over a subfield $\mathbb{F}_{q^m}$, where $m$ divides $n$. This strategic approach restricts the codewords of $C$ to elements found within the smaller field $\mathbb{F}_{q^m}$, effectively concealing the details about the structure inherent in $C$. A classic example of this concept is the Reed-Solomon codes, which are algebraic geometry (AG) codes constructed over a projective line. They are widely used in practical applications, with their subfield subcodes represented by Goppa codes. In particular, in cryptography, especially within the McEliece cryptosystem, subfield subcodes play a crucial role in hiding the code structure, thus enhancing its resilience against distinguisher attacks \cite{sendrier2002security, faugere2013distinguisher}. The long-lasting security of the McEliece cryptosystem based on Goppa codes \cite{mceliece1978public}, emphasizes its effectiveness in preventing such attacks. Despite subsequent proposals exploring Reed-Solomon codes \cite{couvreur2014distinguisher}, AG codes, and their subcodes \cite{couvreur2017cryptanalysis}, all have been susceptible to structural attacks. By imposing restrictions, cryptographic systems can enhance their security by minimizing the risk of potential attacks aimed at distinguishing the chosen subfield subcode. With growing interest in AG codes, particularly Hermitian codes, they are being evaluated as feasible alternatives to Reed-Solomon codes in specific applications \cite{macdonald2003hermitian}. Hermitian codes have been extensively studied in prior research \cite{stichtenoth1988note, little1997structure, yang1992true, korchmaros2019codes, ren2004structure, lhotel2023goppa}, particularly those associated with the point at infinity of the Hermitian curve. However, in \cite{korchmaros2013hermitian, matthews2005one}, authors introduced an alternative construction of Hermitian codes associated with higher-degree places on the Hermitian curve.
 
 
-Our contribution involves conducting further research on Hermitian codes associated with degree $3$ places, and derive additional properties and establish explicit bases for the corresponding Riemann-Roch spaces, additionally, this should align with previous findings in \cite{korchmaros2013hermitian}. These codes have an improved minimum distances, as shown by the Matthews-Michel bound \cite{matthews2005one}, and that has been further strengthened  by Korchm\'aros and Nagy in \cite{korchmaros2013hermitian}. Moreover, we explore the properties of their subfield subcodes. Our investigation particularly emphasizes the determination of their true dimensions. The family of subfield subcodes of Hermitian codes associated with degree $3$ places holds promise for constructing an improved and secure McEliece cryptosystem. This implies that such a proposal could reduce the key size and achieve the security level required by NIST \cite{Nist}.
+Our contribution involves conducting further research on Hermitian codes associated with degree $3$ places, deriving additional properties, and establishing explicit bases for the corresponding Riemann-Roch spaces, additionally, this should align with previous findings in \cite{korchmaros2013hermitian}. The stabilizer of a degree $3$ place has order $3(q^2-q+1)$, the action of this group and the associated quotient curve has been studied by Cossidente, Korchm\'aros and Torres \cite{cossidente1999curves}. We make heavy use of their approach which relates the Hermitian curve with the curve projective curve $XY^q+YZ^q+ZX^q=0$. Beelen, Montanucci, and Vicino \cite{beelen2023weierstrass} study another class of Hermitian quotient curves, which is obtained by automorphisms stabilizing a degree $3$ place of the Hermitian curve. 
+
+One-point Hermitian of degree $3$ places have improved minimum distances, as shown by the Matthews-Michel bound \cite{matthews2005one}, and have been further strengthened by Korchm\'{a}ros and Nagy in \cite{korchmaros2013hermitian}. Moreover, we explore the properties of their subfield subcodes. Our investigation particularly emphasizes the determination of their true dimensions by giving explicit constructions. The family of subfield subcodes of Hermitian codes associated with degree $3$ places holds promise for the construction of an improved and secure McEliece cryptosystem. This implies that such a proposal could reduce the key size and achieve the security level required by NIST \cite{Nist}.
 
 
-The paper is structured as follows. In Section \ref{sec} we introduce the essential background of AG codes constructed from the Hermitian curve, including Hermitian curves, divisors, and the Riemann-Roch space. In Section \ref{sec:geometry}, we provide some facts on degree 3 places on the Hermitian curve, in particular, we study their geometric properties and algebraic presentations. Section \ref{sec:riemann-roch} deals with their corresponding Riemann-Roch spaces, where we explore their structure and give explicit and practical bases. In Section \ref{sec:Herm}, we study the functional and differential Hermitian codes of degree 3 place where we introduce a new construction. Moreover, we discuss some results on their equivalence under certain transformations. In Section \ref{sec:subf}, we give the main result on the dimension of the subfield subcodes of degree 3 place Hermitian codes. This result consists of a theorem that provides a lower bound on the dimension of the underlying codes, while the conjecture suggests a possible equality based on numerical experiments. 
+The paper is structured as follows. In Section \ref{sec} we introduce the essential background of AG codes constructed from the Hermitian curve, including Hermitian curves, divisors, and the Riemann-Roch space. In Section \ref{sec:geometry}, we provide some facts on the geometry of degree 3 places of the Hermitian curve, and the unitary transformations which stabilize the given degree $3$ place. Our main tool is the Hermitian sesquilinear form $\langle u,v \rangle = u_1v_1^q -u_2v_3^q-u_3v_2^q$, the Frobenius map $\Frob$. Section \ref{sec:riemann-roch} deals with their corresponding Riemann-Roch spaces. We explore their structure and give explicit and practical bases over $\mathbb{F}_{q^6}$, and a decomposition into invariant subspaces over $\mathbb{F}_{q^2}$ (Theorem \ref{th:Wt-props}). In Section \ref{sec:Herm}, we study the functional and differential Hermitian codes of degree 3 place where we give explicitly the monomial equivalence between them (Theorem \ref{th:dual-codes}). In Section \ref{sec:subf}, we give the main result on the dimension of the subfield subcodes of degree 3 place Hermitian codes (Theorem \ref{th:subcodes-dim}). This result consists of a theorem that provides a lower bound on the dimension of the underlying codes, while the conjecture suggests a possible equality based on numerical experiments. The computational results have been obtained by the \textsc{HERmitian} package \cite{HERmitian0.2} of the GAP \cite{GAP4.12.2pre} computer algebra system. 
 
 
 \section{Algebraic Geometry (AG) codes \label{sec}}
 
 \subsection{Hermitian curves and their divisors}
 
-For more details we refer the readers to \cite{stichtenoth2009algebraic, stepanov2012codes,cossidente1999curves}.
-
-
-The Hermitian curve, denoted as $\mathscr{H}_q$, over the finite field $\mathbb{F}_{q^2}$ in affine coordinates, is given by the equation:
+For more details, we refer the reader to \cite{stichtenoth2009algebraic, stepanov2012codes,cossidente1999curves}. The Hermitian curve, denoted as $\mathscr{H}_q$, over the finite field $\mathbb{F}_{q^2}$ in affine coordinates is given by the equation:
 \[
 	\mathscr{H}_q: Y^q + Y = X^{q+1}.
 \]
-This curve has a genus $g = \frac{q(q-1)}{2}$, classifying it as a maximal curve because it achieves the maximum number of $\mathbb{F}_{q^2}$-rational points, which is $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Additionally, $\mathscr{H}_q$ possesses a unique singular point at infinity, denoted $Q_{\infty}$.
+This curve has a genus $g = \frac{q(q-1)}{2}$, classifying it as a maximal curve because it achieves the maximum number of $\mathbb{F}_{q^2}$-rational points, which is $\#\mathscr{H}_q(\mathbb{F}_{q^2}) = q^3 + 1$. Furthermore, $\mathscr{H}_q$ has a unique point at infinity, denoted $Q_{\infty}$.
 
-A divisor on $\mathscr{H}_q$ is a formal sum $D = n_1 Q_1 + \cdots + n_k Q_k$ where $n_1, \cdots, n_k$ are integers, and $Q_1, \cdots, Q_k$ are points on $\mathscr{H}_q$. The degree of the divisor $D$ is defined as $\deg(D) = \sum_{i=1}^k n_i$. The valuation of $D$ at a point $Q_i$ is $v_{Q_i}(D) = n_i$, and the support of $D$ is the set $\{ Q_i \mid n_i \neq 0 \}$.
+A divisor on $\mathscr{H}_q$ is a formal sum $D = n_1 Q_1 + \cdots + n_k Q_k$ where $n_1, \cdots, n_k$ are integers and $Q_1, \cdots, Q_k$ are points on $\mathscr{H}_q$. The degree of the divisor $D$ is defined as $\deg(D) = \sum_{i=1}^k n_i$. The valuation of $D$ at a point $Q_i$ is $v_{Q_i}(D) = n_i$, and the support of $D$ is the set $\{ Q_i \mid n_i \neq 0 \}$.
 
 The Frobenius automorphism, denoted as $\text{Fr}_{q^2}$, is defined over the algebraic closure $\overline{\mathbb{F}}_{q^2}$ and acts on elements as follows:
 \[
 	\text{Fr}_{q^2}: \overline{\mathbb{F}}_{q^2} \to \overline{\mathbb{F}}_{q^2}, \quad x \mapsto x^{q^2}.
 \]
-It acts on points of $\mathscr{H}_q$ by applying $\text{Fr}_{q^2}$ to their coordinates. A point $Q$ on $\mathscr{H}_q$ is $\mathbb{F}_{q^2}$-rational if and only if it is fixed by $\text{Fr}_{q^2}(Q)$. In $\overline{\mathbb{F}}_{q^2}$, points on $\mathscr{H}_q$ correspond one-to-one with the places of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$.
+It acts on the points of $\mathscr{H}_q$ by applying $\text{Fr}_{q^2}$ to their coordinates. A point $Q$ on $\mathscr{H}_q$ is $\mathbb{F}_{q^2}$-rational if and only if it is fixed by $\text{Fr}_{q^2}(Q)$. Over $\overline{\mathbb{F}}_{q^2}$, the points in $\mathscr{H}_q$ correspond one-to-one with the places in the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$.
 
 For a divisor $D$, its Frobenius image is given by
 \[
 	\text{Fr}_{q^2}(D) = n_1 \text{Fr}_{q^2}(Q_1) + \cdots + n_k \text{Fr}_{q^2}(Q_k).
 \]
-$D$ is $\mathbb{F}_{q^2}$-rational if $D = \text{Fr}_{q^2}(D)$. Notably, if all points $Q_1, \ldots, Q_k$ are in $\mathscr{H}_q(\mathbb{F}_{q^2})$, then $D$ is inherently $\mathbb{F}_{q^2}$-rational.
+$D$ is $\mathbb{F}_{q^2}$-rational if $D = \text{Fr}_{q^2}(D)$. In particular, if all points $Q_1, \ldots, Q_k$ are in $\mathscr{H}_q(\mathbb{F}_{q^2})$, then $D$ is inherently $\mathbb{F}_{q^2}$-rational.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Riemann-Roch spaces}
 
-For a non-zero function $g$ in the function field $\overline{\mathbb{F}}_{q^2}$ and a place $P$, $v_P(g)$ stands for the order of $g$ at $P$. If $v_P(g) > 0$ then $P$ is a zero of $g$, while if $v_P(g) < 0 $,then $P$ is a pole of $g$ with multiplicity  $-v_P(g)$. The principal divisor of a non-zero function $g$ is $(g)= \sum_{P}v_P(g) P$.
+For a non-zero function $g$ in the function field $\overline{\mathbb{F}}_{q^2}$ and a place $P$, $v_P(g)$ stands for the order of $g$ at $P$. If $v_P(g) > 0$ then $P$ is a zero of $g$, while if $v_P(g) < 0 $,then $P$ is a pole of $g$ with multiplicity $-v_P(g)$. The principal divisor of a non-zero function $g$ is $(g)= \sum_{P}v_P(g) P$.
 
 The \emph{Riemann--Roch space} associated with an  $\mathbb{F}_{q^2}$-rational divisor $G$ is the $\mathbb{F}_{q^2}$ vector space 
 \[\mathscr{L}(G) := \{g \in \mathbb{F}_{q^2}(\mathscr{H}_q) \mid (g) + G \geq 0\} \cup {0}.\] 
 
-From  \cite[Riemann's Theorem~1.4.17]{stichtenoth2009algebraic}, we have 
+From \cite[Riemann's Theorem~1.4.17]{stichtenoth2009algebraic}, we have 
 \[\dim\mathscr{L}(G) \geq \deg(G) +1 - \mathfrak{g},\] 
 with equality if $\deg(G) \geq 2\mathfrak{g}-1$.
 
-In this work, our primary focus is on an $\mathbb{F}_{q^2}$-rational divisor $G$ of the form $ sP$ where $P$ is a degree $r$ place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and $s$ is a positive integer. In the extended constant field $\mathbb{F}_{q^6}(\mathscr{H}_q)$ of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $r$, let $P_1, P_2, \cdots, P_r$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^{2r}}(\mathscr{H}_q)$, and, by appropriately labeling the indices, $P_{i} = \text{Fr}^i_{q^2}(P_1)$, where indices are considered modulo $r$.
+In this work, our primary focus is on an $\mathbb{F}_{q^2}$-rational divisor $G$ of the form $ sP$ where $P$ is a degree $r$ place in $\mathbb{F}_{q^2}(\mathscr{H}_q)$ and $s$ is a positive integer. In the extended constant field $\mathbb{F}_{q^6}(\mathscr{H}_q)$ of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ with degree $r$, let $P_1, P_2, \cdots, P_r$ be the extensions of $P$. These points are degree-one places in $\mathbb{F}_{q^{2r}}(\mathscr{H}_q)$, and, appropriately labeling the indices, $P_{i} = \text{Fr}^i_{q^2}(P_1)$, where the indices are considered modulo $r$.
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hermitian codes}
-Here, we outline the construction of an AG code from the Hermitian curve
+Here, we outline the construction of an AG code from the Hermitian curve.
 
 
-In algebraic coding theory, Hermitian codes stand out as a significant class of algebraic geometry (AG) codes, renowned for their distinctive properties. These codes are constructed from Hermitian curves defined over finite fields. These codes are typically viewed as functional AG codes, denoted by $C_{\mathcal{L}}(D, G)$. In this standard approach, the divisor $G$ is usually a multiple of a single place of degree one. The set $\mathcal{P}$, encompassing all rational points on $\mathscr{H}_q$, is listed as $\{Q_1, \ldots, Q_{n}\}$. This approach gives rise to a structure referred to as a one-point code. However, it is important to note that recent research in the field suggests that using a more varied selection for the divisor $G$ can result in the creation of better AG codes \cite{matthews2005one,korchmaros2013hermitian}.
+In algebraic coding theory, Hermitian codes stand out as a significant class of algebraic geometry (AG) codes, renowned for their distinctive properties. These codes are constructed from Hermitian curves defined over finite fields. These codes are typically viewed as functional AG codes, denoted by $C_{\mathcal{L}}(D, G)$. In this standard approach, the divisor $G$ is usually a multiple of a single place of degree one. The set $\mathcal{P}$, which encompasses all the rational points in $\mathscr{H}_q$, is listed as $\{Q_1, \ldots, Q_{n}\}$. This approach gives rise to a structure known as a one-point code. However, it is important to note that recent research in the field suggests that the use of a more varied selection for the divisor $G$ can result in the creation of better AG codes \cite{matthews2005one,korchmaros2013hermitian}.
 
 
 
@@ -157,17 +155,17 @@ The dual of an AG code can be described as a residue code (see \cite{stichtenoth
 \[ C_{\mathcal{L}}(D,G)^{\perp} = C_{\Omega}(D,G).\]
 
 
-Moreover, the differential code $C_{\Omega}(D, G)$ is monomially equivalent to the functional code 
+Furthermore, the differential code $C_{\Omega}(D, G)$ is monomially equivalent to the functional code 
 \[C_{\mathcal{L}}(D, W+D-G), \]
-where $W$ represents a canonical divisor of $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. The notion of the monomial equivalence of codes is defined as follows. Let $C \leq \mathbb{F}_q^n$ be linear subspaces and $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_n) \in (\mathbb{F}_q^*)^n$ with non-zero entries. We define the Schur product
+where $W$ represents a canonical divisor of $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. The notion of monomial equivalence of codes is defined as follows. Let $C \leq \mathbb{F}_q^n$ be linear subspaces and $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_n) \in (\mathbb{F}_q^*)^n$ with non-zero entries. We define the Schur product
 \[\boldsymbol{\mu} \star C = \{(\mu_1x_1, \ldots,\mu_nx_n) \mid (x_1,\ldots,x_n) \in C\}.\]
-The vector $\boldsymbol{\mu}$ is also called a multiplier. Clearly, $\boldsymbol{\mu} \star C\leq \mathbb{F}_q^n$. Two linear codes $C_1,C_2 \leq \mathbb{F}_q^n$ are monomially equivalent, if $C_2=\boldsymbol{\mu} \star C_1$ for some multiplier $\boldsymbol{\mu}$. Monomially equivalent codes share identical dimensions and minimum distances; however, this correspondence does not preserve all crucial properties of the code.
+The vector $\boldsymbol{\mu}$ is also called a multiplier. Clearly, $\boldsymbol{\mu} \star C\leq \mathbb{F}_q^n$. Two linear codes $C_1,C_2 \leq \mathbb{F}_q^n$ are monomially equivalent if $C_2=\boldsymbol{\mu} \star C_1$ for some multiplier $\boldsymbol{\mu}$. Monomially equivalent codes share identical dimensions and minimum distances; however, this correspondence does not preserve all crucial properties of the code.
 
 
 \subsection{Subfield subcodes and trace codes}
-For the efficient construction of codes over $\mathbb{F}_q$, one approach involves working with codes originally defined over an extension field $\mathbb{F}_{q^m}$. When considering a code $\mathcal{C}$ within $\mathbb{F}_{q^m}^n$, a subfield subcode of $\mathcal{C}$ is its restriction to the field $\mathbb{F}_q$. This process, often employed in defining codes like BCH codes, Goppa codes, and alternant codes, plays a foundational role.
+For the efficient construction of codes over $\mathbb{F}_q$, one approach involves working with codes originally defined over an extension field $\mathbb{F}_{q^m}$. When considering a code $\mathcal{C}$ within $\mathbb{F}_{q^m}^n$, a subfield subcode of $\mathcal{C}$ is its restriction to the field $\mathbb{F}_q$. This process, often employed in the definition of codes such as BCH codes, Goppa codes, and alternant codes, plays a fundamental role.
 
-Let $q$ be a prime power, and $m$ a positive integer. Let $C$ denote a linear code of parameters $[n,k]$ defined over the finite field $\mathbb{F}_{q^m}$. The \emph{subfield subcode} of $C$ over $\mathbb{F}_q$, represented as $C|_{\mathbb{F}_q}$, is the set
+Let $q$ be a prime power and $m$ be a positive integer. Let $C$ denote a linear code of parameters $[n,k]$ defined over the finite field $\mathbb{F}_{q^m}$. The \emph{subfield subcode} of $C$ over $\mathbb{F}_q$, represented as $C|_{\mathbb{F}_q}$, is the set
 \[
 	C|_{\mathbb{F}_q} = C \cap \mathbb{F}_q^n,
 \]
@@ -202,7 +200,7 @@ Finding the exact dimension of a subfield subcode of a linear code is typically 
 \end{equation}
 
 
-In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed regarding subfield subcodes and trace codes of AG codes. This motivated us to formulate the following propositions on the  dimension of the subfield subcodes of AG codes, which are useful for the case $G=sP$ with a place $P$ of higher degree.
+In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed with respect to subfield subcodes and trace codes of AG codes. This motivated us to formulate the following propositions on the dimension of the subfield subcodes of AG codes, which are useful for the case $G=sP$ with a place $P$ of higher degree.
 
 
 \begin{Proposition} \label{prop:sub}
@@ -214,7 +212,7 @@ In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed reg
 \begin{proof}
 	Let $f$ be a function in $\mathscr{L}(G_1)$ such that $f(Q_i) \in \mathbb{F}_q$ for $i=1,\cdots,n$. Then $f^q -f \in \mathscr{L}(qG_1)$ (since $\mathscr{L}(G_1)^q \subseteq \mathscr{L}(qG_1)$), hence $f^q - f \in  \mathscr{L}(qG_1-D)$ where
 	\[\mathscr{L}(qG_1-D) = \ker \left(\operatorname{ev}_{D}\right)=\left\{x \in \mathscr{L}(qG_1) \mid v_{P_i}(x)>0 \text { for } i=1, \ldots, n\right\} .\]
-	Since $\deg(qG_1-D)<0$, it follows that $\mathscr{L}(qG_1 - D)=0$, and  $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
+	Since $\deg(qG_1-D)<0$, it follows that $\mathscr{L}(qG_1 - D)=0$ and $f^q -f =0$ which implies that $f \in \mathbb{F}_q$. Consequently $\dim C_{\mathcal{L}}(D,G_1)|_{ \mathbb{F}_q}= 1$.
 \end{proof}
 
 
@@ -225,10 +223,10 @@ In \cite[Chapter~9]{stichtenoth2009algebraic}, various results are discussed reg
 
 \section{The geometry of Hermitian degree 3 places} \label{sec:geometry}
 
-In this section we collect useful facts on the degree 3 places of the Hermitian curve, their stabilizer subgroups, and Riemann-Roch spaces. 
+In this section, we collect useful facts on the degree 3 places of the Hermitian curve, their stabilizer subgroups, and Riemann-Roch spaces. 
 
 \subsection{The Hermitian sesquilinear form} \label{ssec:h-form}
-The Hermitian curve $\mathscr{H}_q$ has affine equation $X^{q+1}=Y+Y^q$. The Hermitian function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ is generated by $x,y$ such that $x^{q+1}=y+y^q$ holds. The Frobenius field automorphism $\Frob:x\mapsto x^{q^2}$ of the algebraic closure $\overline{\mathbb{F}}_{q^2}$ incudes an action on rational functions, places, divisors and curve automorphisms. For this action, we keep using the notation $\Frob$ in the exponent: $P^\Frob$, $f^\Frob$, $D^\Frob$, etc. 
+The Hermitian curve $\mathscr{H}_q$ has the affine equation $X^{q+1}=Y+Y^q$. The Hermitian function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$ is generated by $x,y$ so that $x^{q+1}=y+y^q$ holds. The Frobenius field automorphism $\Frob:x\mapsto x^{q^2}$ of the algebraic closure $\overline{\mathbb{F}}_{q^2}$ includes an action on rational functions, places, divisors, and curve automorphisms. For this action, we continue to use the notation $\Frob$ in the exponent: $P^\Frob$, $f^\Frob$, $D^\Frob$, etc. 
 
 Let $K$ be a field extension of $\mathbb{F}_{q^2}$. An affine point is a pair $(a,b)\in K^2$. A projective point $(a:b:c)$ is a $1$-dimensional subspace $\{(at,bt,ct) \mid t\in K\}$ of $K^3$. If $c\neq 0$, then the projective point $(a:b:c)$ is identified with the affine point $(a/c,b/c)$. For $u=(u_1,u_2,u_3), v=(v_1,v_2,v_3) \in K^3$, we define the Hermitian form 
 \begin{align*} %\label{eq:}
@@ -250,7 +248,7 @@ If $u$ is on $\mathscr{H}_q$, then $u^\perp$ is the tangent line at $u$. More pr
 
 \subsection{Unitary transformations and curve automorphism} \label{ssec:unitary}
 
-Let $A$ be a $3\times 3$ matrix. The linear map $u\mapsto uA$ will be denoted by $A$ as well. If $A$ is invertible, then it induces a projective linear transformation, denoted by $\hat{A}:(u_1:u_2:u_3)\mapsto (u_1':u_2':u_3')=(u_1:u_2:u_3)^{\hat{A}}$, where
+Let $A$ be a $3\times 3$ matrix. The linear map $u\mapsto uA$ will also be denoted by $A$. If $A$ is invertible, then it induces a projective linear transformation, denoted by $\hat{A}:(u_1:u_2:u_3)\mapsto (u_1':u_2':u_3')=(u_1:u_2:u_3)^{\hat{A}}$, where
 \begin{align*} %\label{eq:}
 u_1' &= a_{11}u_1+a_{21}u_2+a_{31}u_3, \\
 u_2' &= a_{12}u_1+a_{22}u_2+a_{32}u_3, \\
@@ -260,14 +258,14 @@ We use the same notation $\hat{A}:(X,Y) \mapsto (X',Y')=(X,Y)^{\hat{A}}$ for the
 \begin{align*} %\label{eq:}
 (X,Y) \mapsto (X',Y') = \left(\frac{a_{11}X+a_{21}Y+a_{31}}{a_{13}X+a_{23}Y+a_{33}}, \frac{a_{12}X+a_{22}Y+a_{32}}{a_{13}X+a_{23}Y+a_{33}}\right).
 \end{align*}
-The action $f(X,Y) \mapsto f((X,Y)^{\hat{A}^{-1}})$ of $\hat{A}$ on rational functions will be denoted by $A^*$. The following lemma is straightforward.
+The action $f(X,Y) \mapsto f((X,Y)^{\hat{A}^{-1}})$ of $\hat{A}$ on rational functions will be indicated by $A^*$. The following lemma is straightforward.
 \begin{Lemma} \label{lm:f-action}
 Let $f(X,Y)$ be a polynomial of total degree $n$. Define the degree $n$ homogeneous polynomial $F(X,Y,Z)=Z^n f(X/Z,Y/Z)$. Then
 \[f^{A^*}(X,Y)=\frac{F((X,Y,1)A^{-1})}{(a_{13}X+a_{23}Y+a_{33})^n}.\]
 \end{Lemma}
 We remark that the line $a_{13}X+a_{23}Y+a_{33}=0$ can be seen as the pre-image of the line at infinity under $\hat{A}$. 
 
-The linear transformation $A$ is unitary, if
+The linear transformation $A$ is unitary if 
 \[\langle uA, vA \rangle = \langle u,v \rangle\]
 holds for all $u,v$. Since $\langle .,. \rangle$ is non-degenerate, unitary transformations are invertible. Moreover, for all $u,v$ one has
 \begin{align*}
@@ -276,13 +274,13 @@ holds for all $u,v$. Since $\langle .,. \rangle$ is non-degenerate, unitary tran
 &= \langle uA,vA \rangle^q \\
 &= \langle (vA)^\Frob,uA \rangle. \\
 \end{align*}
-This implies $(v^\Frob)A = (vA)^\Frob$ for all $v$, that is, $A$ and $\Frob$ commute. This shows that unitary transformations are defined over $\mathbb{F}_{q^2}$. They form a group, which is denoted by $GU(3,q)$. A useful fact is that if $b_1,b_2,b_3$ is a basis and
+This implies $(v^\Frob)A = (vA)^\Frob$ for all $v$, that is, $A$ and $\Frob$ commute. This shows that unitary transformations are defined over $\mathbb{F}_{q^2}$. They form a group which is denoted by $GU(3,q)$. A useful fact is that if $b_1,b_2,b_3$ is a basis and
 \[\langle b_iA, b_jA \rangle = \langle b_i,b_j \rangle\]
 for all $i,j\in \{1,2,3\}$, then $A$ is unitary. 
 
 Let $A\in GU(3,q)$. If $(x,y)$ is a generic point of $\mathscr{H}_q$, then $(x',y')=(x,y)^{\hat{A}}$ satisfies 
-\[(x')^{q+1}-y'-(y')^q=\langle x',y' \rangle = \langle x,y \rangle=0. \]
-Hence, $(x',y')$ is a generic point of $\mathscr{H}_q$, and $A^*$ induces an automorphism of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. If $A$ is defined over $\mathbb{F}_{q^2}$, then $A^*$ is an automorphism of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. 
+\[(x')^{q+1}-y'-(y')^q=\langle x',y' \rangle = \langle x,y \rangle=0. \] 
+Therefore, $(x',y')$ is a generic point of $\mathscr{H}_q$, and $A^*$ induces an automorphism of the function field $\overline{\mathbb{F}}_{q^2}(\mathscr{H}_q)$. If $A$ is defined over $\mathbb{F}_{q^2}$, then $A^*$ is an automorphism of $\mathbb{F}_{q^2}(\mathscr{H}_q)$. 
 
 
 
@@ -346,7 +344,7 @@ Let $\beta_1\in \mathbb{F}_{q^6}$ be an element such that $\beta_1^{q^3+1}=1$. D
 \begin{align*} %\label{eq:}
 \beta_i\beta_{i+1}^q=\beta_i^{q^3+1}=1.
 \end{align*}
-For $p'_i=\beta_i p_i$, this implies
+For $p'_i=\beta_i p_i$, this implies that
 \begin{align*} %\label{eq:}
 \langle p_i',p_{i+1}' \rangle = \beta_i\beta_{i+1}^q \langle p_i,p_{i+1} \rangle = \langle p_i,p_{i+1} \rangle.
 \end{align*}
@@ -412,7 +410,7 @@ In this section, we keep using the notation of the previous section: $P_i$ is a 
 \subsection{Basis and decomposition of the Riemann-Roch space}
 Let $s,u,v$ be positive integers such that $v\leq q$ and $s=u(q+1)-v$. Clearly, $u,v$ are uniquely defined by $s$. In \cite{korchmaros2013hermitian}, the Riemann-Roch space associated with the divisor $sP$ is given as
 \[\mathscr{L}(sP) = \left\{ \frac{f}{(\ell_1\ell_2\ell_3)^u} \mid f \in \mathbb{F}_{q^2}[X,Y], \; \deg f \leq 3u, \; v_{P_i}(f) \geq v \right\} \cup \{0\}.\]
-The Weierstrass semigroup $H(P)$ consists of the integers $s\geq 0$ such that the pole divisor $(f)_\infty=sP$ for some $f\in {\mathbb{F}_{q^2}}(\mathscr{H}_q)$, see \cite{beelen2023weierstrass}. If $s\not\in H(P)$, then it is called a Weierstrass gap; the set of Weierstrass gaps is denoted by $G(P)$. By \cite[Theorem 3.1]{korchmaros2013hermitian}, we have
+The Weierstrass semigroup $H(P)$ consists of the integers $s\geq 0$ such that the pole divisor $(f)_\infty=sP$ for some $f\in {\mathbb{F}_{q^2}}(\mathscr{H}_q)$, see \cite[Section 6.5]{stichtenoth2009algebraic} and \cite{beelen2023weierstrass}. If $s\not\in H(P)$, then it is called a Weierstrass gap; the set of Weierstrass gaps is denoted by $G(P)$. By \cite[Theorem 3.1]{korchmaros2013hermitian}, we have
 \[G(P) = \{u(q+1)-v \mid 0\leq v\leq q, \; 0<3u\leq v\}.\]
 By the Weierstrass Gap Theorem \cite[Theorem 1.6.8]{stichtenoth2009algebraic}, $|G(P)|=\g$ for a place of degree $1$. In our case, $P$ has degree $3$ and the situation is slightly more complicated.
 
@@ -435,7 +433,7 @@ The following proposition gives an explicit basis for the Riemann-Roch space $\m
 \begin{Proposition} \label{pr:Uti-props}
 Let $t,u,v$ be positive integers such that $v\leq q$ and $t=u(q+1)-v$. Define the rational functions
 \[U_{t,i} = \ell_i^{2u-v}\ell_{i+1}^{v-u}\ell_{i+2}^{-u} = \left(\frac{\ell_i}{\ell_{i+2}}\right)^u\left(\frac{\ell_{i+1}}{\ell_i}\right)^{v-u}, \qquad i=1,2,3.\]
-Define $U_{0,i}=1$ as the constant function for $i=1,2,3$. Then the following hold:
+Define $U_{0,i}=1$ as the constant function for $i=1,2,3$. Then the following holds:
 \begin{enumerate}[label=(\roman*)]
 \item $(U_{t,i})^\Frob = U_{t,i+1}$. 
 \item The principal divisor of $U_{t,i}$ is 
@@ -451,13 +449,13 @@ of rational functions is a basis of $\mathscr{L}(sP)$ over $\mathbb{F}_{q^6}$.
 \end{enumerate}
 \end{Proposition}
 \begin{proof}
-Notice first that $u,v$ are uniquely defined by $t$, hence $U_{t,i}$ is well-defined. (i) is trivial, and (ii) is straightforward from \eqref{eq:div-ell-i}. To show (iii), let us write a linear combination in the form
+Notice first that $u,v$ are uniquely defined by $t$, therefore $U_{t,i}$ is well defined. (i) is trivial, and (ii) is straightforward from \eqref{eq:div-ell-i}. To show (iii), let us write a linear combination in the form
 \begin{align} \label{eq:U-lin-comb}
 \alpha_1 U_{t,1}+\alpha_2 U_{t,2} + \alpha_3 U_{t,3} = \sum\limits_{\substack{r<t \\ i=1,2,3}} \lambda_{r,i} U_{r,i}
 \end{align}
-such that $(\alpha_1,\alpha_2,\alpha_3)\neq (0,0,0)$. The right hand side has valuation at least $-t+1$ at $P_1,P_2,P_3$. If $t\neq (q^2-q+1)/3$ and $\alpha_i\neq 0$, then the right hand side has valuation $-t$ at $P_{i+2}$. Hence, $\alpha_i=0$ for all $i=1,2,3$, a contradiction. Assume $t=(q^2-q+1)/3$. Then
+such that $(\alpha_1,\alpha_2,\alpha_3)\neq (0,0,0)$. The right-hand side has valuation at least $-t+1$ at $P_1,P_2,P_3$. If $t\neq (q^2-q+1)/3$ and $\alpha_i\neq 0$, then the right-hand side has valuation $-t$ at $P_{i+2}$. Hence, $\alpha_i=0$ for all $i=1,2,3$, a contradiction. Assume $t=(q^2-q+1)/3$. Then
 \[U_{t,i}=\frac{\ell_i\ell_{i+1}^q}{(\ell_1\ell_2\ell_3)^\frac{q+1}{3}},\]
-and \eqref{eq:U-lin-dep} follows from \eqref{eq:ell-q-lin-dep}. We can use \eqref{eq:U-lin-dep} to eliminate $U_{t,3}$ from \eqref{eq:U-lin-comb}, that is, we may assume $\alpha_3=0$. Then again, the only term which has valuation $-t$ at $P_{i+2}$ is $\alpha_iU_{t,i}$ with $\alpha_i\neq 0$. Since the left and right hand sides of \eqref{eq:U-lin-comb} must have the same valuations at $P_1,P_3$, $\alpha_1=\alpha_2=0$ must hold, a contradiction. 
+and \eqref{eq:U-lin-dep} follows from \eqref{eq:ell-q-lin-dep}. We can use \eqref{eq:U-lin-dep} to eliminate $U_{t,3}$ from \eqref{eq:U-lin-comb}, that is, we can assume $\alpha_3=0$. Then again, the only term that has a valuation $-t$ at $P_{i+2}$ is $\alpha_iU_{t,i}$ with $\alpha_i\neq 0$. Since the left- and right-hand sides of \eqref{eq:U-lin-comb} must have the same valuations at $P_1,P_3$, $\alpha_1=\alpha_2=0$ must hold, a contradiction. 
 
 (iv) By (iii), $\mathcal{U}(s)$ consists of linearly independent elements. To show that it is a basis of $\mathscr{L}(sP)$, it suffices to show that $|\mathcal{U}(s)|=\dim(\mathscr{L}(sP))$ for $3s\geq 2\g-2$. On the one hand, in this case $\dim(\mathscr{L}(sP)) = 3s+1-\g$. On the other hand, 
 \[|\mathcal{U}(s)|=1+3(s-|G(P)|)-\varepsilon = 3s+1-(3|G(P)|+\varepsilon),\]
@@ -535,18 +533,18 @@ where $\varphi:\mathbb{F}_{q^6}\to \mathbb{F}_{q^6}$ is an $\mathbb{F}_{q^2}$-li
 \end{align*}
 Since $b=\beta_1^{q+1}$ satisfies $b^{q^2-q+1}=1$, this means that for any $\alpha, b\in \mathbb{F}_{q^6}$, $b^{q^2-q+1}=1$, we have
 \[(b^t \alpha) \varphi = b^s(\alpha\varphi).\]
-Let $b$ be an element of order $q^2-q+1$ in $\mathbb{F}_{q^6}$. If $b^t$ or $b^s$ is in $\mathbb{F}_{q^2}$, then $b^t=b^s$ and a) holds. Assume that neither $b^t$ nor $b^s$ is in $\mathbb{F}_{q^2}$. Then $\mathbb{F}_{q^6}=\mathbb{F}_{q^2}(b^t)=\mathbb{F}_{q^2}(b^s)$, and over $\mathbb{F}_{q^2}$, the minimal polynomial of $b^t$ has degree $3$. Assume $b^{3t}+c_1b^{2t}+c_2b^t+c_3=0$ with $c_0,c_1,c_2\in \mathbb{F}_{q^2}$. Then
+Let $b$ be an element of order $q^2-q+1$ in $\mathbb{F}_{q^6}$. If $b^t$ or $b^s$ is in $\mathbb{F}_{q^2}$, then $b^t=b^s$ and a) hold. Assume that neither $b^t$ nor $b^s$ is in $\mathbb{F}_{q^2}$. Then $\mathbb{F}_{q^6}=\mathbb{F}_{q^2}(b^t)=\mathbb{F}_{q^2}(b^s)$, and over $\mathbb{F}_{q^2}$, the minimal polynomial of $b^t$ has the degree $3$. Assume $b^{3t}+c_1b^{2t}+c_2b^t+c_3=0$ with $c_0,c_1,c_2\in \mathbb{F}_{q^2}$. Then
 \begin{align*}
 0&=(b^{3t}+c_1b^{2t}+c_2b^t+c_3)\varphi \\
 &= (b^{3t}\varphi)+c_1(b^{2t}\varphi)+c_2(b^t\varphi)+c_3(1\varphi) \\
 &= (b^{3s}+c_1b^{2s}+c_2b^s+c_3)(1\varphi). \\
 \end{align*}
-As $\varphi$ is bijective, $1\varphi\neq 0$, $0=b^{3s}+c_1b^{2s}+c_2b^s+c_3$ follows. This means that $b^s$ has the same minimal polynomial, and $b^t \to b^s$ extends to a field automorphism of $\mathbb{F}_{q^6}$ over $\mathbb{F}_{q^2}$. This implies $b^s=b^t$, $b^s=(b^t)^{q^2}$ or $b^s=(b^t)^{q^4}$, and the claim follows. 
+As $\varphi$ is bijective, $1\varphi\neq 0$, $0=b^{3s}+c_1b^{2s}+c_2b^s+c_3$ follows. This means that $b^s$ has the same minimal polynomial and $b^t \to b^s$ extends to a field automorphism of $\mathbb{F}_{q^6}$ over $\mathbb{F}_{q^2}$. This implies $b^s=b^t$, $b^s=(b^t)^{q^2}$ or $b^s=(b^t)^{q^4}$, and the claim follows. 
 \end{proof}
 
 \section{Hermitian codes of degree $3$ places and their duals \label{sec:Herm}}
 
-In this section, we explore one-point Hermitian codes of degree $3$ places, and their dual codes. Let $P$ be a degree $3$ place on the Hermitian curve $\mathscr{H}_q$, $Q_1,\ldots,Q_n,Q_\infty$ its $\mathbb{F}_{q^2}$-rational places, where $n=q^3$. We define the divisors $D=Q_1+Q_2+\cdots+Q_n$, $\widetilde{D}=D+Q_{\infty}$, and $G=sP$ for a positive integer $s$.
+In this section, we explore the one-point Hermitian codes of degree $3$ places and their dual codes. Let $P$ be a degree $3$ place on the Hermitian curve $\mathscr{H}_q$, $Q_1,\ldots,Q_n,Q_\infty$ its $\mathbb{F}_{q^2}$-rational places, where $n=q^3$. We define the divisors $D=Q_1+Q_2+\cdots+Q_n$, $\widetilde{D}=D+Q_{\infty}$, and $G=sP$ for a positive integer $s$.
 
 
 \subsection{Functional Hermitian codes of degree $3$ places}
@@ -554,9 +552,9 @@ Given a divisor $D$ and $G$, we define the degree $3$ place functional Hermitian
 
 \[C_{\mathcal{L}}(D,G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n) \right)\,\, |\,\, g \in  \mathscr{L}(G) \right\rbrace, \]
 
-This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n/3$. Moreover, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
+This code forms an $[n,k]$ AG code, where $k\geq 3s-\g+1$, achieving equality when $\lfloor\frac{ 2 \g-2}{3}\rfloor <s<n/3$. Furthermore, the code has a minimum distance $d\geq d^*=q^3-3s$, where $d^*$ the designed minimum distance.
 
-Additionally, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\widetilde{D},G)$, is constructed by evaluating functions in $\mathscr{L}(G)$ on all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
+Furthermore, another degree $3$ place functional Hermitian code associated with $G$, denoted by $C_{\mathcal{L}}(\widetilde{D},G)$, is constructed by evaluating the functions in $\mathscr{L}(G)$ at all rational points $Q_1,Q_2,\cdots,Q_n$, and the point at infinity $Q_{\infty}$, as follows:
 
 \[C_{\mathcal{L}}(\widetilde{D},G):= \left\lbrace \left(g(Q_1),g(Q_2),\cdots,g(Q_n),g(Q_{\infty}) \right)\,\, |\,\, g \in  \mathscr{L}(G)\right\rbrace ,\]
 
@@ -565,7 +563,7 @@ Clearly, $C_{\mathcal{L}}(\widetilde{D},G)$ has length of $n+1$. Concerning the 
 If $s< q^3/3$, then $\mathscr{L}(sP)$, $C_{\mathcal{L}}(D,G)$ and $C_{\mathcal{L}}(\widetilde{D},G)$ have the same dimension. 
 \end{Proposition}
 \begin{proof}
-If $f\in \ker \ev_D$, then $f\in \mathscr{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\widetilde{D}}$ is trivial as well. 
+If $f\in \ker \ev_D$, then $f\in \mathscr{L}(sP-D)$, which is trivial if $s<q^3/3$. In this case, $\ker \ev_{\widetilde{D}}$ is also trivial. 
 \end{proof}
 
 \begin{Remark}
@@ -602,7 +600,7 @@ Canceling by $x^q$, we get $R(x,y)=x^{q^2}-x$, and $d(R(x,y))=-dx$ follows immed
 
 \subsection{Differential Hermitian codes of degree $3$ places}
 
-Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is referred to as the differential code. It constitutes an $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
+Differential Hermitian codes of degree $3$ places are essential counterparts to functional codes on the Hermitian curve $\mathscr{H}_q$. The dual code $C_{\Omega}(D,G)$ of $C_{\mathcal{L}}(D,G)$ is called the differential code. It constitutes a $[n, \ell(G -D)-\ell(G) +\deg D, d^{\perp}]$ code, where $d^{\perp} \leq \deg(G) - (2\g -2)$, with $\deg(G) - (2\g -2)$ being its designed distance.
 
 \cite[Proposition 8.1.2]{stichtenoth2009algebraic} provides an explicit description of the differential code as functional code
 \[C_\Omega(D,G) = C_\mathscr{L}(D-G+(dt)-(t)),\]
@@ -613,7 +611,7 @@ see \cite[Lemma 6.4.4]{stichtenoth2009algebraic}. Then, \eqref{eq:Rxy-pricdiv} i
 \[C_\Omega(D,sP) = C_\mathscr{L}(D,(q^3+q^2-q-2)Q_{\infty}-sP). \qed\]
 \end{Proposition}
 
-The computation of $C_\Omega(\widetilde{D},sP)$ is more complicated. We claim the next results for prime powers $q\equiv 2 \pmod3$, since the proofs are rather transparent in this case. We are certain that they hold for $q\equiv 1\pmod3$, as well. Our opinion is supported by numerical experiments with $q\leq 8$. 
+The computation of $C_\Omega(\widetilde{D},sP)$ is more complicated. We claim the next results for the prime powers $q\equiv 2 \pmod3$, since the proofs are rather transparent in this case. We are certain that they hold for $q\equiv 1\pmod3$, as well. Our opinion is supported by numerical experiments with $q\leq 8$. 
 
 \begin{Lemma} \label{lm:dR-dT}
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational function 
@@ -666,7 +664,7 @@ We have
 &= (q^2-1)(q+1)Q_\infty -G+(T)\\
 &= \frac{(q^2-1)(q+1)}{3}P-\left((\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}\right) -G+(T).
 \end{align*}
-For the Riemann-Roch spaces, the results follows. 
+For the Riemann-Roch spaces, the results follow. 
 \end{proof}
 
 \begin{Lemma} \label{lm:elliellj-at-Qinfty}
@@ -674,7 +672,7 @@ For any $i,j\in \{1,2,3\}$, we have
 \[\left(\frac{\ell_i}{\ell_j}\right)(Q_\infty)=1.\]
 \end{Lemma}
 \begin{proof}
-We use the local expansion $\tau(t)=(t:1:t^{q+1}+\cdots)$ of $\mathscr{H}_q$ at $Q_\infty$. The dots stand for terms of higher degree. 
+We use the local expansion $\tau(t)=(t:1:t^{q+1}+\cdots)$ of $\mathscr{H}_q$ at $Q_\infty$. The dots represent terms of higher degree. 
 \[\left(\frac{\ell_i}{\ell_j}\right)(\tau(t)) = \frac{a_i^qt -1 -b_i^q(t^{q+1}+\cdots)}{a_j^qt -1 -b_j^q(t^{q+1}+\cdots)},\] 
 which implies 
 \[\left(\frac{\ell_i}{\ell_j}\right)(Q_\infty) = \left(\frac{\ell_i}{\ell_j}\right)(\tau(0)) =1. \qedhere\]
@@ -688,12 +686,12 @@ Then $T_1(Q_\infty)=1$.
 \begin{proof}
 Since 
 \[\frac{\ell_i^{q^2}}{\ell_{i+1}(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}\]
-is the product of terms like $\ell_i/\ell_j$, it takes the value $1$ at $Q_\infty$. This implies $(1/T_1)(Q_\infty)=1$. 
+is the product of terms such as $\ell_i/\ell_j$, it takes the value $1$ at $Q_\infty$. This implies $(1/T_1)(Q_\infty)=1$. 
 \end{proof}
 
-Before stating our main result on differential codes, we remind thet two linear codes $C_1,C_2$ are monomially equivalent, if $C_2=\boldsymbol{\mu} \star C_1$ for some multiplier vector $\boldsymbol{\mu}$. 
+Before stating our main result on differential codes, we remind the reader that two linear codes $C_1,C_2$ are monomially equivalent, if $C_2=\boldsymbol{\mu} \star C_1$ for some multiplier vector $\boldsymbol{\mu}$. 
 
-\begin{Theorem}
+\begin{Theorem} \label{th:dual-codes}
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
 Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\widetilde{D}$. Define $\mu_i=T_1(Q_i)$ for $i \in \{1,\ldots,q^3,\infty\}$, and write $\boldsymbol{\mu}=(\mu_i)$. Then all entries $\mu_i\in \mathbb{F}_{q^2}^*$, and
@@ -730,15 +728,15 @@ Since $G_1\geq 0$, we have $\mathscr{L}(G_1), \mathscr{L}(G_1)^q \leq \mathscr{L
 \end{proof}
 
 \begin{Proposition} \label{pr:trace-subcode}
-	Let $G_1$ be a positive divisor satisfying $\deg G_1 < n/q$. Then $\trace (C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subfield subcode of $C_{\mathcal{L}}(D,qG_1)$. Its dimension is
-	\[ \dim_{\mathbb{F}_q}(\trace (C_{\mathcal{L}}(D,G_1)) = 2\dim_{\mathbb{F}_{q^2}}(\mathscr{L}(G_1))-1. \]
+	Let $G_1$ be a positive divisor that satisfies $\deg G_1 < n/q$. Then $\trace (C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subfield subcode of $C_{\mathcal{L}}(D,qG_1)$. Its dimension is
+	\[ \dim_{\mathbb{F}_q}(\trace (C_{\mathcal{L}}(D,G_1))) = 2\dim_{\mathbb{F}_{q^2}}(\mathscr{L}(G_1))-1. \]
 \end{Proposition}
 \begin{proof}
-$\trace (C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subfield subcode by Lemma \ref{lm:trace-code-props}. The trace map $\trace$ and the evaluation map $\ev_D$ commute, and by $\deg(G_1)<n$, the $\ev_D$ is injective. Define the $\mathbb{F}_q$-linear map
+$\trace (C_{\mathcal{L}}(D,G_1))$ is an $\mathbb{F}_q$-linear subfield subcode by Lemma \ref{lm:trace-code-props}. The trace map $\trace$ and the evaluation map $\ev_D$ commute, and by $\deg(G_1)<n$, $\ev_D$ is injective. Define the $\mathbb{F}_q$-linear map
 \[\tau:\mathscr{L}(G_1) \to C_{\mathcal{L}}(D,qG_1) \cap  \mathbb{F}_q^n, \qquad f\mapsto \ev_D(\trace(f)).\]
 On the one hand,
 \[\dim_{\mathbb{F}_q}(\mathscr{L}(G_1)) = 2\dim_{\mathbb{F}_{q^2}}(\mathscr{L}(G_1)) = \dim \mathrm{Im}(\tau) + \dim \ker(\tau).\]
-We have to show that $\ker(\tau)=1$. Define $\varepsilon\in \mathbb{F}_{q^2}$ such that $\varepsilon=1$ if $q$ is even, and $\varepsilon=g^{(q+1)/2}$, if $q$ is odd and $g$ is a primitive element in $\mathbb{F}_{q^2}$. Then $\varepsilon^{q-1}=-1$. For the rational function $f\in \mathbb{F}_{q^2}(\mathscr{H}(q))$, we have
+We have to show that $\ker(\tau)=1$. Define $\varepsilon\in \mathbb{F}_{q^2}$ such that $\varepsilon=1$ if $q$ is even and $\varepsilon=g^{(q+1)/2}$, if $q$ is odd and $g$ is a primitive element in $\mathbb{F}_{q^2}$. Then $\varepsilon^{q-1}=-1$. For the rational function $f\in \mathbb{F}_{q^2}(\mathscr{H}(q))$, we have
 \begin{align*}
 f\in \ker(\tau) &\Rightarrow f^q+f=0 \\
 &\Rightarrow (\varepsilon f)^q=\varepsilon f \\
@@ -815,7 +813,7 @@ Set $G_1=(q-1)P$. By Proposition \ref{pr:trace-subcode},
 \[\mathcal{T}=\ev_D(\trace(\mathscr{L}(G_1)))\]
 is an $\mathbb{F}_q$-linear subspace in $C_\mathcal{L}(D,q(q-1)P)|_{\mathbb{F}_q}$. Since $\dim(\mathscr{L}((q-1)P))=4$, $\mathcal{T}$ has dimension $7$. This proves $\dim C_\mathcal{L}(D,q(q-1)P)|_{\mathbb{F}_q}\geq 7$. 
 
-Let $\widetilde{\mathcal{W}}$ the $3$-dimensional $\mathbb{F}_q$-linear subfield subcode of $C_\mathcal{L}(D,(q^2-q+1)P)$ given in Proposition \ref{pr:3-dim-tildeW}. We show that $\mathcal{T} \cap \widetilde{\mathcal{W}} = \{0\}$; the inequality $\dim C_\mathcal{L}(D,(q^2-q+1)P)|_{\mathbb{F}_q}\geq 10$ will follow. On the one hand,  
+Let $\widetilde{\mathcal{W}}$ the $3$-dimensional $\mathbb{F}_q$-linear subfield subcode of $C_\mathcal{L}(D,(q^2-q+1)P)$ given in Proposition \ref{pr:3-dim-tildeW}. We show that $\mathcal{T} \cap \widetilde{\mathcal{W}} = \{0\}$; the inequality $\dim C_\mathcal{L}(D,(q^2-q+1)P)|_{\mathbb{F}_q}\geq 10$ will follow. On the one hand, 
 \[\widetilde{\mathcal{W}}\leq \ev_D(\mathcal{W}_{q^2-q+1}).\] 
 On the other hand, using Theorem \ref{th:Wt-props}, we have
 \[\mathcal{T} \leq \ev_D(\mathscr{L}(q(q-1)P)) = \ev_D\left( \bigoplus_{t\in H(P), \, t\leq q(q-1)} \mathcal{W}_t \right).\]
@@ -841,21 +839,29 @@ The following are equivalent.
 \end{enumerate}
 \end{Proposition}
 \begin{proof}
-We use the notation of the proof of Theorem \ref{th:subcodes-dim}. Assume (i). We have $\mathscr{L}((q-1)P)=\mathcal{W}_0\oplus \mathcal{W}_{q-1}$. Moreover, $\mathcal{T}$ is an $\mathbb{F}_q \mathcal{B}$-module which decomposes into the direct sum of a $1$-dimensional and a $6$-dimensional submodule. Notice that any non-trivial irreducible $\mathbb{F}_q \mathcal{B}$-module have dimension $6$. Since $\mathcal{T}\cap C_\mathcal{L}(D,(q^2-q-1)P)$ is a proper submodule, the only possibility is that it is $1$-dimensional over $\mathbb{F}_q$. (ii) follows. Trivially, (ii) implies (iii). Let us now assume (iii).
+We use the notation of the proof of Theorem \ref{th:subcodes-dim}. Assume (i). We have $\mathscr{L}((q-1)P)=\mathcal{W}_0\oplus \mathcal{W}_{q-1}$. Moreover, $\mathcal{T}$ is an $\mathbb{F}_q \mathcal{B}$-module that decomposes into the direct sum of a $1$-dimensional submodule and a $6$-dimensional submodule. Notice that any non-trivial irreducible $\mathbb{F}_q \mathcal{B}$-module has dimension $6$. Since $\mathcal{T}\cap C_\mathcal{L}(D,(q^2-q-1)P)$ is a proper submodule, the only possibility is that it is $1$-dimensional over $\mathbb{F}_q$. (ii) follows. Trivially, (ii) implies (iii). Let us now assume (iii).
 \[\dim_{\mathbb{F}_q} C_\mathcal{L}(D,(q^2-q)P) / C_\mathcal{L}(D,(q^2-q-1)P) = 6,\]
 therefore,
 \[\dim_{\mathbb{F}_q} C_\mathcal{L}(D,(q^2-q)P)|_{\mathbb{F}_q} / C_\mathcal{L}(D,(q^2-q-1)P)|_{\mathbb{F}_q} \leq 6.\]
 This implies $\dim C_\mathcal{L}(D,(q^2-q)P)|_{\mathbb{F}_q} \leq 7$. Together with Theorem \ref{th:subcodes-dim}, we have (i). 
 \end{proof}
 
-We have partial result related to case (iii) of Proposition \ref{pr:equivalents}.
+We have a partial result related to case (iii) of Proposition \ref{pr:equivalents}.
 
 \begin{Proposition}
 $\dim C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}=1$ for all $0\leq s\leq \frac{2}{3}\g$.
 \end{Proposition}
 \begin{proof}
-Fix an arbitrary integer $s$ in the range $0 \leq s <\frac{2}{3}\g$ and consider a generic element $(c_1,\ldots,c_{q^3}) \in C_{q}(s)$. This corresponds to a function $g$ in $\mathscr{L}(sP)$ such that $c_i=g(Q_i)$ is an element of $\mathbb{F}_q$ for each $i=1,\ldots,q^3$. We note that there exists a $\gamma \in \mathbb{F}_q$ such that at least $q^2$ of the $c_i$ values are equal to $\gamma$. In other words, the function $g-\gamma$ is in $\mathscr{L}(sP)$ and has at least $q^2$ zeros on $\mathscr{H}_q$. However, a non-zero function in $\mathscr{L}(sP)$ cannot have more than $\deg(G)\leq 2\g = q(q-1)$ zeros, leading us to conclude that $g-\gamma$ must be the zero function. This implies that every $c_i$ is equal to $\gamma$, and hence, $C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}$ consists of constant vectors. This completes the proof.
+Fix an arbitrary integer $s$ in the range $0 \leq s <\frac{2}{3}\g$ and consider a generic element $(c_1,\ldots,c_{q^3}) \in C_{q}(s)$. This corresponds to a function $g$ in $\mathscr{L}(sP)$ such that $c_i=g(Q_i)$ is an element of $\mathbb{F}_q$ for each $i=1,\ldots,q^3$. We note that there exists a $\gamma \in \mathbb{F}_q$ such that at least $q^2$ of the $c_i$ values are equal to $\gamma$. In other words, the function $g-\gamma$ is in $\mathscr{L}(sP)$ and has at least $q^2$ zeros on $\mathscr{H}_q$. However, a non-zero function in $\mathscr{L}(sP)$ cannot have more than $\deg(G)\leq 2\g = q(q-1)$ zeros, leading us to conclude that $g-\gamma$ must be the zero function. This implies that every $c_i$ is equal to $\gamma$, and hence $C_\mathcal{L}(D,sP)|_{\mathbb{F}_q}$ consists of constant vectors. This completes the proof.
 \end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Acknowledgments}
+
+The first author acknowledges the support from the French government Investissements d’Avenir program ANR-11-LABX-0020-01. Additionally, a part of this work was funded by the French National Research Agency through ANR Barracuda (ANR-21-CE39-0009). The second author was supported by the Ministry of Culture and Innovation and the National Research, Development, and Innovation Office within the Quantum Information National Laboratory of Hungary (Grant No. 2022-2.1.1-NL-2022-00004), and partially funded by NKFIH Grant SNN 132625.
 
 
 
