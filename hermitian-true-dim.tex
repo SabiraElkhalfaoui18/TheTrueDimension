@@ -80,11 +80,13 @@ $^{1}$ \quad Univ Rennes, IRMAR - UMR 6625, F-35000 Rennes, France; sabiraelkhal
 $^{2}$ \quad Bolyai Institute, University of Szeged, Aradi v\'{e}rtan\'{u}k tere 1, H-6720 Szeged, Hungary; and  HUN-REN-ELTE Geometric and Algebraic Combinatorics Research Group, P\'azm\'any P\'eter s\'et\'any 1/C, H-1117 Budapest, Hungary; nagyg@math.u-szeged.hu}
 
 % Contact information of the corresponding author
-\corres{Correspondence: sabiraelkhalfaoui@gmail.com (S.E.K.)}
+%\corres{Correspondence: sabiraelkhalfaoui@gmail.com (S.E.K.)}
+\corres{Correspondence: nagyg@math.u-szeged.hu (G.P.N.)}
 
 % Current address and/or shared authorship
 %\firstnote{Current address: Affiliation 3.} 
-\secondnote{These authors contributed equally to this work.}
+%\secondnote{These authors contributed equally to this work.}
+\firstnote{These authors contributed equally to this work.}
 % The commands \thirdnote{} till \eighthnote{} are available for further notes
 
 %\simplesumm{} % Simple summary
@@ -109,17 +111,19 @@ Our comprehensive exploration seeks to deepen the understanding of Hermitian cod
 
 \section{Introduction}
 
-The advent of quantum computers presents significant threats to classical cryptographic schemes, which needs the development of post-quantum cryptographic primitives that resist quantum attacks. In this regard, Algebraic-Geometry (AG) codes have gained considerable attention due to their error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes that stand out against structural attacks, making them good candidates for deployment in post-quantum cryptography.
+The advent of quantum computers presents significant threats to classical cryptographic schemes, which need the development of post-quantum cryptographic primitives that resist quantum attacks. In this regard, Algebraic-Geometry (AG) codes have gained considerable attention due to their error-correcting capabilities and potential applications in secure communication and cryptographic protocols. Among various classes of AG codes, subfield subcodes stand out against structural attacks, making them good candidates for deployment in post-quantum cryptography.
 
 
 
 Within linear codes over finite field extensions, the process of generating subfield subcodes, commonly referred to as restriction, entails converting a given linear code $C$ over a large field extension $\mathbb{F}_{q^n}$ into a code that is defined over a subfield $\mathbb{F}_{q^m}$, where $m$ divides $n$. This strategic approach restricts the codewords of $C$ to elements found within the smaller field $\mathbb{F}_{q^m}$, effectively concealing the details about the structure inherent in $C$. A classic example of this concept is the Reed-Solomon codes, which are algebraic geometry (AG) codes constructed over a projective line. They are widely used in practical applications, with their subfield subcodes represented by Goppa codes. In particular, in cryptography, especially within the McEliece cryptosystem, subfield subcodes play a crucial role in hiding the code structure, thus enhancing its resilience against distinguisher attacks \cite{sendrier2002security, faugere2013distinguisher}. The long-lasting security of the McEliece cryptosystem based on Goppa codes \cite{mceliece1978public}, emphasizes its effectiveness in preventing such attacks. Despite subsequent proposals exploring Reed-Solomon codes \cite{couvreur2014distinguisher}, AG codes, and their subcodes \cite{couvreur2017cryptanalysis}, all have been susceptible to structural attacks. By imposing restrictions, cryptographic systems can enhance their security by minimizing the risk of potential attacks aimed at distinguishing the chosen subfield subcode. With growing interest in AG codes, particularly Hermitian codes, they are being evaluated as feasible alternatives to Reed-Solomon codes in specific applications \cite{macdonald2003hermitian}. Hermitian codes have been extensively studied in prior research \cite{stichtenoth1988note, little1997structure, yang1992true, korchmaros2019codes, ren2004structure, lhotel2023goppa}, particularly those associated with the point at infinity of the Hermitian curve. However, in \cite{korchmaros2013hermitian, matthews2005one}, authors introduced an alternative construction of Hermitian codes associated with higher-degree places on the Hermitian curve.
 
 
-Our contribution involves conducting further research on Hermitian codes associated with degree $3$ places, and derive additional properties and establish explicit bases for the corresponding Riemann-Roch spaces, additionally, this should align with previous findings in \cite{korchmaros2013hermitian}. These codes have improved minimum distances, as shown by the Matthews-Michel bound \cite{matthews2005one}, and have been further strengthened by Korchm'aros and Nagy in \cite{korchmaros2013hermitian}. Moreover, we explore the properties of their subfield subcodes. Our investigation particularly emphasizes the determination of their true dimensions. The family of subfield subcodes of Hermitian codes associated with degree $3$ places holds promise for the construction of an improved and secure McEliece cryptosystem. This implies that such a proposal could reduce the key size and achieve the security level required by NIST \cite{Nist}.
+Our contribution involves conducting further research on Hermitian codes associated with degree $3$ places, deriving additional properties, and establishing explicit bases for the corresponding Riemann-Roch spaces, additionally, this should align with previous findings in \cite{korchmaros2013hermitian}. The stabilizer of a degree $3$ place has order $3(q^2-q+1)$, the action of this group and the associated quotient curve has been studied by Cossidente, Korchm\'aros and Torres \cite{cossidente1999curves}. We make heavy use of their approach which relates the Hermitian curve with the curve projective curve $XY^q+YZ^q+ZX^q=0$. Beelen, Montanucci, and Vicino \cite{beelen2023weierstrass} study another class of Hermitian quotient curves, which is obtained by automorphisms stabilizing a degree $3$ place of the Hermitian curve. 
+
+One-point Hermitian of degree $3$ places have improved minimum distances, as shown by the Matthews-Michel bound \cite{matthews2005one}, and have been further strengthened by Korchm\'{a}ros and Nagy in \cite{korchmaros2013hermitian}. Moreover, we explore the properties of their subfield subcodes. Our investigation particularly emphasizes the determination of their true dimensions by giving explicit constructions. The family of subfield subcodes of Hermitian codes associated with degree $3$ places holds promise for the construction of an improved and secure McEliece cryptosystem. This implies that such a proposal could reduce the key size and achieve the security level required by NIST \cite{Nist}.
 
 
-The paper is structured as follows. In Section \ref{sec} we introduce the essential background of AG codes constructed from the Hermitian curve, including Hermitian curves, divisors, and the Riemann-Roch space. In Section \ref{sec:geometry}, we provide some facts on degree 3 places on the Hermitian curve, in particular, we study their geometric properties and algebraic presentations. Section \ref{sec:riemann-roch} deals with their corresponding Riemann-Roch spaces, where we explore their structure and give explicit and practical bases. In Section \ref{sec:Herm}, we study the functional and differential Hermitian codes of degree 3 place where we introduce a new construction. Moreover, we discuss some results on their equivalence under certain transformations. In Section \ref{sec:subf}, we give the main result on the dimension of the subfield subcodes of degree 3 place Hermitian codes. This result consists of a theorem that provides a lower bound on the dimension of the underlying codes, while the conjecture suggests a possible equality based on numerical experiments. 
+The paper is structured as follows. In Section \ref{sec} we introduce the essential background of AG codes constructed from the Hermitian curve, including Hermitian curves, divisors, and the Riemann-Roch space. In Section \ref{sec:geometry}, we provide some facts on the geometry of degree 3 places of the Hermitian curve, and the unitary transformations which stabilize the given degree $3$ place. Our main tool is the Hermitian sesquilinear form $\langle u,v \rangle = u_1v_1^q -u_2v_3^q-u_3v_2^q$, the Frobenius map $\Frob$. Section \ref{sec:riemann-roch} deals with their corresponding Riemann-Roch spaces. We explore their structure and give explicit and practical bases over $\mathbb{F}_{q^6}$, and a decomposition into invariant subspaces over $\mathbb{F}_{q^2}$ (Theorem \ref{th:Wt-props}). In Section \ref{sec:Herm}, we study the functional and differential Hermitian codes of degree 3 place where we give explicitly the monomial equivalence between them (Theorem \ref{th:dual-codes}). In Section \ref{sec:subf}, we give the main result on the dimension of the subfield subcodes of degree 3 place Hermitian codes (Theorem \ref{th:subcodes-dim}). This result consists of a theorem that provides a lower bound on the dimension of the underlying codes, while the conjecture suggests a possible equality based on numerical experiments. The computational results have been obtained by the \textsc{HERmitian} package \cite{HERmitian0.2} of the GAP \cite{GAP4.12.2pre} computer algebra system. 
 
 
 \section{Algebraic Geometry (AG) codes \label{sec}}
@@ -445,7 +449,7 @@ In this section, we keep using the notation of the previous section: $P_i$ is a 
 \subsection{Basis and decomposition of the Riemann-Roch space}
 Let $s,u,v$ be positive integers such that $v\leq q$ and $s=u(q+1)-v$. Clearly, $u,v$ are uniquely defined by $s$. In \cite{korchmaros2013hermitian}, the Riemann-Roch space associated with the divisor $sP$ is given as
 \[\mathscr{L}(sP) = \left\{ \frac{f}{(\ell_1\ell_2\ell_3)^u} \mid f \in \mathbb{F}_{q^2}[X,Y], \; \deg f \leq 3u, \; v_{P_i}(f) \geq v \right\} \cup \{0\}.\]
-The Weierstrass semigroup $H(P)$ consists of the integers $s\geq 0$ such that the pole divisor $(f)_\infty=sP$ for some $f\in {\mathbb{F}_{q^2}}(\mathscr{H}_q)$, see \cite{beelen2023weierstrass}. If $s\not\in H(P)$, then it is called a Weierstrass gap; the set of Weierstrass gaps is denoted by $G(P)$. By \cite[Theorem 3.1]{korchmaros2013hermitian}, we have
+The Weierstrass semigroup $H(P)$ consists of the integers $s\geq 0$ such that the pole divisor $(f)_\infty=sP$ for some $f\in {\mathbb{F}_{q^2}}(\mathscr{H}_q)$, see \cite[Section 6.5]{stichtenoth2009algebraic} and \cite{beelen2023weierstrass}. If $s\not\in H(P)$, then it is called a Weierstrass gap; the set of Weierstrass gaps is denoted by $G(P)$. By \cite[Theorem 3.1]{korchmaros2013hermitian}, we have
 \[G(P) = \{u(q+1)-v \mid 0\leq v\leq q, \; 0<3u\leq v\}.\]
 By the Weierstrass Gap Theorem \cite[Theorem 1.6.8]{stichtenoth2009algebraic}, $|G(P)|=\g$ for a place of degree $1$. In our case, $P$ has degree $3$ and the situation is slightly more complicated.
 
@@ -726,7 +730,7 @@ is the product of terms such as $\ell_i/\ell_j$, it takes the value $1$ at $Q_\i
 
 Before stating our main result on differential codes, we remind the reader that two linear codes $C_1,C_2$ are monomially equivalent, if $C_2=\boldsymbol{\mu} \star C_1$ for some multiplier vector $\boldsymbol{\mu}$. 
 
-\begin{Theorem}
+\begin{Theorem} \label{th:dual-codes}
 Assume $q\equiv 2 \pmod3$ and define the $\mathbb{F}_{q^2}$-rational functions 
 \[T=\frac{1}{3}\left(\frac{\ell_1^{q^2}}{\ell_2} + \frac{\ell_2^{q^2}}{\ell_3} + \frac{\ell_3^{q^2}}{\ell_1}\right) \qquad \text{and} \qquad T_1=\frac{(\ell_1\ell_{2}\ell_{3})^{\frac{q^2-1}{3}}}{T}.\]
 Let $G$ be a divisor of $\mathbb{F}_{q^2}(\mathscr{H}_q)$ whose support is disjoint from the support of $\widetilde{D}$. Define $\mu_i=T_1(Q_i)$ for $i \in \{1,\ldots,q^3,\infty\}$, and write $\boldsymbol{\mu}=(\mu_i)$. Then all entries $\mu_i\in \mathbb{F}_{q^2}^*$, and
@@ -894,7 +898,8 @@ Fix an arbitrary integer $s$ in the range $0 \leq s <\frac{2}{3}\g$ and consider
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\acknowledgments{The first author acknowledges support from the French government Investissements d’Avenir program ANR-11-LABX-0020-01. Additionally, a part of this work was funded by the French National Research Agency through ANR Barracuda (ANR-21-CE39-0009). The second author... }
+\acknowledgments{The first author acknowledges the support from the French government Investissements d’Avenir program ANR-11-LABX-0020-01. Additionally, a part of this work was funded by the French National Research Agency through ANR Barracuda (ANR-21-CE39-0009). The second author was supported by the Ministry of Culture and Innovation and the National Research, Development, and Innovation Oﬃce within the Quantum Information National Laboratory of Hungary (Grant No. 2022-2.1.1-NL-2022-00004), and partially funded by NKFIH Grant SNN 132625.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reftitle{References}
 
